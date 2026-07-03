@@ -1,0 +1,64 @@
+name: Clouds
+options:
+  bundleIdPrefix: org.oekalegon
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: 6.0
+    MARKETING_VERSION: 1.0.0
+    CURRENT_PROJECT_VERSION: 1
+
+targets:
+  Clouds:
+    type: application
+    platform: iOS
+    sources:
+      - path: Clouds
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: org.oekalegon.Clouds
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad: UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+        GENERATE_INFOPLIST_FILE: YES
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+  CloudsTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: CloudsTests
+    dependencies:
+      - target: Clouds
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: org.oekalegon.CloudsTests
+        GENERATE_INFOPLIST_FILE: YES
+
+  CloudsUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: CloudsUITests
+    dependencies:
+      - target: Clouds
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: org.oekalegon.CloudsUITests
+        GENERATE_INFOPLIST_FILE: YES
+
+schemes:
+  Clouds:
+    build:
+      targets:
+        Clouds: all
+    test:
+      targets:
+        - CloudsTests
+        - CloudsUITests
+    run:
+      config: Debug

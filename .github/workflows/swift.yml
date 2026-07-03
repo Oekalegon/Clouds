@@ -15,9 +15,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # TODO: replace project/scheme placeholders once the Xcode project exists
     - name: Build
-      run: xcodebuild -project Clouds.xcodeproj -scheme Clouds -destination 'platform=macOS' build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+      run: xcodebuild -project Clouds.xcodeproj -scheme Clouds -destination 'platform=iOS Simulator,name=iPhone 16' build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
     - name: Run tests
-      run: xcodebuild -project Clouds.xcodeproj -scheme Clouds -destination 'platform=macOS' test -skip-testing:CloudsUITests CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+      run: xcodebuild -project Clouds.xcodeproj -scheme Clouds -destination 'platform=iOS Simulator,name=iPhone 16' test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
