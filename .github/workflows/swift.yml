@@ -15,21 +15,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # TODO: remove this step if Clouds does not depend on AstroKit
-    - name: Checkout AstroKit (local dependency)
-      uses: actions/checkout@v4
-      with:
-        repository: Oekalegon/AstroKit
-        path: AstroKit
-
-    # TODO: remove this step if Clouds does not depend on AstroKit
-    - name: Symlink AstroKit as sibling of Clouds
-      run: ln -s "$GITHUB_WORKSPACE/AstroKit" "$(dirname "$GITHUB_WORKSPACE")/AstroKit"
-
-    # TODO: remove this step if Clouds does not need CFITSIO
-    - name: Install CFITSIO
-      run: brew install cfitsio
-
     # TODO: replace project/scheme placeholders once the Xcode project exists
     - name: Build
       run: xcodebuild -project Clouds.xcodeproj -scheme Clouds -destination 'platform=macOS' build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
