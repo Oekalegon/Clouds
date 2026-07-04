@@ -14,10 +14,7 @@ struct HistoryView: View {
     @State private var isPresentingIdentify = false
 
     private var sections: [(day: Date, items: [CloudObservation])] {
-        let grouped = Dictionary(grouping: observations) { CloudObservation.sectionKey(for: $0.date) }
-        return grouped
-            .sorted { $0.key > $1.key }
-            .map { (day: $0.key, items: $0.value) }
+        CloudObservation.grouped(observations)
     }
 
     var body: some View {
