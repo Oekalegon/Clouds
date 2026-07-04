@@ -1,0 +1,11 @@
+{
+  "id": "LightningOrThunder",
+  "text": "Is lightning seen or thunder heard?",
+  "description": "This is the clearest sign of a Cumulonimbus, even when the cloud's shape is hard to judge.",
+  "image": "question-lightning-or-thunder",
+  "answers": [
+    { "id": "Yes", "label": "Yes" },
+    { "id": "No", "label": "No" },
+    { "id": "Unsure", "label": "Not sure" }
+  ]
+}

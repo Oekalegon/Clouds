@@ -1,0 +1,11 @@
+{
+  "id": "ElementOneToThreeFingers",
+  "text": "Is each rounded element 1 to 3 fingers in size, held at arm's length?",
+  "description": "Compare one rounded element of the cloud's pattern to the width of one to three fingers held at arm's length.",
+  "image": "question-element-one-to-three-fingers",
+  "answers": [
+    { "id": "Yes", "label": "Yes" },
+    { "id": "No", "label": "No" },
+    { "id": "Unsure", "label": "Not sure" }
+  ]
+}
