@@ -12,7 +12,7 @@ import SwiftData
 struct CloudsApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self
+            CloudObservation.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +25,7 @@ struct CloudsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HistoryView()
         }
         .modelContainer(sharedModelContainer)
     }

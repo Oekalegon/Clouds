@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00D31B2F3287427F28053B3A /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A907BFB6E840EFB9088F386C /* HistoryView.swift */; };
+		018A5F6B168C1A3851BE5825 /* CloudObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52716D289115DBB34EDCF4A6 /* CloudObservation.swift */; };
 		1910CE03337AEFD3EAC76BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03FD643277470D745D53F47 /* Assets.xcassets */; };
 		1DA43621059DD691264D30D8 /* CloudsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */; };
+		435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */; };
 		8D341620A9368821BA5B6571 /* CloudsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E36FBD2E4069F00893290 /* CloudsTests.swift */; };
 		A96E6F8EDCF0B5405CC671A4 /* CloudsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00322B04CE1C57B1E6452CF4 /* CloudsUITestsLaunchTests.swift */; };
-		B183575FDB914A6F6CC9352D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC896857B3F8A5F3E0E6DF /* ContentView.swift */; };
-		B6E5D1A59152FDC9F8D5B1C4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2305E58608167B11F6CD1 /* Item.swift */; };
+		B6060BD769E53F6293D22A12 /* IdentifyPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9273EA023D85BEBDF6034735 /* IdentifyPlaceholderView.swift */; };
 		CFA2420D838A886542163FE0 /* CloudsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CCDD66D32EF7CE61976689 /* CloudsApp.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,14 +38,16 @@
 /* Begin PBXFileReference section */
 		00322B04CE1C57B1E6452CF4 /* CloudsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		084698C267707E6D1131D0E9 /* CloudsTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CloudsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationRow.swift; sourceTree = "<group>"; };
 		4BCA3E4178256FE2FE6805FE /* CloudsUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CloudsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsUITests.swift; sourceTree = "<group>"; };
-		62DC896857B3F8A5F3E0E6DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		52716D289115DBB34EDCF4A6 /* CloudObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudObservation.swift; sourceTree = "<group>"; };
 		79A7741295E9D52AF5A9C4EB /* Clouds.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Clouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9273EA023D85BEBDF6034735 /* IdentifyPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyPlaceholderView.swift; sourceTree = "<group>"; };
 		98CCDD66D32EF7CE61976689 /* CloudsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsApp.swift; sourceTree = "<group>"; };
+		A907BFB6E840EFB9088F386C /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		B07E36FBD2E4069F00893290 /* CloudsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsTests.swift; sourceTree = "<group>"; };
 		F03FD643277470D745D53F47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FFD2305E58608167B11F6CD1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -66,6 +70,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7F738149284A2A5DBF68BBC6 /* Identify */ = {
+			isa = PBXGroup;
+			children = (
+				9273EA023D85BEBDF6034735 /* IdentifyPlaceholderView.swift */,
+			);
+			path = Identify;
+			sourceTree = "<group>";
+		};
+		8BC09333931520B5875D30E9 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A907BFB6E840EFB9088F386C /* HistoryView.swift */,
+				1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		A0AA0AB20D20EB4E75117D4B = {
 			isa = PBXGroup;
 			children = (
@@ -84,13 +105,30 @@
 			path = CloudsTests;
 			sourceTree = "<group>";
 		};
+		F3E84C881602493A6953D535 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8BC09333931520B5875D30E9 /* History */,
+				7F738149284A2A5DBF68BBC6 /* Identify */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F992DF084494FB26D2D322BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52716D289115DBB34EDCF4A6 /* CloudObservation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FBFFE35CA8C859AEEACBCA39 /* Clouds */ = {
 			isa = PBXGroup;
 			children = (
 				F03FD643277470D745D53F47 /* Assets.xcassets */,
 				98CCDD66D32EF7CE61976689 /* CloudsApp.swift */,
-				62DC896857B3F8A5F3E0E6DF /* ContentView.swift */,
-				FFD2305E58608167B11F6CD1 /* Item.swift */,
+				F992DF084494FB26D2D322BE /* Models */,
+				F3E84C881602493A6953D535 /* Views */,
 			);
 			path = Clouds;
 			sourceTree = "<group>";
@@ -220,9 +258,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018A5F6B168C1A3851BE5825 /* CloudObservation.swift in Sources */,
 				CFA2420D838A886542163FE0 /* CloudsApp.swift in Sources */,
-				B183575FDB914A6F6CC9352D /* ContentView.swift in Sources */,
-				B6E5D1A59152FDC9F8D5B1C4 /* Item.swift in Sources */,
+				00D31B2F3287427F28053B3A /* HistoryView.swift in Sources */,
+				B6060BD769E53F6293D22A12 /* IdentifyPlaceholderView.swift in Sources */,
+				435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

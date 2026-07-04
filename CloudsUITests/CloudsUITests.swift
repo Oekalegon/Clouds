@@ -14,11 +14,19 @@ final class CloudsUITests: XCTestCase {
     }
 
     @MainActor
-    func testAddAndDeleteItem() throws {
+    func testEmptyStateShowsWhenNoObservations() throws {
         let app = XCUIApplication()
         app.launch()
 
-        app.buttons["Add Item"].tap()
-        XCTAssertEqual(app.cells.count, 1)
+        XCTAssertTrue(app.staticTexts["No Observations Yet"].waitForExistence(timeout: 5))
+    }
+
+    @MainActor
+    func testIdentifyButtonShowsComingSoonPlaceholder() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        app.buttons["Identify"].tap()
+        XCTAssertTrue(app.staticTexts["Coming Soon"].waitForExistence(timeout: 5))
     }
 }
