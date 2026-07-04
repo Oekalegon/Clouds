@@ -14,7 +14,7 @@ typealias StateID = String
 /// combination of parent states. Wrapped so it can be used as a
 /// dictionary key, since `Dictionary` itself isn't `Hashable`.
 struct Assignment: Hashable {
-    var values: [NodeID: StateID]
+    let values: [NodeID: StateID]
 
     init(_ values: [NodeID: StateID] = [:]) {
         self.values = values
