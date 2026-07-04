@@ -57,7 +57,7 @@ extension BayesianNetwork {
         forTargets targets: [NodeID],
         given evidence: [NodeID: StateID] = [:]
     ) throws -> Double {
-        let currentEntropy = entropy(of: try jointPosterior(over: targets, given: evidence))
+        let currentEntropy = Self.entropy(of: try jointPosterior(over: targets, given: evidence))
         let candidateDistribution = try posterior(of: candidate, given: evidence)
 
         var expectedPosteriorEntropy = 0.0
@@ -65,7 +65,7 @@ extension BayesianNetwork {
             var hypotheticalEvidence = evidence
             hypotheticalEvidence[candidate] = state
             let hypotheticalJoint = try jointPosterior(over: targets, given: hypotheticalEvidence)
-            expectedPosteriorEntropy += probability * entropy(of: hypotheticalJoint)
+            expectedPosteriorEntropy += probability * Self.entropy(of: hypotheticalJoint)
         }
 
         return currentEntropy - expectedPosteriorEntropy
@@ -89,7 +89,7 @@ extension BayesianNetwork {
     }
 
     /// Shannon entropy, in bits, of a discrete distribution.
-    func entropy<Key>(of distribution: [Key: Double]) -> Double {
+    static func entropy<Key>(of distribution: [Key: Double]) -> Double {
         distribution.values.reduce(0) { total, probability in
             guard probability > 0 else { return total }
             return total - probability * log2(probability)
