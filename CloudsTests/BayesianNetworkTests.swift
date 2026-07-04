@@ -69,6 +69,14 @@ struct BayesianNetworkTests {
         #expect(abs(total - 1.0) < 1e-9)
     }
 
+    @Test func posteriorThrowsOnImpossibleEvidence() async throws {
+        let network = try makeWetGrassNetwork()
+
+        #expect(throws: BayesianNetworkError.zeroEvidenceProbability) {
+            try network.posterior(of: "Cloudy", given: ["WetGrass": "T", "Sprinkler": "F", "Rain": "F"])
+        }
+    }
+
     @Test func initThrowsOnCyclicGraph() async throws {
         let a = BayesianNetworkNode(id: "A", states: ["T", "F"], parentIDs: ["B"])
         let b = BayesianNetworkNode(id: "B", states: ["T", "F"], parentIDs: ["A"])
