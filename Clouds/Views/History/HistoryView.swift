@@ -13,11 +13,11 @@ struct HistoryView: View {
     @Query(sort: \CloudObservation.date, order: .reverse) private var observations: [CloudObservation]
     @State private var isPresentingIdentify = false
 
-    private var sections: [(day: Date, observations: [CloudObservation])] {
+    private var sections: [(day: Date, items: [CloudObservation])] {
         let grouped = Dictionary(grouping: observations) { CloudObservation.sectionKey(for: $0.date) }
         return grouped
             .sorted { $0.key > $1.key }
-            .map { (day: $0.key, observations: $0.value) }
+            .map { (day: $0.key, items: $0.value) }
     }
 
     var body: some View {
@@ -49,7 +49,7 @@ struct HistoryView: View {
             List {
                 ForEach(sections, id: \.day) { section in
                     Section {
-                        ForEach(section.observations) { observation in
+                        ForEach(section.items) { observation in
                             ObservationRow(observation: observation)
                         }
                     } header: {
