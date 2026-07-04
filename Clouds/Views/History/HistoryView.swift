@@ -29,7 +29,7 @@ struct HistoryView: View {
                     }
                 }
                 .sheet(isPresented: $isPresentingIdentify) {
-                    IdentifyPlaceholderView()
+                    IdentifyView()
                 }
         }
     }
