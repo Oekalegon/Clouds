@@ -16,4 +16,7 @@ enum SchemaError: Error, Equatable {
 
     /// A question's answer ids don't exactly match its node's states.
     case answerStateMismatch(question: NodeID, expectedStates: Set<StateID>, actualStates: Set<StateID>)
+
+    /// A question lists the same answer id more than once.
+    case duplicateAnswer(question: NodeID)
 }

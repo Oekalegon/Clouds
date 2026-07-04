@@ -30,8 +30,13 @@ extension QuestionDefinition {
     /// network node with this id actually exists; assembling a network
     /// with its questions is a future ticket's concern.
     func validate(against states: [StateID]) throws {
+        let ids = answers.map(\.id)
+        guard ids.count == Set(ids).count else {
+            throw SchemaError.duplicateAnswer(question: id)
+        }
+
         let expected = Set(states)
-        let actual = Set(answers.map(\.id))
+        let actual = Set(ids)
         guard actual == expected else {
             throw SchemaError.answerStateMismatch(question: id, expectedStates: expected, actualStates: actual)
         }

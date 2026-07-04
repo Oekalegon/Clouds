@@ -93,4 +93,22 @@ struct QuestionDefinitionTests {
             try question.validate(against: ["T", "F"])
         }
     }
+
+    @Test func validateAgainstDuplicateAnswerIDThrows() throws {
+        let question = QuestionDefinition(
+            id: "Cloudy",
+            text: "Is the sky mostly overcast?",
+            description: nil,
+            image: nil,
+            answers: [
+                QuestionAnswer(id: "T", label: "Yes, mostly overcast"),
+                QuestionAnswer(id: "F", label: "No, mostly clear"),
+                QuestionAnswer(id: "T", label: "Yes, definitely overcast")
+            ]
+        )
+
+        #expect(throws: SchemaError.duplicateAnswer(question: "Cloudy")) {
+            try question.validate(against: ["T", "F"])
+        }
+    }
 }
