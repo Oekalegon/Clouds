@@ -1,0 +1,11 @@
+{
+  "id": "ElementSmallerThanOneFinger",
+  "text": "Is each element smaller than 1 finger held at arm's length?",
+  "description": "Hold your hand at arm's length and compare one element of the cloud's pattern to the width of a single finger.",
+  "image": "question-element-smaller-than-one-finger",
+  "answers": [
+    { "id": "Yes", "label": "Yes" },
+    { "id": "No", "label": "No" },
+    { "id": "Unsure", "label": "Not sure" }
+  ]
+}

@@ -1,0 +1,1165 @@
+{
+  "nodes": [
+    {
+      "id": "Genus",
+      "states": [
+        "Ci",
+        "Cc",
+        "Cs",
+        "Ac",
+        "As",
+        "Ns",
+        "Sc",
+        "St",
+        "Cu",
+        "Cb"
+      ],
+      "cpt": [
+        {
+          "distribution": {
+            "Ci": 0.1,
+            "Cc": 0.1,
+            "Cs": 0.1,
+            "Ac": 0.1,
+            "As": 0.1,
+            "Ns": 0.1,
+            "Sc": 0.1,
+            "St": 0.1,
+            "Cu": 0.1,
+            "Cb": 0.1
+          }
+        }
+      ]
+    },
+    {
+      "id": "LightningOrThunder",
+      "states": [
+        "Yes",
+        "No",
+        "Unsure"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.94,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.94,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.94,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.94,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.94,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.94,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.94,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.94,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.4,
+            "No": 0.55,
+            "Unsure": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "BulgingHeapsOrDomes",
+      "states": [
+        "Yes",
+        "No",
+        "Unsure"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.7,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.7,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "FuzzyUpperOutline",
+      "states": [
+        "Yes",
+        "No",
+        "Unsure"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "UniformLayerNoElements",
+      "states": [
+        "Yes",
+        "No",
+        "Unsure"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.15,
+            "No": 0.8,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.8,
+            "No": 0.15,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "SunOrMoonBrightPatch",
+      "states": [
+        "Yes",
+        "No",
+        "Unsure"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.3,
+            "No": 0.65,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.2,
+            "No": 0.75,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.15,
+            "No": 0.8,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.7,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.15,
+            "No": 0.8,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.15,
+            "No": 0.8,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.1,
+            "No": 0.85,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "ElevatedGreySheet",
+      "states": [
+        "Yes",
+        "No",
+        "Unsure"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.15,
+            "No": 0.8,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.1,
+            "No": 0.85,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.35,
+            "No": 0.6,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.1,
+            "No": 0.85,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.1,
+            "No": 0.85,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "DenseWetLowerLayer",
+      "states": [
+        "Yes",
+        "No",
+        "Unsure"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.2,
+            "No": 0.75,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.15,
+            "No": 0.8,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "WhiteWispyFibres",
+      "states": [
+        "Yes",
+        "No",
+        "Unsure"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.3,
+            "No": 0.65,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.1,
+            "No": 0.85,
+            "Unsure": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "ElementSmallerThanOneFinger",
+      "states": [
+        "Yes",
+        "No",
+        "Unsure"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.15,
+            "No": 0.8,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "ElementOneToThreeFingers",
+      "states": [
+        "Yes",
+        "No",
+        "Unsure"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.1,
+            "No": 0.85,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.85,
+            "No": 0.1,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.15,
+            "No": 0.8,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.9,
+            "Unsure": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.03,
+            "No": 0.92,
+            "Unsure": 0.05
+          }
+        }
+      ]
+    }
+  ]
+}

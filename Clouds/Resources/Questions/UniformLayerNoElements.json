@@ -1,0 +1,11 @@
+{
+  "id": "UniformLayerNoElements",
+  "text": "Is there a uniform, continuous or broken layer that has no rolls or elements?",
+  "description": "Look for a smooth or featureless sheet, rather than one made of distinct grains, rolls or patches.",
+  "image": "question-uniform-layer-no-elements",
+  "answers": [
+    { "id": "Yes", "label": "Yes" },
+    { "id": "No", "label": "No" },
+    { "id": "Unsure", "label": "Not sure" }
+  ]
+}
