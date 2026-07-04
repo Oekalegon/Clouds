@@ -14,7 +14,11 @@ struct CloudsApp: App {
         let schema = Schema([
             CloudObservation.self
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        // UI tests launch with this flag so each test run gets an
+        // isolated, empty store instead of accumulating data in the
+        // simulator's persistent one across runs.
+        let isUITesting = ProcessInfo.processInfo.arguments.contains("UI-TESTING-RESET")
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: isUITesting)
 
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])

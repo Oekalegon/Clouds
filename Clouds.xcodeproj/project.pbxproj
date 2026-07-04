@@ -11,15 +11,21 @@
 		018A5F6B168C1A3851BE5825 /* CloudObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52716D289115DBB34EDCF4A6 /* CloudObservation.swift */; };
 		07A0120563700F88EDE4FB09 /* LightningOrThunder.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AFBE492B520E3F1D3E63206 /* LightningOrThunder.json */; };
 		07EFFFBAFFCAFE12F1C5B0A7 /* BayesianNetworkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA4F7C788DB82047969F09 /* BayesianNetworkNode.swift */; };
+		090A60715653D48A9884E88B /* CloudGenusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EED6AADC2C4B097722EC3 /* CloudGenusTests.swift */; };
 		0ACCFEE9E02806DE54295303 /* GenusNetworkContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6C397400C0A8328B12AB8 /* GenusNetworkContentTests.swift */; };
+		119EEF67FD7C39B5238FAD55 /* IdentificationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F82D5F2E6BF1E209E50399 /* IdentificationSession.swift */; };
+		15FE3F137E95A4B53059FCDF /* IdentifyQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35235DD1F40B6E2B2D31A3F3 /* IdentifyQuestionView.swift */; };
 		1910CE03337AEFD3EAC76BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03FD643277470D745D53F47 /* Assets.xcassets */; };
 		1DA43621059DD691264D30D8 /* CloudsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */; };
+		2BEEF198249F7F93FA58B04D /* IdentificationSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */; };
 		4205DC43D0AF16F6FEBDDF6F /* ConditionalProbabilityTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A702925077EDF186478E73B /* ConditionalProbabilityTable.swift */; };
 		435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */; };
 		4A4FCBFA40AC20AF26317727 /* ElementSmallerThanOneFinger.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C2821079C3B8F669B9F86B /* ElementSmallerThanOneFinger.json */; };
 		4D0EABE766627635FAC8555E /* QuestionDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB130AAEDCEC9C6D151ACD /* QuestionDefinition.swift */; };
 		4D7ABE83BA7335AB697327BC /* BayesianNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8B734E98C54B34061208E /* BayesianNetworkTests.swift */; };
 		56A0235A63346D9DD98E4EB4 /* FuzzyUpperOutline.json in Resources */ = {isa = PBXBuildFile; fileRef = 679E51AFEC31360BF59FD5D3 /* FuzzyUpperOutline.json */; };
+		5AF6D534768EA74054AD5F9F /* IdentificationCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F241FD23AD7F3B59F30F10A /* IdentificationCatalog.swift */; };
+		5E5B67C470292F15A3664C16 /* IdentifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6723EF65DA1BBEB49FABC321 /* IdentifyView.swift */; };
 		61939F7505ADCA08D5229DA4 /* WhiteWispyFibres.json in Resources */ = {isa = PBXBuildFile; fileRef = 672A070EF3B0822E0BC0B09E /* WhiteWispyFibres.json */; };
 		6573685E3EABCBAB09576A27 /* BayesianNetworkFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9143FD4EBE882E8F881C48 /* BayesianNetworkFileTests.swift */; };
 		6C428D2FB3E9E848886F9DDB /* UniformLayerNoElements.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A2DF7AA241887CD58513687 /* UniformLayerNoElements.json */; };
@@ -31,12 +37,14 @@
 		A6FED8BE84B75700F03448FD /* ElevatedGreySheet.json in Resources */ = {isa = PBXBuildFile; fileRef = FB1315337268972F0CEAF892 /* ElevatedGreySheet.json */; };
 		A96E6F8EDCF0B5405CC671A4 /* CloudsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00322B04CE1C57B1E6452CF4 /* CloudsUITestsLaunchTests.swift */; };
 		B1C0590E823ADC0CAE8C4891 /* QuestionAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD499EB07C78B41C91EEB0C /* QuestionAnswer.swift */; };
-		B6060BD769E53F6293D22A12 /* IdentifyPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9273EA023D85BEBDF6034735 /* IdentifyPlaceholderView.swift */; };
 		B7674EEBC6079942D18D0325 /* BayesianNetwork+Inference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D630CD3DE67D860E4971821 /* BayesianNetwork+Inference.swift */; };
 		B7C92C201A566730D7AAA36A /* QuestionDefinitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */; };
+		C11624CE051975D66084F9D1 /* CloudGenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C0B37358FFBD1E01C627FC /* CloudGenus.swift */; };
 		C7AB1D674BE124DCC73B4FB2 /* BayesianNetworkFileCPTRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB107D714889A4D4378AC2 /* BayesianNetworkFileCPTRow.swift */; };
+		C9F7FA330DE4BBE876847066 /* IdentifyResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101201FF2D5D81A7BADBA9B /* IdentifyResultView.swift */; };
 		CF1277D20E19AEFF91B64B05 /* ElementOneToThreeFingers.json in Resources */ = {isa = PBXBuildFile; fileRef = EB12330E34D9AE1B1CC3B75E /* ElementOneToThreeFingers.json */; };
 		CFA2420D838A886542163FE0 /* CloudsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CCDD66D32EF7CE61976689 /* CloudsApp.swift */; };
+		D23DDB89C225C908EDC51DF4 /* IdentificationCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3E2E1B6AF160ADAE49BCC /* IdentificationCatalogTests.swift */; };
 		D4B88AC0CD705357C8537AE4 /* DenseWetLowerLayer.json in Resources */ = {isa = PBXBuildFile; fileRef = 16B54034A604CC69042AE4CE /* DenseWetLowerLayer.json */; };
 		DA04EA594D465962F3AC99AD /* BayesianNetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAE73F981E1B912FFB38F0 /* BayesianNetworkTypes.swift */; };
 		DA2F47AF2D6C218AC5441FAF /* BayesianNetworkFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E702BF2101569DA4774C95AF /* BayesianNetworkFile.swift */; };
@@ -66,9 +74,11 @@
 		04C2821079C3B8F669B9F86B /* ElementSmallerThanOneFinger.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ElementSmallerThanOneFinger.json; sourceTree = "<group>"; };
 		084698C267707E6D1131D0E9 /* CloudsTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CloudsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16B54034A604CC69042AE4CE /* DenseWetLowerLayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DenseWetLowerLayer.json; sourceTree = "<group>"; };
+		1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationSessionTests.swift; sourceTree = "<group>"; };
 		1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationRow.swift; sourceTree = "<group>"; };
 		22913B2E238E33E6A578D0FC /* BayesianNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetwork.swift; sourceTree = "<group>"; };
 		32F8B734E98C54B34061208E /* BayesianNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkTests.swift; sourceTree = "<group>"; };
+		35235DD1F40B6E2B2D31A3F3 /* IdentifyQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyQuestionView.swift; sourceTree = "<group>"; };
 		3A2DF7AA241887CD58513687 /* UniformLayerNoElements.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UniformLayerNoElements.json; sourceTree = "<group>"; };
 		46EA4F7C788DB82047969F09 /* BayesianNetworkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkNode.swift; sourceTree = "<group>"; };
 		4BCA3E4178256FE2FE6805FE /* CloudsUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CloudsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,14 +86,17 @@
 		4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsUITests.swift; sourceTree = "<group>"; };
 		52716D289115DBB34EDCF4A6 /* CloudObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudObservation.swift; sourceTree = "<group>"; };
 		5AF6C397400C0A8328B12AB8 /* GenusNetworkContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenusNetworkContentTests.swift; sourceTree = "<group>"; };
+		6723EF65DA1BBEB49FABC321 /* IdentifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyView.swift; sourceTree = "<group>"; };
 		672A070EF3B0822E0BC0B09E /* WhiteWispyFibres.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WhiteWispyFibres.json; sourceTree = "<group>"; };
 		679E51AFEC31360BF59FD5D3 /* FuzzyUpperOutline.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FuzzyUpperOutline.json; sourceTree = "<group>"; };
 		6AFBE492B520E3F1D3E63206 /* LightningOrThunder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LightningOrThunder.json; sourceTree = "<group>"; };
 		6BCB130AAEDCEC9C6D151ACD /* QuestionDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDefinition.swift; sourceTree = "<group>"; };
+		6F241FD23AD7F3B59F30F10A /* IdentificationCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationCatalog.swift; sourceTree = "<group>"; };
 		74FD05B2BA4FA2289FD625D1 /* BulgingHeapsOrDomes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BulgingHeapsOrDomes.json; sourceTree = "<group>"; };
+		76C0B37358FFBD1E01C627FC /* CloudGenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudGenus.swift; sourceTree = "<group>"; };
 		79A7741295E9D52AF5A9C4EB /* Clouds.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Clouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAAE73F981E1B912FFB38F0 /* BayesianNetworkTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkTypes.swift; sourceTree = "<group>"; };
-		9273EA023D85BEBDF6034735 /* IdentifyPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyPlaceholderView.swift; sourceTree = "<group>"; };
+		9101201FF2D5D81A7BADBA9B /* IdentifyResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyResultView.swift; sourceTree = "<group>"; };
 		98CCDD66D32EF7CE61976689 /* CloudsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsApp.swift; sourceTree = "<group>"; };
 		9A702925077EDF186478E73B /* ConditionalProbabilityTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalProbabilityTable.swift; sourceTree = "<group>"; };
 		9B9143FD4EBE882E8F881C48 /* BayesianNetworkFileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileTests.swift; sourceTree = "<group>"; };
@@ -91,9 +104,13 @@
 		ADCB107D714889A4D4378AC2 /* BayesianNetworkFileCPTRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileCPTRow.swift; sourceTree = "<group>"; };
 		B07E36FBD2E4069F00893290 /* CloudsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsTests.swift; sourceTree = "<group>"; };
 		B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDefinitionTests.swift; sourceTree = "<group>"; };
+		C7F82D5F2E6BF1E209E50399 /* IdentificationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationSession.swift; sourceTree = "<group>"; };
+		C9E1F1C0088EF73B31FFB761 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		CE320D13DD2209A18A8D3ECD /* SunOrMoonBrightPatch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SunOrMoonBrightPatch.json; sourceTree = "<group>"; };
 		CF83FDE6FE19C308F55C1551 /* BayesianNetworkFileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileNode.swift; sourceTree = "<group>"; };
+		D06EED6AADC2C4B097722EC3 /* CloudGenusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudGenusTests.swift; sourceTree = "<group>"; };
 		DAD499EB07C78B41C91EEB0C /* QuestionAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswer.swift; sourceTree = "<group>"; };
+		DCA3E2E1B6AF160ADAE49BCC /* IdentificationCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationCatalogTests.swift; sourceTree = "<group>"; };
 		E702BF2101569DA4774C95AF /* BayesianNetworkFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFile.swift; sourceTree = "<group>"; };
 		EB12330E34D9AE1B1CC3B75E /* ElementOneToThreeFingers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ElementOneToThreeFingers.json; sourceTree = "<group>"; };
 		F03FD643277470D745D53F47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,7 +194,9 @@
 		7F738149284A2A5DBF68BBC6 /* Identify */ = {
 			isa = PBXGroup;
 			children = (
-				9273EA023D85BEBDF6034735 /* IdentifyPlaceholderView.swift */,
+				35235DD1F40B6E2B2D31A3F3 /* IdentifyQuestionView.swift */,
+				9101201FF2D5D81A7BADBA9B /* IdentifyResultView.swift */,
+				6723EF65DA1BBEB49FABC321 /* IdentifyView.swift */,
 			);
 			path = Identify;
 			sourceTree = "<group>";
@@ -191,12 +210,21 @@
 			path = History;
 			sourceTree = "<group>";
 		};
+		91DF4DECDD1CE6C09EC58911 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C9E1F1C0088EF73B31FFB761 /* Shared.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		A0AA0AB20D20EB4E75117D4B = {
 			isa = PBXGroup;
 			children = (
 				FBFFE35CA8C859AEEACBCA39 /* Clouds */,
 				A727DA03CCA1CEB578432A2A /* CloudsTests */,
 				3B1174B397A74CE886FE1DA6 /* CloudsUITests */,
+				91DF4DECDD1CE6C09EC58911 /* Config */,
 				7E0A96AF2DC7132A2171EB64 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -206,8 +234,11 @@
 			children = (
 				9B9143FD4EBE882E8F881C48 /* BayesianNetworkFileTests.swift */,
 				32F8B734E98C54B34061208E /* BayesianNetworkTests.swift */,
+				D06EED6AADC2C4B097722EC3 /* CloudGenusTests.swift */,
 				B07E36FBD2E4069F00893290 /* CloudsTests.swift */,
 				5AF6C397400C0A8328B12AB8 /* GenusNetworkContentTests.swift */,
+				DCA3E2E1B6AF160ADAE49BCC /* IdentificationCatalogTests.swift */,
+				1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */,
 				B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */,
 			);
 			path = CloudsTests;
@@ -235,6 +266,7 @@
 			children = (
 				52716D289115DBB34EDCF4A6 /* CloudObservation.swift */,
 				1D2E3F2502A40E3978BDEC3F /* BayesianNetwork */,
+				FFFE0C52C9689F8E6CCBA577 /* Identification */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +281,16 @@
 				F3E84C881602493A6953D535 /* Views */,
 			);
 			path = Clouds;
+			sourceTree = "<group>";
+		};
+		FFFE0C52C9689F8E6CCBA577 /* Identification */ = {
+			isa = PBXGroup;
+			children = (
+				76C0B37358FFBD1E01C627FC /* CloudGenus.swift */,
+				6F241FD23AD7F3B59F30F10A /* IdentificationCatalog.swift */,
+				C7F82D5F2E6BF1E209E50399 /* IdentificationSession.swift */,
+			);
+			path = Identification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,8 +414,11 @@
 			files = (
 				6573685E3EABCBAB09576A27 /* BayesianNetworkFileTests.swift in Sources */,
 				4D7ABE83BA7335AB697327BC /* BayesianNetworkTests.swift in Sources */,
+				090A60715653D48A9884E88B /* CloudGenusTests.swift in Sources */,
 				8D341620A9368821BA5B6571 /* CloudsTests.swift in Sources */,
 				0ACCFEE9E02806DE54295303 /* GenusNetworkContentTests.swift in Sources */,
+				D23DDB89C225C908EDC51DF4 /* IdentificationCatalogTests.swift in Sources */,
+				2BEEF198249F7F93FA58B04D /* IdentificationSessionTests.swift in Sources */,
 				B7C92C201A566730D7AAA36A /* QuestionDefinitionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,11 +443,16 @@
 				85A2AF714D075CEA973D3FF5 /* BayesianNetworkFileNode.swift in Sources */,
 				07EFFFBAFFCAFE12F1C5B0A7 /* BayesianNetworkNode.swift in Sources */,
 				DA04EA594D465962F3AC99AD /* BayesianNetworkTypes.swift in Sources */,
+				C11624CE051975D66084F9D1 /* CloudGenus.swift in Sources */,
 				018A5F6B168C1A3851BE5825 /* CloudObservation.swift in Sources */,
 				CFA2420D838A886542163FE0 /* CloudsApp.swift in Sources */,
 				4205DC43D0AF16F6FEBDDF6F /* ConditionalProbabilityTable.swift in Sources */,
 				00D31B2F3287427F28053B3A /* HistoryView.swift in Sources */,
-				B6060BD769E53F6293D22A12 /* IdentifyPlaceholderView.swift in Sources */,
+				5AF6D534768EA74054AD5F9F /* IdentificationCatalog.swift in Sources */,
+				119EEF67FD7C39B5238FAD55 /* IdentificationSession.swift in Sources */,
+				15FE3F137E95A4B53059FCDF /* IdentifyQuestionView.swift in Sources */,
+				C9F7FA330DE4BBE876847066 /* IdentifyResultView.swift in Sources */,
+				5E5B67C470292F15A3664C16 /* IdentifyView.swift in Sources */,
 				435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */,
 				B1C0590E823ADC0CAE8C4891 /* QuestionAnswer.swift in Sources */,
 				4D0EABE766627635FAC8555E /* QuestionDefinition.swift in Sources */,
@@ -448,6 +498,7 @@
 		};
 		47819D5E6F0CB0770B73E94D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E1F1C0088EF73B31FFB761 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -594,6 +645,7 @@
 		};
 		CD83A17DC9AAC7C22DDE6D40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E1F1C0088EF73B31FFB761 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

@@ -14,13 +14,27 @@ import Foundation
 extension BayesianNetwork {
     /// The joint posterior distribution over `targets`, marginalizing out
     /// every other non-evidence node, given `evidence`.
+    ///
+    /// Only enumerates free nodes in the *ancestral graph* of
+    /// `targets ∪ evidence` (i.e. those nodes plus their ancestors).
+    /// Any other free node is a "barren" node w.r.t. this query — it has
+    /// no path to a target or evidence node, so marginalizing it out
+    /// always contributes a factor of 1 (its CPT rows sum to 1 over
+    /// states) and can be skipped entirely rather than enumerated. This
+    /// is an exact simplification (not an approximation): for a
+    /// star-shaped network like this app's (one classification root,
+    /// many independent question leaves), it collapses an
+    /// exponential-in-the-number-of-unanswered-questions enumeration down
+    /// to just the target's own states once none of those questions are
+    /// themselves targets or evidence.
     func jointPosterior(over targets: [NodeID], given evidence: [NodeID: StateID] = [:]) throws -> [Assignment: Double] {
         for id in targets + Array(evidence.keys) {
             guard nodes[id] != nil else { throw BayesianNetworkError.unknownNode(id) }
         }
 
         let fixed = Assignment(evidence)
-        let freeNodes = topologicalOrder.filter { evidence[$0] == nil }
+        let relevant = ancestralClosure(of: Set(targets).union(evidence.keys))
+        let freeNodes = topologicalOrder.filter { evidence[$0] == nil && relevant.contains($0) }
 
         var totals: [Assignment: Double] = [:]
         var grandTotal = 0.0
@@ -106,6 +120,27 @@ extension BayesianNetwork {
             if probability == 0 { break }
         }
         return probability
+    }
+
+    /// `nodeIDs` plus every ancestor reachable by following `parentIDs`
+    /// upward.
+    private func ancestralClosure(of nodeIDs: Set<NodeID>) -> Set<NodeID> {
+        var closure = nodeIDs
+        var frontier = Array(nodeIDs)
+
+        while !frontier.isEmpty {
+            var next: [NodeID] = []
+            for id in frontier {
+                guard let node = nodes[id] else { continue }
+                for parentID in node.parentIDs where !closure.contains(parentID) {
+                    closure.insert(parentID)
+                    next.append(parentID)
+                }
+            }
+            frontier = next
+        }
+
+        return closure
     }
 
     /// Calls `body` with every full assignment formed by combining `fixed`
