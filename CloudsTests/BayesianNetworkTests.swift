@@ -69,6 +69,14 @@ struct BayesianNetworkTests {
         #expect(abs(total - 1.0) < 1e-9)
     }
 
+    @Test func posteriorThrowsOnUnknownNode() async throws {
+        let network = try makeWetGrassNetwork()
+
+        #expect(throws: BayesianNetworkError.unknownNode("Ghost")) {
+            try network.posterior(of: "Ghost")
+        }
+    }
+
     @Test func posteriorThrowsOnImpossibleEvidence() async throws {
         let network = try makeWetGrassNetwork()
 
