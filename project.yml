@@ -5,6 +5,13 @@ options:
     iOS: "26.0"
   createIntermediateGroups: true
 
+# Local, gitignored signing overrides (e.g. DEVELOPMENT_TEAM) — see
+# Config/Local.xcconfig.example. Keeps personal Apple Developer Team IDs
+# out of the shared project file.
+configFiles:
+  Debug: Config/Local.xcconfig
+  Release: Config/Local.xcconfig
+
 settings:
   base:
     SWIFT_VERSION: 6.0

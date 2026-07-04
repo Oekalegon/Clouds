@@ -94,7 +94,7 @@
 		6F241FD23AD7F3B59F30F10A /* IdentificationCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationCatalog.swift; sourceTree = "<group>"; };
 		74FD05B2BA4FA2289FD625D1 /* BulgingHeapsOrDomes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BulgingHeapsOrDomes.json; sourceTree = "<group>"; };
 		76C0B37358FFBD1E01C627FC /* CloudGenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudGenus.swift; sourceTree = "<group>"; };
-		79A7741295E9D52AF5A9C4EB /* Clouds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79A7741295E9D52AF5A9C4EB /* Clouds.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Clouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAAE73F981E1B912FFB38F0 /* BayesianNetworkTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkTypes.swift; sourceTree = "<group>"; };
 		9101201FF2D5D81A7BADBA9B /* IdentifyResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyResultView.swift; sourceTree = "<group>"; };
 		98CCDD66D32EF7CE61976689 /* CloudsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsApp.swift; sourceTree = "<group>"; };
@@ -103,6 +103,7 @@
 		A907BFB6E840EFB9088F386C /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		ADCB107D714889A4D4378AC2 /* BayesianNetworkFileCPTRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileCPTRow.swift; sourceTree = "<group>"; };
 		B07E36FBD2E4069F00893290 /* CloudsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsTests.swift; sourceTree = "<group>"; };
+		B2BADCAE56EB27FECC849BD6 /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
 		B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDefinitionTests.swift; sourceTree = "<group>"; };
 		C7F82D5F2E6BF1E209E50399 /* IdentificationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationSession.swift; sourceTree = "<group>"; };
 		CE320D13DD2209A18A8D3ECD /* SunOrMoonBrightPatch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SunOrMoonBrightPatch.json; sourceTree = "<group>"; };
@@ -209,12 +210,21 @@
 			path = History;
 			sourceTree = "<group>";
 		};
+		91DF4DECDD1CE6C09EC58911 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B2BADCAE56EB27FECC849BD6 /* Local.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		A0AA0AB20D20EB4E75117D4B = {
 			isa = PBXGroup;
 			children = (
 				FBFFE35CA8C859AEEACBCA39 /* Clouds */,
 				A727DA03CCA1CEB578432A2A /* CloudsTests */,
 				3B1174B397A74CE886FE1DA6 /* CloudsUITests */,
+				91DF4DECDD1CE6C09EC58911 /* Config */,
 				7E0A96AF2DC7132A2171EB64 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -349,8 +359,15 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					1A4C456ED78B0C0624C4F47E = {
+						DevelopmentTeam = "";
+					};
 					1DE4E00C36CCC42535F4B397 = {
+						DevelopmentTeam = "";
 						TestTargetID = 1A4C456ED78B0C0624C4F47E;
+					};
+					B97BF9B31AFC8B34AEF63981 = {
+						DevelopmentTeam = "";
 					};
 				};
 			};
@@ -472,7 +489,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = J2S9726G2L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -489,6 +505,7 @@
 		};
 		47819D5E6F0CB0770B73E94D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2BADCAE56EB27FECC849BD6 /* Local.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -585,7 +602,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = J2S9726G2L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -636,6 +652,7 @@
 		};
 		CD83A17DC9AAC7C22DDE6D40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2BADCAE56EB27FECC849BD6 /* Local.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
