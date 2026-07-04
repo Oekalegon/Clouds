@@ -17,12 +17,15 @@
 		4D0EABE766627635FAC8555E /* QuestionDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB130AAEDCEC9C6D151ACD /* QuestionDefinition.swift */; };
 		4D7ABE83BA7335AB697327BC /* BayesianNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8B734E98C54B34061208E /* BayesianNetworkTests.swift */; };
 		6573685E3EABCBAB09576A27 /* BayesianNetworkFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9143FD4EBE882E8F881C48 /* BayesianNetworkFileTests.swift */; };
+		85A2AF714D075CEA973D3FF5 /* BayesianNetworkFileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF83FDE6FE19C308F55C1551 /* BayesianNetworkFileNode.swift */; };
 		8D341620A9368821BA5B6571 /* CloudsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E36FBD2E4069F00893290 /* CloudsTests.swift */; };
 		A02F59C811B21E1407D8F250 /* SchemaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358E1EBEDC2898244A3031C /* SchemaError.swift */; };
 		A96E6F8EDCF0B5405CC671A4 /* CloudsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00322B04CE1C57B1E6452CF4 /* CloudsUITestsLaunchTests.swift */; };
+		B1C0590E823ADC0CAE8C4891 /* QuestionAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD499EB07C78B41C91EEB0C /* QuestionAnswer.swift */; };
 		B6060BD769E53F6293D22A12 /* IdentifyPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9273EA023D85BEBDF6034735 /* IdentifyPlaceholderView.swift */; };
 		B7674EEBC6079942D18D0325 /* BayesianNetwork+Inference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D630CD3DE67D860E4971821 /* BayesianNetwork+Inference.swift */; };
 		B7C92C201A566730D7AAA36A /* QuestionDefinitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */; };
+		C7AB1D674BE124DCC73B4FB2 /* BayesianNetworkFileCPTRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB107D714889A4D4378AC2 /* BayesianNetworkFileCPTRow.swift */; };
 		CFA2420D838A886542163FE0 /* CloudsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CCDD66D32EF7CE61976689 /* CloudsApp.swift */; };
 		DA04EA594D465962F3AC99AD /* BayesianNetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAE73F981E1B912FFB38F0 /* BayesianNetworkTypes.swift */; };
 		DA2F47AF2D6C218AC5441FAF /* BayesianNetworkFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E702BF2101569DA4774C95AF /* BayesianNetworkFile.swift */; };
@@ -65,8 +68,11 @@
 		9A702925077EDF186478E73B /* ConditionalProbabilityTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalProbabilityTable.swift; sourceTree = "<group>"; };
 		9B9143FD4EBE882E8F881C48 /* BayesianNetworkFileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileTests.swift; sourceTree = "<group>"; };
 		A907BFB6E840EFB9088F386C /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		ADCB107D714889A4D4378AC2 /* BayesianNetworkFileCPTRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileCPTRow.swift; sourceTree = "<group>"; };
 		B07E36FBD2E4069F00893290 /* CloudsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsTests.swift; sourceTree = "<group>"; };
 		B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDefinitionTests.swift; sourceTree = "<group>"; };
+		CF83FDE6FE19C308F55C1551 /* BayesianNetworkFileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileNode.swift; sourceTree = "<group>"; };
+		DAD499EB07C78B41C91EEB0C /* QuestionAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswer.swift; sourceTree = "<group>"; };
 		E702BF2101569DA4774C95AF /* BayesianNetworkFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFile.swift; sourceTree = "<group>"; };
 		F03FD643277470D745D53F47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F358E1EBEDC2898244A3031C /* SchemaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaError.swift; sourceTree = "<group>"; };
@@ -99,6 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				E702BF2101569DA4774C95AF /* BayesianNetworkFile.swift */,
+				ADCB107D714889A4D4378AC2 /* BayesianNetworkFileCPTRow.swift */,
+				CF83FDE6FE19C308F55C1551 /* BayesianNetworkFileNode.swift */,
+				DAD499EB07C78B41C91EEB0C /* QuestionAnswer.swift */,
 				6BCB130AAEDCEC9C6D151ACD /* QuestionDefinition.swift */,
 				F358E1EBEDC2898244A3031C /* SchemaError.swift */,
 			);
@@ -313,6 +322,8 @@
 				B7674EEBC6079942D18D0325 /* BayesianNetwork+Inference.swift in Sources */,
 				E3CADD68F04D3A632C6B83CD /* BayesianNetwork.swift in Sources */,
 				DA2F47AF2D6C218AC5441FAF /* BayesianNetworkFile.swift in Sources */,
+				C7AB1D674BE124DCC73B4FB2 /* BayesianNetworkFileCPTRow.swift in Sources */,
+				85A2AF714D075CEA973D3FF5 /* BayesianNetworkFileNode.swift in Sources */,
 				07EFFFBAFFCAFE12F1C5B0A7 /* BayesianNetworkNode.swift in Sources */,
 				DA04EA594D465962F3AC99AD /* BayesianNetworkTypes.swift in Sources */,
 				018A5F6B168C1A3851BE5825 /* CloudObservation.swift in Sources */,
@@ -321,6 +332,7 @@
 				00D31B2F3287427F28053B3A /* HistoryView.swift in Sources */,
 				B6060BD769E53F6293D22A12 /* IdentifyPlaceholderView.swift in Sources */,
 				435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */,
+				B1C0590E823ADC0CAE8C4891 /* QuestionAnswer.swift in Sources */,
 				4D0EABE766627635FAC8555E /* QuestionDefinition.swift in Sources */,
 				A02F59C811B21E1407D8F250 /* SchemaError.swift in Sources */,
 			);

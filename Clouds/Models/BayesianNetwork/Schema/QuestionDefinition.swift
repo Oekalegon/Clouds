@@ -19,16 +19,11 @@ struct QuestionDefinition: Decodable {
     let answers: [QuestionAnswer]
 }
 
-struct QuestionAnswer: Decodable, Hashable {
-    let id: StateID
-    let label: String
-}
-
 extension QuestionDefinition {
     /// Checks that this question's answer ids are exactly the given node's
-    /// states — no missing answers, no stray ones. Does not check that a
-    /// network node with this id actually exists; assembling a network
-    /// with its questions is a future ticket's concern.
+    /// states — no missing answers, no stray ones, no duplicates. Does not
+    /// check that a network node with this id actually exists; assembling
+    /// a network with its questions is a future ticket's concern.
     func validate(against states: [StateID]) throws {
         let ids = answers.map(\.id)
         guard ids.count == Set(ids).count else {
