@@ -13,6 +13,7 @@ final class CloudObservation {
     var date: Date
     var latitude: Double?
     var longitude: Double?
+    var placeName: String?
     var genus: String?
     var species: String?
     var variety: String?
@@ -23,6 +24,7 @@ final class CloudObservation {
         date: Date = .now,
         latitude: Double? = nil,
         longitude: Double? = nil,
+        placeName: String? = nil,
         genus: String? = nil,
         species: String? = nil,
         variety: String? = nil,
@@ -32,6 +34,7 @@ final class CloudObservation {
         self.date = date
         self.latitude = latitude
         self.longitude = longitude
+        self.placeName = placeName
         self.genus = genus
         self.species = species
         self.variety = variety

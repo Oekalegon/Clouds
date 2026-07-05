@@ -18,6 +18,7 @@
 		1910CE03337AEFD3EAC76BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03FD643277470D745D53F47 /* Assets.xcassets */; };
 		1DA43621059DD691264D30D8 /* CloudsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */; };
 		2BEEF198249F7F93FA58B04D /* IdentificationSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */; };
+		32E05F7EFBE924C335502760 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91AC6FC8F5E11FD2D976B7 /* LocationProvider.swift */; };
 		4205DC43D0AF16F6FEBDDF6F /* ConditionalProbabilityTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A702925077EDF186478E73B /* ConditionalProbabilityTable.swift */; };
 		435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */; };
 		4A4FCBFA40AC20AF26317727 /* ElementSmallerThanOneFinger.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C2821079C3B8F669B9F86B /* ElementSmallerThanOneFinger.json */; };
@@ -108,6 +109,7 @@
 		C9E1F1C0088EF73B31FFB761 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		CE320D13DD2209A18A8D3ECD /* SunOrMoonBrightPatch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SunOrMoonBrightPatch.json; sourceTree = "<group>"; };
 		CF83FDE6FE19C308F55C1551 /* BayesianNetworkFileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileNode.swift; sourceTree = "<group>"; };
+		CF91AC6FC8F5E11FD2D976B7 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		D06EED6AADC2C4B097722EC3 /* CloudGenusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudGenusTests.swift; sourceTree = "<group>"; };
 		DAD499EB07C78B41C91EEB0C /* QuestionAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswer.swift; sourceTree = "<group>"; };
 		DCA3E2E1B6AF160ADAE49BCC /* IdentificationCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationCatalogTests.swift; sourceTree = "<group>"; };
@@ -252,6 +254,14 @@
 			path = BayesianNetwork;
 			sourceTree = "<group>";
 		};
+		B8793AB7356F3750A466389B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CF91AC6FC8F5E11FD2D976B7 /* LocationProvider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F3E84C881602493A6953D535 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +288,7 @@
 				98CCDD66D32EF7CE61976689 /* CloudsApp.swift */,
 				F992DF084494FB26D2D322BE /* Models */,
 				458EBBE8CDBA8F8E351E4707 /* Resources */,
+				B8793AB7356F3750A466389B /* Services */,
 				F3E84C881602493A6953D535 /* Views */,
 			);
 			path = Clouds;
@@ -453,6 +464,7 @@
 				15FE3F137E95A4B53059FCDF /* IdentifyQuestionView.swift in Sources */,
 				C9F7FA330DE4BBE876847066 /* IdentifyResultView.swift in Sources */,
 				5E5B67C470292F15A3664C16 /* IdentifyView.swift in Sources */,
+				32E05F7EFBE924C335502760 /* LocationProvider.swift in Sources */,
 				435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */,
 				B1C0590E823ADC0CAE8C4891 /* QuestionAnswer.swift in Sources */,
 				4D0EABE766627635FAC8555E /* QuestionDefinition.swift in Sources */,
@@ -483,6 +495,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Clouds uses your location to record where you observed each cloud.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -596,6 +609,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Clouds uses your location to record where you observed each cloud.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
