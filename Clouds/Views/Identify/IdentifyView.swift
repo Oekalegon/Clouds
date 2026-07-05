@@ -12,6 +12,8 @@ struct IdentifyView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @State private var session = IdentificationSession()
+    @State private var locationProvider = LocationProvider()
+    @State private var capturedLocation: LocationProvider.CapturedLocation?
 
     var body: some View {
         NavigationStack {
@@ -37,6 +39,9 @@ struct IdentifyView: View {
                 }
                 .task {
                     await session.start()
+                }
+                .task {
+                    capturedLocation = await locationProvider.captureCurrentLocation()
                 }
         }
     }
@@ -66,7 +71,12 @@ struct IdentifyView: View {
 
     private func save() {
         guard let genus = session.mostLikelyGenus.flatMap(CloudGenus.init) else { return }
-        let observation = CloudObservation(genus: genus.displayName)
+        let observation = CloudObservation(
+            latitude: capturedLocation?.coordinate.latitude,
+            longitude: capturedLocation?.coordinate.longitude,
+            placeName: capturedLocation?.placeName,
+            genus: genus.displayName
+        )
         modelContext.insert(observation)
         dismiss()
     }
