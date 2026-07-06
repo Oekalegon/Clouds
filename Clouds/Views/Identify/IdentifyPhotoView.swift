@@ -16,12 +16,34 @@ struct IdentifyPhotoView: View {
     @Binding var photoData: Data?
     let onStart: () -> Void
 
+    private enum PhotoSource: Equatable {
+        case camera
+        case library
+    }
+
     @State private var isShowingSourceDialog = false
-    @State private var isShowingCamera = false
-    @State private var isShowingLibraryPicker = false
+    @State private var activePhotoSource: PhotoSource?
     @State private var selectedLibraryItem: PhotosPickerItem?
     @State private var libraryLoadErrorMessage: String?
     @State private var isShowingCameraPermissionDeniedAlert = false
+
+    /// Bridges `activePhotoSource` to the `Bool` bindings `fullScreenCover`/
+    /// `photosPicker` require, so at most one of camera/library can ever be
+    /// presented at a time — enforced by `activePhotoSource` being a single
+    /// optional value, not two independently-settable booleans.
+    private var isShowingCamera: Binding<Bool> {
+        Binding(
+            get: { activePhotoSource == .camera },
+            set: { if !$0 { activePhotoSource = nil } }
+        )
+    }
+
+    private var isShowingLibraryPicker: Binding<Bool> {
+        Binding(
+            get: { activePhotoSource == .library },
+            set: { if !$0 { activePhotoSource = nil } }
+        )
+    }
 
     var body: some View {
         VStack(spacing: 24) {
@@ -45,14 +67,14 @@ struct IdentifyPhotoView: View {
                 Button("Take Photo") {
                     Task {
                         if await CameraAuthorization.requestAccess() {
-                            isShowingCamera = true
+                            activePhotoSource = .camera
                         } else {
                             isShowingCameraPermissionDeniedAlert = true
                         }
                     }
                 }
             }
-            Button("Choose from Library") { isShowingLibraryPicker = true }
+            Button("Choose from Library") { activePhotoSource = .library }
             if photoData != nil {
                 Button("Remove Photo", role: .destructive) {
                     photoData = nil
@@ -60,17 +82,17 @@ struct IdentifyPhotoView: View {
                 }
             }
         }
-        .fullScreenCover(isPresented: $isShowingCamera) {
+        .fullScreenCover(isPresented: isShowingCamera) {
             CameraCaptureView { data in
                 if let data {
                     photoData = data
                     selectedLibraryItem = nil
                 }
-                isShowingCamera = false
+                activePhotoSource = nil
             }
             .ignoresSafeArea()
         }
-        .photosPicker(isPresented: $isShowingLibraryPicker, selection: $selectedLibraryItem, matching: .images)
+        .photosPicker(isPresented: isShowingLibraryPicker, selection: $selectedLibraryItem, matching: .images)
         .onChange(of: selectedLibraryItem) { _, newItem in
             Task {
                 do {
