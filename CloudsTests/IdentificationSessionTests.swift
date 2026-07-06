@@ -237,4 +237,82 @@ struct IdentificationSessionTests {
         #expect(session.mostLikelyGenus == "A")
         #expect(session.posterior["A"] == session.posterior["B"])
     }
+
+    // MARK: - End-to-end sessions against the real bundled content
+
+    /// Same technique as `IdentificationCatalogTests`/`GenusNetworkContentTests`:
+    /// read the real, production JSON straight off disk rather than via
+    /// `Bundle`, since this unit-test target isn't app-hosted.
+    private static let resourcesURL = URL(fileURLWithPath: #filePath)
+        .deletingLastPathComponent()
+        .deletingLastPathComponent()
+        .appendingPathComponent("Clouds/Resources")
+
+    private func loadRealCatalog() throws -> IdentificationCatalog {
+        let decoder = JSONDecoder()
+
+        let networkURL = Self.resourcesURL.appendingPathComponent("BayesianNetwork/genus-network.json")
+        let networkFile = try decoder.decode(BayesianNetworkFile.self, from: Data(contentsOf: networkURL))
+
+        let questionIDs = networkFile.nodes.map(\.id).filter { $0 != "Genus" }
+        let questionFiles = try questionIDs.map { id in
+            try decoder.decode(
+                QuestionDefinition.self,
+                from: Data(contentsOf: Self.resourcesURL.appendingPathComponent("Questions/\(id).json"))
+            )
+        }
+
+        return try IdentificationCatalog(networkFile: networkFile, questionFiles: questionFiles)
+    }
+
+    /// A truthful "user" for `trueGenus`: whichever real (non-NotApplicable)
+    /// answer is most likely for that genus on the asked question, straight
+    /// from the network's own CPT — never the answer a fixed tree-order
+    /// walk would give, since `bestNextQuestion` doesn't respect tree order.
+    private func oracleAnswer(for questionID: NodeID, trueGenus: StateID, network: BayesianNetwork) -> StateID {
+        let distribution = network.cpts[questionID]?.distribution(givenParents: Assignment(["Genus": trueGenus])) ?? [:]
+        let realAnswers = distribution.filter { $0.key != QuestionDefinition.notApplicableStateID }
+        return realAnswers.max { $0.value < $1.value }?.key ?? "Unsure"
+    }
+
+    private func runSessionToCompletion(catalog: IdentificationCatalog, trueGenus: StateID) async -> IdentificationSession {
+        let session = IdentificationSession(catalog: catalog)
+        await session.start()
+
+        while !session.isFinished, let questionID = session.currentQuestionID {
+            let answer = oracleAnswer(for: questionID, trueGenus: trueGenus, network: catalog.network)
+            await session.selectAnswer(answer)
+        }
+
+        return session
+    }
+
+    /// End-to-end regression guard: for each real genus, a "user" who
+    /// truthfully answers whatever question `bestNextQuestion` actually
+    /// asks (not a fixed tree-order walk) should end up with that genus as
+    /// `mostLikelyGenus`. This is the test that would have caught CLD-8's
+    /// NotApplicable-calibration bug, where genera with a short
+    /// "applicable" question set (Ci, Cs, Cu, Cb) get systematically
+    /// misclassified once a real answer's likelihood is distorted by the
+    /// per-genus NotApplicable rescaling.
+    ///
+    /// Those four genera are wrapped in `withKnownIssue` rather than fixed
+    /// here: the real fix is an engine-level renormalization (or a full
+    /// Bayesian-network restructuring), tracked as separate follow-up work.
+    /// `withKnownIssue` will itself fail once that fix lands and one of
+    /// these starts passing — that's the signal to remove it from this set.
+    @Test(arguments: CloudGenus.allCases)
+    func endToEndSessionIdentifiesTheTrueGenusFromTruthfulAnswers(genus: CloudGenus) async throws {
+        let knownlyMiscalibrated: Set<CloudGenus> = [.cirrus, .cirrostratus, .cumulus, .cumulonimbus]
+        let catalog = try loadRealCatalog()
+        let session = await runSessionToCompletion(catalog: catalog, trueGenus: genus.rawValue)
+
+        if knownlyMiscalibrated.contains(genus) {
+            withKnownIssue("CLD-8's NotApplicable calibration misclassifies this genus under adaptive question selection; tracked for the planned Bayesian network restructuring") {
+                #expect(session.mostLikelyGenus == genus.rawValue)
+            }
+        } else {
+            #expect(session.mostLikelyGenus == genus.rawValue)
+        }
+    }
 }
