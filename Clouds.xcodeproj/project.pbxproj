@@ -19,6 +19,7 @@
 		1DA43621059DD691264D30D8 /* CloudsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */; };
 		2BEEF198249F7F93FA58B04D /* IdentificationSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */; };
 		32E05F7EFBE924C335502760 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91AC6FC8F5E11FD2D976B7 /* LocationProvider.swift */; };
+		37F0B8760E07F1A29279E224 /* CameraCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F82A8AB3F7FA9A527959241 /* CameraCaptureView.swift */; };
 		4205DC43D0AF16F6FEBDDF6F /* ConditionalProbabilityTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A702925077EDF186478E73B /* ConditionalProbabilityTable.swift */; };
 		435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */; };
 		4A4FCBFA40AC20AF26317727 /* ElementSmallerThanOneFinger.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C2821079C3B8F669B9F86B /* ElementSmallerThanOneFinger.json */; };
@@ -50,6 +51,7 @@
 		DA04EA594D465962F3AC99AD /* BayesianNetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAE73F981E1B912FFB38F0 /* BayesianNetworkTypes.swift */; };
 		DA2F47AF2D6C218AC5441FAF /* BayesianNetworkFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E702BF2101569DA4774C95AF /* BayesianNetworkFile.swift */; };
 		E3CADD68F04D3A632C6B83CD /* BayesianNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22913B2E238E33E6A578D0FC /* BayesianNetwork.swift */; };
+		EB20768A9A9CF2CA20F9E1FA /* IdentifyPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BE934C340B633C51357138 /* IdentifyPhotoView.swift */; };
 		F40B5B3B6439819B78BFF2D3 /* genus-network.json in Resources */ = {isa = PBXBuildFile; fileRef = F0C3A25C83679D0EAFE9D653 /* genus-network.json */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +88,9 @@
 		4D630CD3DE67D860E4971821 /* BayesianNetwork+Inference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BayesianNetwork+Inference.swift"; sourceTree = "<group>"; };
 		4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsUITests.swift; sourceTree = "<group>"; };
 		52716D289115DBB34EDCF4A6 /* CloudObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudObservation.swift; sourceTree = "<group>"; };
+		52BE934C340B633C51357138 /* IdentifyPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyPhotoView.swift; sourceTree = "<group>"; };
 		5AF6C397400C0A8328B12AB8 /* GenusNetworkContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenusNetworkContentTests.swift; sourceTree = "<group>"; };
+		5F82A8AB3F7FA9A527959241 /* CameraCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureView.swift; sourceTree = "<group>"; };
 		6723EF65DA1BBEB49FABC321 /* IdentifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyView.swift; sourceTree = "<group>"; };
 		672A070EF3B0822E0BC0B09E /* WhiteWispyFibres.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WhiteWispyFibres.json; sourceTree = "<group>"; };
 		679E51AFEC31360BF59FD5D3 /* FuzzyUpperOutline.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FuzzyUpperOutline.json; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 		7F738149284A2A5DBF68BBC6 /* Identify */ = {
 			isa = PBXGroup;
 			children = (
+				5F82A8AB3F7FA9A527959241 /* CameraCaptureView.swift */,
+				52BE934C340B633C51357138 /* IdentifyPhotoView.swift */,
 				35235DD1F40B6E2B2D31A3F3 /* IdentifyQuestionView.swift */,
 				9101201FF2D5D81A7BADBA9B /* IdentifyResultView.swift */,
 				6723EF65DA1BBEB49FABC321 /* IdentifyView.swift */,
@@ -454,6 +460,7 @@
 				85A2AF714D075CEA973D3FF5 /* BayesianNetworkFileNode.swift in Sources */,
 				07EFFFBAFFCAFE12F1C5B0A7 /* BayesianNetworkNode.swift in Sources */,
 				DA04EA594D465962F3AC99AD /* BayesianNetworkTypes.swift in Sources */,
+				37F0B8760E07F1A29279E224 /* CameraCaptureView.swift in Sources */,
 				C11624CE051975D66084F9D1 /* CloudGenus.swift in Sources */,
 				018A5F6B168C1A3851BE5825 /* CloudObservation.swift in Sources */,
 				CFA2420D838A886542163FE0 /* CloudsApp.swift in Sources */,
@@ -461,6 +468,7 @@
 				00D31B2F3287427F28053B3A /* HistoryView.swift in Sources */,
 				5AF6D534768EA74054AD5F9F /* IdentificationCatalog.swift in Sources */,
 				119EEF67FD7C39B5238FAD55 /* IdentificationSession.swift in Sources */,
+				EB20768A9A9CF2CA20F9E1FA /* IdentifyPhotoView.swift in Sources */,
 				15FE3F137E95A4B53059FCDF /* IdentifyQuestionView.swift in Sources */,
 				C9F7FA330DE4BBE876847066 /* IdentifyResultView.swift in Sources */,
 				5E5B67C470292F15A3664C16 /* IdentifyView.swift in Sources */,
@@ -495,6 +503,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Clouds uses your camera to take a photo of an observed cloud.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Clouds uses your location to record where you observed each cloud.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -609,6 +618,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Clouds uses your camera to take a photo of an observed cloud.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Clouds uses your location to record where you observed each cloud.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

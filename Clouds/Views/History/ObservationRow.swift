@@ -6,22 +6,38 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ObservationRow: View {
     let observation: CloudObservation
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(observation.genus ?? "Unidentified Cloud")
-                .font(.headline)
-            Text(observation.date, format: .dateTime.hour().minute())
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-            if let placeName = observation.placeName {
-                Text(placeName)
+        HStack(spacing: 12) {
+            thumbnail
+
+            VStack(alignment: .leading) {
+                Text(observation.genus ?? "Unidentified Cloud")
+                    .font(.headline)
+                Text(observation.date, format: .dateTime.hour().minute())
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
+                if let placeName = observation.placeName {
+                    Text(placeName)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
+        }
+    }
+
+    @ViewBuilder
+    private var thumbnail: some View {
+        if let photoData = observation.photoData, let uiImage = UIImage(data: photoData) {
+            Image(uiImage: uiImage)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 44, height: 44)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
         }
     }
 }

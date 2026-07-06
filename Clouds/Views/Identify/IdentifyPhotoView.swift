@@ -1,0 +1,87 @@
+//
+//  IdentifyPhotoView.swift
+//  Clouds
+//
+//  Created by Dieudonné Willems on 06/07/2026.
+//
+
+import SwiftUI
+import PhotosUI
+import UIKit
+
+/// First screen of the identify flow: lets the user optionally attach a
+/// photo (camera or library) before starting the Q&A. The photo is never
+/// required to proceed, matching how location capture never blocks saving.
+struct IdentifyPhotoView: View {
+    @Binding var photoData: Data?
+    let onStart: () -> Void
+
+    @State private var isShowingSourceDialog = false
+    @State private var isShowingCamera = false
+    @State private var isShowingLibraryPicker = false
+    @State private var selectedLibraryItem: PhotosPickerItem?
+
+    var body: some View {
+        VStack(spacing: 24) {
+            Spacer()
+
+            photoWell
+
+            Button(photoData == nil ? "Add Photo" : "Retake Photo") {
+                isShowingSourceDialog = true
+            }
+            .buttonStyle(.bordered)
+
+            Spacer()
+
+            Button("Start Identification", action: onStart)
+                .buttonStyle(.borderedProminent)
+        }
+        .padding()
+        .confirmationDialog("Add Photo", isPresented: $isShowingSourceDialog) {
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                Button("Take Photo") { isShowingCamera = true }
+            }
+            Button("Choose from Library") { isShowingLibraryPicker = true }
+            if photoData != nil {
+                Button("Remove Photo", role: .destructive) { photoData = nil }
+            }
+        }
+        .fullScreenCover(isPresented: $isShowingCamera) {
+            CameraCaptureView { data in
+                if let data { photoData = data }
+                isShowingCamera = false
+            }
+            .ignoresSafeArea()
+        }
+        .photosPicker(isPresented: $isShowingLibraryPicker, selection: $selectedLibraryItem, matching: .images)
+        .onChange(of: selectedLibraryItem) { _, newItem in
+            Task {
+                photoData = try? await newItem?.loadTransferable(type: Data.self)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var photoWell: some View {
+        RoundedRectangle(cornerRadius: 16)
+            .fill(.secondary.opacity(0.15))
+            .frame(width: 240, height: 240)
+            .overlay {
+                if let photoData, let uiImage = UIImage(data: photoData) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFill()
+                } else {
+                    Image(systemName: "camera.fill")
+                        .font(.system(size: 48))
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+}
+
+#Preview {
+    IdentifyPhotoView(photoData: .constant(nil), onStart: {})
+}

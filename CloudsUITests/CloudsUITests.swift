@@ -35,6 +35,9 @@ final class CloudsUITests: XCTestCase {
 
         app.buttons["Identify"].tap()
 
+        XCTAssertTrue(app.buttons["Start Identification"].waitForExistence(timeout: 3))
+        app.buttons["Start Identification"].tap()
+
         // Answer through the flow (order/count of questions isn't
         // hardcoded, since the next question is chosen by expected
         // information gain, not a fixed sequence). At most 10 question

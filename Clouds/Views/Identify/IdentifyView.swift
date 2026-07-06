@@ -14,22 +14,26 @@ struct IdentifyView: View {
     @State private var session = IdentificationSession()
     @State private var locationProvider = LocationProvider()
     @State private var capturedLocation: LocationProvider.CapturedLocation?
+    @State private var photoData: Data?
+    @State private var isShowingPhotoStep = true
 
     var body: some View {
         NavigationStack {
             content
                 .toolbar {
-                    ToolbarItem(placement: .navigation) {
-                        Button("Back", systemImage: "chevron.backward") {
-                            Task { await session.goBack() }
+                    if !isShowingPhotoStep {
+                        ToolbarItem(placement: .navigation) {
+                            Button("Back", systemImage: "chevron.backward") {
+                                Task { await session.goBack() }
+                            }
+                            .disabled(!session.canGoBack)
                         }
-                        .disabled(!session.canGoBack)
-                    }
-                    ToolbarItem(placement: .navigation) {
-                        Button("Forward", systemImage: "chevron.forward") {
-                            Task { await session.goForward() }
+                        ToolbarItem(placement: .navigation) {
+                            Button("Forward", systemImage: "chevron.forward") {
+                                Task { await session.goForward() }
+                            }
+                            .disabled(!session.canGoForward)
                         }
-                        .disabled(!session.canGoForward)
                     }
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Close") {
@@ -48,7 +52,9 @@ struct IdentifyView: View {
 
     @ViewBuilder
     private var content: some View {
-        if session.isComputingNextQuestion {
+        if isShowingPhotoStep {
+            IdentifyPhotoView(photoData: $photoData, onStart: { isShowingPhotoStep = false })
+        } else if session.isComputingNextQuestion {
             ProgressView()
         } else if session.isFinished {
             IdentifyResultView(
@@ -75,7 +81,8 @@ struct IdentifyView: View {
             latitude: capturedLocation?.coordinate.latitude,
             longitude: capturedLocation?.coordinate.longitude,
             placeName: capturedLocation?.placeName,
-            genus: genus.displayName
+            genus: genus.displayName,
+            photoData: photoData
         )
         modelContext.insert(observation)
         dismiss()
