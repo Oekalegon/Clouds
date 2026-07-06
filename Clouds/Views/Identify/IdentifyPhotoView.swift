@@ -20,6 +20,7 @@ struct IdentifyPhotoView: View {
     @State private var isShowingCamera = false
     @State private var isShowingLibraryPicker = false
     @State private var selectedLibraryItem: PhotosPickerItem?
+    @State private var libraryLoadErrorMessage: String?
 
     var body: some View {
         VStack(spacing: 24) {
@@ -44,12 +45,18 @@ struct IdentifyPhotoView: View {
             }
             Button("Choose from Library") { isShowingLibraryPicker = true }
             if photoData != nil {
-                Button("Remove Photo", role: .destructive) { photoData = nil }
+                Button("Remove Photo", role: .destructive) {
+                    photoData = nil
+                    selectedLibraryItem = nil
+                }
             }
         }
         .fullScreenCover(isPresented: $isShowingCamera) {
             CameraCaptureView { data in
-                if let data { photoData = data }
+                if let data {
+                    photoData = data
+                    selectedLibraryItem = nil
+                }
                 isShowingCamera = false
             }
             .ignoresSafeArea()
@@ -57,8 +64,25 @@ struct IdentifyPhotoView: View {
         .photosPicker(isPresented: $isShowingLibraryPicker, selection: $selectedLibraryItem, matching: .images)
         .onChange(of: selectedLibraryItem) { _, newItem in
             Task {
-                photoData = try? await newItem?.loadTransferable(type: Data.self)
+                do {
+                    if let newItem, let data = try await newItem.loadTransferable(type: Data.self) {
+                        photoData = data
+                    }
+                } catch {
+                    libraryLoadErrorMessage = "Couldn't load that photo. Please try again."
+                }
             }
+        }
+        .alert(
+            "Photo Unavailable",
+            isPresented: Binding(
+                get: { libraryLoadErrorMessage != nil },
+                set: { if !$0 { libraryLoadErrorMessage = nil } }
+            )
+        ) {
+            Button("OK") { libraryLoadErrorMessage = nil }
+        } message: {
+            Text(libraryLoadErrorMessage ?? "")
         }
     }
 
