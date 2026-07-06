@@ -72,6 +72,23 @@ struct QuestionDefinitionTests {
         try question.validate(against: ["T", "F"])
     }
 
+    @Test func validateAgainstStatesExcludesNotApplicableFromRequiredAnswers() throws {
+        let question = QuestionDefinition(
+            id: "Cloudy",
+            text: "Is the sky mostly overcast?",
+            description: nil,
+            image: nil,
+            answers: [
+                QuestionAnswer(id: "T", label: "Yes"),
+                QuestionAnswer(id: "F", label: "No")
+            ]
+        )
+
+        // "NotApplicable" is a real node state (CLD-8) but never a
+        // selectable answer, so it must not be required here.
+        try question.validate(against: ["T", "F", QuestionDefinition.notApplicableStateID])
+    }
+
     @Test func validateAgainstMismatchedStatesThrows() throws {
         let question = QuestionDefinition(
             id: "Cloudy",

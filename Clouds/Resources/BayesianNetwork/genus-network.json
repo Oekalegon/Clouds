@@ -36,7 +36,8 @@
       "states": [
         "Yes",
         "No",
-        "Unsure"
+        "Unsure",
+        "NotApplicable"
       ],
       "parents": [
         "Genus"
@@ -47,9 +48,10 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.01,
-            "No": 0.94,
-            "Unsure": 0.05
+            "Yes": 0.0095,
+            "No": 0.893,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -57,9 +59,10 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.01,
-            "No": 0.94,
-            "Unsure": 0.05
+            "Yes": 0.0095,
+            "No": 0.893,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -67,9 +70,10 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.01,
-            "No": 0.94,
-            "Unsure": 0.05
+            "Yes": 0.0095,
+            "No": 0.893,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -77,9 +81,10 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.01,
-            "No": 0.94,
-            "Unsure": 0.05
+            "Yes": 0.0095,
+            "No": 0.893,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -87,9 +92,10 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.01,
-            "No": 0.94,
-            "Unsure": 0.05
+            "Yes": 0.0095,
+            "No": 0.893,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -97,9 +103,10 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.01,
-            "No": 0.94,
-            "Unsure": 0.05
+            "Yes": 0.0095,
+            "No": 0.893,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -107,9 +114,10 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.01,
-            "No": 0.94,
-            "Unsure": 0.05
+            "Yes": 0.0095,
+            "No": 0.893,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -117,9 +125,10 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.01,
-            "No": 0.94,
-            "Unsure": 0.05
+            "Yes": 0.0095,
+            "No": 0.893,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -127,9 +136,10 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0285,
+            "No": 0.874,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -137,9 +147,10 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.4,
-            "No": 0.55,
-            "Unsure": 0.05
+            "Yes": 0.38,
+            "No": 0.5225,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         }
       ]
@@ -149,7 +160,8 @@
       "states": [
         "Yes",
         "No",
-        "Unsure"
+        "Unsure",
+        "NotApplicable"
       ],
       "parents": [
         "Genus"
@@ -160,9 +172,10 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0285,
+            "No": 0.874,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -170,9 +183,10 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0475,
+            "No": 0.855,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -180,9 +194,10 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.019,
+            "No": 0.8835,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -190,9 +205,10 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.25,
-            "No": 0.7,
-            "Unsure": 0.05
+            "Yes": 0.2375,
+            "No": 0.665,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -200,9 +216,10 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.019,
+            "No": 0.8835,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -210,9 +227,10 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0285,
+            "No": 0.874,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -220,9 +238,10 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.25,
-            "No": 0.7,
-            "Unsure": 0.05
+            "Yes": 0.2375,
+            "No": 0.665,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -230,9 +249,10 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0285,
+            "No": 0.874,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -240,9 +260,10 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -250,9 +271,10 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         }
       ]
@@ -262,7 +284,8 @@
       "states": [
         "Yes",
         "No",
-        "Unsure"
+        "Unsure",
+        "NotApplicable"
       ],
       "parents": [
         "Genus"
@@ -273,9 +296,10 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -283,9 +307,10 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -293,9 +318,10 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -303,9 +329,10 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -313,9 +340,10 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -323,9 +351,10 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -333,9 +362,10 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -343,9 +373,10 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -353,9 +384,10 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0475,
+            "No": 0.855,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -363,9 +395,10 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         }
       ]
@@ -375,7 +408,8 @@
       "states": [
         "Yes",
         "No",
-        "Unsure"
+        "Unsure",
+        "NotApplicable"
       ],
       "parents": [
         "Genus"
@@ -386,9 +420,10 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.15,
-            "No": 0.8,
-            "Unsure": 0.05
+            "Yes": 0.1425,
+            "No": 0.76,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -396,9 +431,10 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0475,
+            "No": 0.855,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -406,9 +442,10 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.8,
-            "No": 0.15,
-            "Unsure": 0.05
+            "Yes": 0.76,
+            "No": 0.1425,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -416,9 +453,10 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0475,
+            "No": 0.855,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -426,9 +464,10 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -436,9 +475,10 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -446,9 +486,10 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0475,
+            "No": 0.855,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -456,9 +497,10 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -466,9 +508,10 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -476,9 +519,10 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         }
       ]
@@ -488,7 +532,8 @@
       "states": [
         "Yes",
         "No",
-        "Unsure"
+        "Unsure",
+        "NotApplicable"
       ],
       "parents": [
         "Genus"
@@ -499,9 +544,10 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.3,
-            "No": 0.65,
-            "Unsure": 0.05
+            "Yes": 0.045,
+            "No": 0.0975,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -509,9 +555,10 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.2,
-            "No": 0.75,
-            "Unsure": 0.05
+            "Yes": 0.03,
+            "No": 0.1125,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -519,9 +566,10 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -529,9 +577,10 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.15,
-            "No": 0.8,
-            "Unsure": 0.05
+            "Yes": 0.0225,
+            "No": 0.12,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -539,9 +588,10 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.25,
-            "No": 0.7,
-            "Unsure": 0.05
+            "Yes": 0.2375,
+            "No": 0.665,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -549,9 +599,10 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.019,
+            "No": 0.8835,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -559,9 +610,10 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.15,
-            "No": 0.8,
-            "Unsure": 0.05
+            "Yes": 0.0225,
+            "No": 0.12,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -569,9 +621,10 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.15,
-            "No": 0.8,
-            "Unsure": 0.05
+            "Yes": 0.1425,
+            "No": 0.76,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -579,9 +632,10 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.1,
-            "No": 0.85,
-            "Unsure": 0.05
+            "Yes": 0.015,
+            "No": 0.1275,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -589,9 +643,10 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         }
       ]
@@ -601,7 +656,8 @@
       "states": [
         "Yes",
         "No",
-        "Unsure"
+        "Unsure",
+        "NotApplicable"
       ],
       "parents": [
         "Genus"
@@ -612,9 +668,10 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0075,
+            "No": 0.135,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -622,9 +679,10 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0075,
+            "No": 0.135,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -632,9 +690,10 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.15,
-            "No": 0.8,
-            "Unsure": 0.05
+            "Yes": 0.0225,
+            "No": 0.12,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -642,9 +701,10 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.1,
-            "No": 0.85,
-            "Unsure": 0.05
+            "Yes": 0.015,
+            "No": 0.1275,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -652,9 +712,10 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -662,9 +723,10 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.35,
-            "No": 0.6,
-            "Unsure": 0.05
+            "Yes": 0.3325,
+            "No": 0.57,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -672,9 +734,10 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.1,
-            "No": 0.85,
-            "Unsure": 0.05
+            "Yes": 0.015,
+            "No": 0.1275,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -682,9 +745,10 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.1,
-            "No": 0.85,
-            "Unsure": 0.05
+            "Yes": 0.095,
+            "No": 0.8075,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -692,9 +756,10 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -702,9 +767,10 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0075,
+            "No": 0.135,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         }
       ]
@@ -714,7 +780,8 @@
       "states": [
         "Yes",
         "No",
-        "Unsure"
+        "Unsure",
+        "NotApplicable"
       ],
       "parents": [
         "Genus"
@@ -725,9 +792,10 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -735,9 +803,10 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -745,9 +814,10 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -755,9 +825,10 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -765,9 +836,10 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.2,
-            "No": 0.75,
-            "Unsure": 0.05
+            "Yes": 0.03,
+            "No": 0.1125,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -775,9 +847,10 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -785,9 +858,10 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0075,
+            "No": 0.135,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -795,9 +869,10 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.15,
-            "No": 0.8,
-            "Unsure": 0.05
+            "Yes": 0.1425,
+            "No": 0.76,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -805,9 +880,10 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -815,9 +891,10 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0075,
+            "No": 0.135,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         }
       ]
@@ -827,7 +904,8 @@
       "states": [
         "Yes",
         "No",
-        "Unsure"
+        "Unsure",
+        "NotApplicable"
       ],
       "parents": [
         "Genus"
@@ -838,9 +916,10 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -848,9 +927,10 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0475,
+            "No": 0.855,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -858,9 +938,10 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.3,
-            "No": 0.65,
-            "Unsure": 0.05
+            "Yes": 0.045,
+            "No": 0.0975,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -868,9 +949,10 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0285,
+            "No": 0.874,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -878,9 +960,10 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0075,
+            "No": 0.135,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -888,9 +971,10 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -898,9 +982,10 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0285,
+            "No": 0.874,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -908,9 +993,10 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -918,9 +1004,10 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -928,9 +1015,10 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.1,
-            "No": 0.85,
-            "Unsure": 0.05
+            "Yes": 0.015,
+            "No": 0.1275,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         }
       ]
@@ -940,7 +1028,8 @@
       "states": [
         "Yes",
         "No",
-        "Unsure"
+        "Unsure",
+        "NotApplicable"
       ],
       "parents": [
         "Genus"
@@ -951,9 +1040,10 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0075,
+            "No": 0.135,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -961,9 +1051,10 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -971,9 +1062,10 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0075,
+            "No": 0.135,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -981,9 +1073,10 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.15,
-            "No": 0.8,
-            "Unsure": 0.05
+            "Yes": 0.1425,
+            "No": 0.76,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -991,9 +1084,10 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -1001,9 +1095,10 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -1011,9 +1106,10 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0475,
+            "No": 0.855,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -1021,9 +1117,10 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -1031,9 +1128,10 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -1041,9 +1139,10 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         }
       ]
@@ -1053,7 +1152,8 @@
       "states": [
         "Yes",
         "No",
-        "Unsure"
+        "Unsure",
+        "NotApplicable"
       ],
       "parents": [
         "Genus"
@@ -1064,9 +1164,10 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -1074,9 +1175,10 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.1,
-            "No": 0.85,
-            "Unsure": 0.05
+            "Yes": 0.015,
+            "No": 0.1275,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -1084,9 +1186,10 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -1094,9 +1197,10 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.85,
-            "No": 0.1,
-            "Unsure": 0.05
+            "Yes": 0.8075,
+            "No": 0.095,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -1104,9 +1208,10 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -1114,9 +1219,10 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.02,
-            "No": 0.93,
-            "Unsure": 0.05
+            "Yes": 0.003,
+            "No": 0.1395,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -1124,9 +1230,10 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.15,
-            "No": 0.8,
-            "Unsure": 0.05
+            "Yes": 0.1425,
+            "No": 0.76,
+            "Unsure": 0.0475,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -1134,9 +1241,10 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -1144,9 +1252,10 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.05,
-            "No": 0.9,
-            "Unsure": 0.05
+            "Yes": 0.0075,
+            "No": 0.135,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         },
         {
@@ -1154,9 +1263,10 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.92,
-            "Unsure": 0.05
+            "Yes": 0.0045,
+            "No": 0.138,
+            "Unsure": 0.0075,
+            "NotApplicable": 0.85
           }
         }
       ]

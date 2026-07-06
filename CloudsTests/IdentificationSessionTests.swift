@@ -40,6 +40,36 @@ struct IdentificationSessionTests {
     }
     """
 
+    /// Genus(A,B; uniform prior) + Q1 (near-deterministic, so it's always
+    /// picked first) + Q2, which is almost never applicable when Genus=A
+    /// (P(NotApplicable|A)=0.95) but very informative when Genus=B. Q2's
+    /// own NotApplicable-vs-not split is itself informative about Genus,
+    /// so Q1 must be sharp enough to still win the initial expected
+    /// information gain comparison. Mirrors CLD-8: a question whose
+    /// real-world relevance depends on which genus the evidence currently
+    /// favors.
+    private static let notApplicableNetworkJSON = """
+    {
+      "nodes": [
+        { "id": "Genus", "states": ["A", "B"], "cpt": [{ "distribution": { "A": 0.5, "B": 0.5 } }] },
+        {
+          "id": "Q1", "states": ["Yes", "No"], "parents": ["Genus"],
+          "cpt": [
+            { "given": { "Genus": "A" }, "distribution": { "Yes": 0.99, "No": 0.01 } },
+            { "given": { "Genus": "B" }, "distribution": { "Yes": 0.01, "No": 0.99 } }
+          ]
+        },
+        {
+          "id": "Q2", "states": ["Yes", "No", "NotApplicable"], "parents": ["Genus"],
+          "cpt": [
+            { "given": { "Genus": "A" }, "distribution": { "Yes": 0.025, "No": 0.025, "NotApplicable": 0.95 } },
+            { "given": { "Genus": "B" }, "distribution": { "Yes": 0.9, "No": 0.05, "NotApplicable": 0.05 } }
+          ]
+        }
+      ]
+    }
+    """
+
     /// Genus(A,B) + a single question whose "Unsure" answer is equally
     /// likely under both genera, so the posterior stays a perfect tie.
     private static let tieBreakNetworkJSON = """
@@ -169,6 +199,28 @@ struct IdentificationSessionTests {
 
         // Both questions have been asked; even below threshold, there are
         // no more candidates, so the session must still terminate.
+        #expect(session.isFinished)
+        #expect(session.currentQuestionID == nil)
+    }
+
+    @Test func skipsACandidateWhoseNotApplicableLikelihoodIsHigh() async throws {
+        let catalog = try makeCatalog(
+            json: Self.notApplicableNetworkJSON,
+            questionStates: [("Q1", ["Yes", "No"]), ("Q2", ["Yes", "No"])]
+        )
+        // A high confidence threshold keeps the session from finishing on
+        // confidence alone, isolating the NotApplicable-driven skip.
+        let session = IdentificationSession(catalog: catalog, confidenceThreshold: 0.999, notApplicableThreshold: 0.8)
+        await session.start()
+
+        try #require(session.currentQuestionID == "Q1")
+        await session.selectAnswer("Yes")
+
+        // P(A | Q1=Yes) = 0.99, so P(NotApplicable) for Q2 is
+        // 0.99*0.95 + 0.01*0.05 ≈ 0.941 — above the 0.8 threshold, so Q2
+        // must be skipped rather than asked, even though it's the only
+        // remaining candidate and confidence (0.99 < 0.999) hasn't been
+        // reached.
         #expect(session.isFinished)
         #expect(session.currentQuestionID == nil)
     }
