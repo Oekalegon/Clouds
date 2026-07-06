@@ -15,6 +15,7 @@ struct IdentifyView: View {
     @State private var locationProvider = LocationProvider()
     @State private var capturedLocation: LocationProvider.CapturedLocation?
     @State private var photoData: Data?
+    @State private var photoDate: Date?
     @State private var isShowingPhotoStep = true
 
     var body: some View {
@@ -53,7 +54,7 @@ struct IdentifyView: View {
     @ViewBuilder
     private var content: some View {
         if isShowingPhotoStep {
-            IdentifyPhotoView(photoData: $photoData, onStart: { isShowingPhotoStep = false })
+            IdentifyPhotoView(photoData: $photoData, photoDate: $photoDate, onStart: { isShowingPhotoStep = false })
         } else if session.isComputingNextQuestion {
             ProgressView()
         } else if session.isFinished {
@@ -81,6 +82,7 @@ struct IdentifyView: View {
             ImageThumbnailer.downsampledJPEGData(from: $0, maxPixelSize: 300)
         }
         let observation = CloudObservation(
+            date: photoDate ?? .now,
             latitude: capturedLocation?.coordinate.latitude,
             longitude: capturedLocation?.coordinate.longitude,
             placeName: capturedLocation?.placeName,

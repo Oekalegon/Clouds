@@ -14,6 +14,11 @@ import UIKit
 /// required to proceed, matching how location capture never blocks saving.
 struct IdentifyPhotoView: View {
     @Binding var photoData: Data?
+    /// The photo's own capture date when it came from the library, so the
+    /// observation can be dated by when the cloud was actually seen rather
+    /// than when it was added. `nil` for camera captures, which are already
+    /// happening in the moment.
+    @Binding var photoDate: Date?
     let onStart: () -> Void
 
     private enum PhotoSource: Equatable {
@@ -78,6 +83,7 @@ struct IdentifyPhotoView: View {
             if photoData != nil {
                 Button("Remove Photo", role: .destructive) {
                     photoData = nil
+                    photoDate = nil
                     selectedLibraryItem = nil
                 }
             }
@@ -86,6 +92,7 @@ struct IdentifyPhotoView: View {
             CameraCaptureView { data in
                 if let data {
                     photoData = data
+                    photoDate = nil
                     selectedLibraryItem = nil
                 }
                 activePhotoSource = nil
@@ -98,6 +105,7 @@ struct IdentifyPhotoView: View {
                 do {
                     if let newItem, let data = try await newItem.loadTransferable(type: Data.self) {
                         photoData = data
+                        photoDate = PhotoCaptureDateExtractor.captureDate(from: data)
                     }
                 } catch {
                     libraryLoadErrorMessage = "Couldn't load that photo. Please try again."
@@ -148,5 +156,5 @@ struct IdentifyPhotoView: View {
 }
 
 #Preview {
-    IdentifyPhotoView(photoData: .constant(nil), onStart: {})
+    IdentifyPhotoView(photoData: .constant(nil), photoDate: .constant(nil), onStart: {})
 }
