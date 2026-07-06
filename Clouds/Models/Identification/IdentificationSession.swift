@@ -22,8 +22,18 @@ final class IdentificationSession {
     private static let targetNodeID: NodeID = "Genus"
     private static let logger = Logger(subsystem: "org.oekalegon.Clouds", category: "Identification")
 
+    /// Below the genus-network content's calibrated ceiling for a highly
+    /// non-applicable question (0.85 — see `GenusNetworkContentTests`):
+    /// a default at or above that ceiling would mean the skip-question
+    /// filter below can mathematically never trigger, since a node's
+    /// marginal `P(NotApplicable | evidence)` is a probability-weighted
+    /// average of its per-genus CPT values and so can never exceed the
+    /// highest of those values.
+    nonisolated static let defaultNotApplicableThreshold: Double = 0.65
+
     private let catalog: IdentificationCatalog
     private let confidenceThreshold: Double
+    private let notApplicableThreshold: Double
 
     private(set) var history: [AnsweredQuestion] = []
     private(set) var currentIndex = 0
@@ -33,9 +43,14 @@ final class IdentificationSession {
     private(set) var isFinished = false
     private(set) var isComputingNextQuestion = false
 
-    init(catalog: IdentificationCatalog = .shared, confidenceThreshold: Double = 0.9) {
+    init(
+        catalog: IdentificationCatalog = .shared,
+        confidenceThreshold: Double = 0.9,
+        notApplicableThreshold: Double = IdentificationSession.defaultNotApplicableThreshold
+    ) {
         self.catalog = catalog
         self.confidenceThreshold = confidenceThreshold
+        self.notApplicableThreshold = notApplicableThreshold
     }
 
     var canGoBack: Bool { currentIndex > 0 }
@@ -121,13 +136,28 @@ final class IdentificationSession {
             return
         }
 
-        isFinished = false
         isComputingNextQuestion = true
         let targets = [Self.targetNodeID]
+        let notApplicableThreshold = self.notApplicableThreshold
+        let expectedIndex = currentIndex
         let next = await Task.detached {
-            try? network.bestNextQuestion(among: remainingCandidates, forTargets: targets, given: evidence)
+            let applicableCandidates = remainingCandidates.filter { candidateID in
+                let notApplicableProbability = (try? network.posterior(of: candidateID, given: evidence))?[
+                    QuestionDefinition.notApplicableStateID
+                ] ?? 0
+                return notApplicableProbability < notApplicableThreshold
+            }
+            return try? network.bestNextQuestion(among: applicableCandidates, forTargets: targets, given: evidence)
         }.value
+
+        // The user may have navigated (goBack/goForward) while this
+        // computation was in flight, which already ran its own refresh()
+        // synchronously. Applying this now-stale result would clobber
+        // that more recent, correct state.
+        guard currentIndex == expectedIndex else { return }
+
         currentQuestionID = next
+        isFinished = next == nil
         isComputingNextQuestion = false
     }
 

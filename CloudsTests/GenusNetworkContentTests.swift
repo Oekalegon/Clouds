@@ -89,6 +89,78 @@ struct GenusNetworkContentTests {
         }
     }
 
+    /// CLD-8: every question node must carry a "NotApplicable" state so the
+    /// Q&A flow can skip questions the decision tree never actually reaches
+    /// for the genus currently favored by the evidence.
+    @Test func everyQuestionNodeHasANotApplicableState() throws {
+        let file = try decodeNetworkFile()
+        let nodesByID = Dictionary(uniqueKeysWithValues: file.nodes.map { ($0.id, $0) })
+
+        for id in Self.questionNodeIDs {
+            let node = try #require(nodesByID[id])
+            #expect(node.states.contains(QuestionDefinition.notApplicableStateID))
+        }
+    }
+
+    /// A question's "NotApplicable" likelihood should genuinely vary with
+    /// how generic the question is — a low, roughly-uniform prior for a
+    /// question asked of everyone early on (UniformLayerNoElements), versus
+    /// a high prior for one that's only ever reached for a couple of
+    /// genera at the very end of the tree (ElementOneToThreeFingers).
+    @Test func genericQuestionsHaveLowerNotApplicablePriorsThanSpecificOnes() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+
+        let genericPrior = try network.posterior(of: "UniformLayerNoElements")[QuestionDefinition.notApplicableStateID] ?? 0
+        let specificPrior = try network.posterior(of: "ElementOneToThreeFingers")[QuestionDefinition.notApplicableStateID] ?? 0
+
+        #expect(genericPrior < 0.25)
+        #expect(specificPrior > 0.5)
+        #expect(genericPrior < specificPrior)
+    }
+
+    /// The ticket's own example: once "UniformLayerNoElements" is answered
+    /// "No" (ruling out the uniform-layer genera Cs/As/Ns/St), the
+    /// finger-size questions become markedly more likely to apply, since
+    /// the evidence has shifted weight onto the genera they actually
+    /// distinguish (Ci/Cc/Ac/Sc).
+    @Test func notApplicableLikelihoodDropsAfterUniformLayerAnsweredNo() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+
+        let prior = try network.posterior(of: "ElementOneToThreeFingers")[QuestionDefinition.notApplicableStateID] ?? 0
+        let afterNo = try network.posterior(
+            of: "ElementOneToThreeFingers",
+            given: ["UniformLayerNoElements": "No"]
+        )[QuestionDefinition.notApplicableStateID] ?? 0
+
+        #expect(afterNo < prior)
+    }
+
+    /// Regression guard for a bug where the calibration's NotApplicable
+    /// ceiling and `IdentificationSession`'s shipped default threshold had
+    /// silently drifted apart: since a node's marginal
+    /// `P(NotApplicable | evidence)` is a probability-weighted average of
+    /// its per-genus CPT values, it can never exceed the highest calibrated
+    /// value (0.85, see `everyQuestionNodeHasANotApplicableState`'s
+    /// neighbors), so a default threshold at or above that ceiling would
+    /// make the skip-question feature inert in production. Uses
+    /// `IdentificationSession.defaultNotApplicableThreshold` itself (not a
+    /// copied literal) so the two can't drift apart again unnoticed.
+    @Test func notApplicableLikelihoodClearsTheShippedDefaultThresholdOnAClearBranch() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+        let evidence: [NodeID: StateID] = [
+            "LightningOrThunder": "No",
+            "BulgingHeapsOrDomes": "No",
+            "UniformLayerNoElements": "Yes"
+        ]
+
+        let notApplicableProbability = try network.posterior(
+            of: "ElementOneToThreeFingers",
+            given: evidence
+        )[QuestionDefinition.notApplicableStateID] ?? 0
+
+        #expect(notApplicableProbability > IdentificationSession.defaultNotApplicableThreshold)
+    }
+
     private func mostLikelyGenus(_ network: BayesianNetwork, given evidence: [NodeID: StateID]) throws -> StateID {
         let posterior = try network.posterior(of: "Genus", given: evidence)
         return try #require(posterior.max(by: { $0.value < $1.value })?.key)
