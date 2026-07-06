@@ -20,6 +20,7 @@ struct CloudsTests {
         #expect(observation.variety == nil)
         #expect(observation.specialFeature == nil)
         #expect(observation.photoData == nil)
+        #expect(observation.thumbnailData == nil)
     }
 
     @Test func sectionKeyIsEqualForSameDay() async throws {

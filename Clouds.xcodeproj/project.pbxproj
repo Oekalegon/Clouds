@@ -14,11 +14,14 @@
 		090A60715653D48A9884E88B /* CloudGenusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EED6AADC2C4B097722EC3 /* CloudGenusTests.swift */; };
 		0ACCFEE9E02806DE54295303 /* GenusNetworkContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6C397400C0A8328B12AB8 /* GenusNetworkContentTests.swift */; };
 		119EEF67FD7C39B5238FAD55 /* IdentificationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F82D5F2E6BF1E209E50399 /* IdentificationSession.swift */; };
+		153DEFF50223301971F612EB /* ImageThumbnailerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E26685CF3D07C86D6EC4A1 /* ImageThumbnailerTests.swift */; };
 		15FE3F137E95A4B53059FCDF /* IdentifyQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35235DD1F40B6E2B2D31A3F3 /* IdentifyQuestionView.swift */; };
 		1910CE03337AEFD3EAC76BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03FD643277470D745D53F47 /* Assets.xcassets */; };
 		1DA43621059DD691264D30D8 /* CloudsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */; };
 		2BEEF198249F7F93FA58B04D /* IdentificationSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */; };
 		32E05F7EFBE924C335502760 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91AC6FC8F5E11FD2D976B7 /* LocationProvider.swift */; };
+		37F0B8760E07F1A29279E224 /* CameraCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F82A8AB3F7FA9A527959241 /* CameraCaptureView.swift */; };
+		3BA80C2923281AFD2335F2BB /* CameraAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239FDE89ADF1DE98BF1E059C /* CameraAuthorization.swift */; };
 		4205DC43D0AF16F6FEBDDF6F /* ConditionalProbabilityTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A702925077EDF186478E73B /* ConditionalProbabilityTable.swift */; };
 		435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */; };
 		4A4FCBFA40AC20AF26317727 /* ElementSmallerThanOneFinger.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C2821079C3B8F669B9F86B /* ElementSmallerThanOneFinger.json */; };
@@ -30,6 +33,7 @@
 		61939F7505ADCA08D5229DA4 /* WhiteWispyFibres.json in Resources */ = {isa = PBXBuildFile; fileRef = 672A070EF3B0822E0BC0B09E /* WhiteWispyFibres.json */; };
 		6573685E3EABCBAB09576A27 /* BayesianNetworkFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9143FD4EBE882E8F881C48 /* BayesianNetworkFileTests.swift */; };
 		6C428D2FB3E9E848886F9DDB /* UniformLayerNoElements.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A2DF7AA241887CD58513687 /* UniformLayerNoElements.json */; };
+		7A8EA0F72266141ED7247035 /* ImageThumbnailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C5E80A89C3E64CD74B306 /* ImageThumbnailer.swift */; };
 		85A2AF714D075CEA973D3FF5 /* BayesianNetworkFileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF83FDE6FE19C308F55C1551 /* BayesianNetworkFileNode.swift */; };
 		8D341620A9368821BA5B6571 /* CloudsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E36FBD2E4069F00893290 /* CloudsTests.swift */; };
 		97CCA870806DC21020A05EC6 /* SunOrMoonBrightPatch.json in Resources */ = {isa = PBXBuildFile; fileRef = CE320D13DD2209A18A8D3ECD /* SunOrMoonBrightPatch.json */; };
@@ -50,6 +54,7 @@
 		DA04EA594D465962F3AC99AD /* BayesianNetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAE73F981E1B912FFB38F0 /* BayesianNetworkTypes.swift */; };
 		DA2F47AF2D6C218AC5441FAF /* BayesianNetworkFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E702BF2101569DA4774C95AF /* BayesianNetworkFile.swift */; };
 		E3CADD68F04D3A632C6B83CD /* BayesianNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22913B2E238E33E6A578D0FC /* BayesianNetwork.swift */; };
+		EB20768A9A9CF2CA20F9E1FA /* IdentifyPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BE934C340B633C51357138 /* IdentifyPhotoView.swift */; };
 		F40B5B3B6439819B78BFF2D3 /* genus-network.json in Resources */ = {isa = PBXBuildFile; fileRef = F0C3A25C83679D0EAFE9D653 /* genus-network.json */; };
 /* End PBXBuildFile section */
 
@@ -78,15 +83,19 @@
 		1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationSessionTests.swift; sourceTree = "<group>"; };
 		1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationRow.swift; sourceTree = "<group>"; };
 		22913B2E238E33E6A578D0FC /* BayesianNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetwork.swift; sourceTree = "<group>"; };
+		239FDE89ADF1DE98BF1E059C /* CameraAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAuthorization.swift; sourceTree = "<group>"; };
 		32F8B734E98C54B34061208E /* BayesianNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkTests.swift; sourceTree = "<group>"; };
 		35235DD1F40B6E2B2D31A3F3 /* IdentifyQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyQuestionView.swift; sourceTree = "<group>"; };
 		3A2DF7AA241887CD58513687 /* UniformLayerNoElements.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UniformLayerNoElements.json; sourceTree = "<group>"; };
+		43E26685CF3D07C86D6EC4A1 /* ImageThumbnailerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageThumbnailerTests.swift; sourceTree = "<group>"; };
 		46EA4F7C788DB82047969F09 /* BayesianNetworkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkNode.swift; sourceTree = "<group>"; };
 		4BCA3E4178256FE2FE6805FE /* CloudsUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CloudsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D630CD3DE67D860E4971821 /* BayesianNetwork+Inference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BayesianNetwork+Inference.swift"; sourceTree = "<group>"; };
 		4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsUITests.swift; sourceTree = "<group>"; };
 		52716D289115DBB34EDCF4A6 /* CloudObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudObservation.swift; sourceTree = "<group>"; };
+		52BE934C340B633C51357138 /* IdentifyPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyPhotoView.swift; sourceTree = "<group>"; };
 		5AF6C397400C0A8328B12AB8 /* GenusNetworkContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenusNetworkContentTests.swift; sourceTree = "<group>"; };
+		5F82A8AB3F7FA9A527959241 /* CameraCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureView.swift; sourceTree = "<group>"; };
 		6723EF65DA1BBEB49FABC321 /* IdentifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyView.swift; sourceTree = "<group>"; };
 		672A070EF3B0822E0BC0B09E /* WhiteWispyFibres.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WhiteWispyFibres.json; sourceTree = "<group>"; };
 		679E51AFEC31360BF59FD5D3 /* FuzzyUpperOutline.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FuzzyUpperOutline.json; sourceTree = "<group>"; };
@@ -105,6 +114,7 @@
 		ADCB107D714889A4D4378AC2 /* BayesianNetworkFileCPTRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileCPTRow.swift; sourceTree = "<group>"; };
 		B07E36FBD2E4069F00893290 /* CloudsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsTests.swift; sourceTree = "<group>"; };
 		B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDefinitionTests.swift; sourceTree = "<group>"; };
+		B85C5E80A89C3E64CD74B306 /* ImageThumbnailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageThumbnailer.swift; sourceTree = "<group>"; };
 		C7F82D5F2E6BF1E209E50399 /* IdentificationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationSession.swift; sourceTree = "<group>"; };
 		C9E1F1C0088EF73B31FFB761 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		CE320D13DD2209A18A8D3ECD /* SunOrMoonBrightPatch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SunOrMoonBrightPatch.json; sourceTree = "<group>"; };
@@ -196,6 +206,8 @@
 		7F738149284A2A5DBF68BBC6 /* Identify */ = {
 			isa = PBXGroup;
 			children = (
+				5F82A8AB3F7FA9A527959241 /* CameraCaptureView.swift */,
+				52BE934C340B633C51357138 /* IdentifyPhotoView.swift */,
 				35235DD1F40B6E2B2D31A3F3 /* IdentifyQuestionView.swift */,
 				9101201FF2D5D81A7BADBA9B /* IdentifyResultView.swift */,
 				6723EF65DA1BBEB49FABC321 /* IdentifyView.swift */,
@@ -241,6 +253,7 @@
 				5AF6C397400C0A8328B12AB8 /* GenusNetworkContentTests.swift */,
 				DCA3E2E1B6AF160ADAE49BCC /* IdentificationCatalogTests.swift */,
 				1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */,
+				43E26685CF3D07C86D6EC4A1 /* ImageThumbnailerTests.swift */,
 				B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */,
 			);
 			path = CloudsTests;
@@ -257,6 +270,8 @@
 		B8793AB7356F3750A466389B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				239FDE89ADF1DE98BF1E059C /* CameraAuthorization.swift */,
+				B85C5E80A89C3E64CD74B306 /* ImageThumbnailer.swift */,
 				CF91AC6FC8F5E11FD2D976B7 /* LocationProvider.swift */,
 			);
 			path = Services;
@@ -430,6 +445,7 @@
 				0ACCFEE9E02806DE54295303 /* GenusNetworkContentTests.swift in Sources */,
 				D23DDB89C225C908EDC51DF4 /* IdentificationCatalogTests.swift in Sources */,
 				2BEEF198249F7F93FA58B04D /* IdentificationSessionTests.swift in Sources */,
+				153DEFF50223301971F612EB /* ImageThumbnailerTests.swift in Sources */,
 				B7C92C201A566730D7AAA36A /* QuestionDefinitionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +470,8 @@
 				85A2AF714D075CEA973D3FF5 /* BayesianNetworkFileNode.swift in Sources */,
 				07EFFFBAFFCAFE12F1C5B0A7 /* BayesianNetworkNode.swift in Sources */,
 				DA04EA594D465962F3AC99AD /* BayesianNetworkTypes.swift in Sources */,
+				3BA80C2923281AFD2335F2BB /* CameraAuthorization.swift in Sources */,
+				37F0B8760E07F1A29279E224 /* CameraCaptureView.swift in Sources */,
 				C11624CE051975D66084F9D1 /* CloudGenus.swift in Sources */,
 				018A5F6B168C1A3851BE5825 /* CloudObservation.swift in Sources */,
 				CFA2420D838A886542163FE0 /* CloudsApp.swift in Sources */,
@@ -461,9 +479,11 @@
 				00D31B2F3287427F28053B3A /* HistoryView.swift in Sources */,
 				5AF6D534768EA74054AD5F9F /* IdentificationCatalog.swift in Sources */,
 				119EEF67FD7C39B5238FAD55 /* IdentificationSession.swift in Sources */,
+				EB20768A9A9CF2CA20F9E1FA /* IdentifyPhotoView.swift in Sources */,
 				15FE3F137E95A4B53059FCDF /* IdentifyQuestionView.swift in Sources */,
 				C9F7FA330DE4BBE876847066 /* IdentifyResultView.swift in Sources */,
 				5E5B67C470292F15A3664C16 /* IdentifyView.swift in Sources */,
+				7A8EA0F72266141ED7247035 /* ImageThumbnailer.swift in Sources */,
 				32E05F7EFBE924C335502760 /* LocationProvider.swift in Sources */,
 				435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */,
 				B1C0590E823ADC0CAE8C4891 /* QuestionAnswer.swift in Sources */,
@@ -495,6 +515,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Clouds uses your camera to take a photo of an observed cloud.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Clouds uses your location to record where you observed each cloud.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -609,6 +630,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Clouds uses your camera to take a photo of an observed cloud.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Clouds uses your location to record where you observed each cloud.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
