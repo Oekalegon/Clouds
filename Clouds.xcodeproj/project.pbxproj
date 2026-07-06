@@ -18,12 +18,14 @@
 		15FE3F137E95A4B53059FCDF /* IdentifyQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35235DD1F40B6E2B2D31A3F3 /* IdentifyQuestionView.swift */; };
 		1910CE03337AEFD3EAC76BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03FD643277470D745D53F47 /* Assets.xcassets */; };
 		1DA43621059DD691264D30D8 /* CloudsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */; };
+		2A14A98B68C2CE9FEE2E0A51 /* PhotoCaptureDateExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A8E76F0F00A121475B5DF /* PhotoCaptureDateExtractorTests.swift */; };
 		2BEEF198249F7F93FA58B04D /* IdentificationSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */; };
 		32E05F7EFBE924C335502760 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91AC6FC8F5E11FD2D976B7 /* LocationProvider.swift */; };
 		37F0B8760E07F1A29279E224 /* CameraCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F82A8AB3F7FA9A527959241 /* CameraCaptureView.swift */; };
 		3BA80C2923281AFD2335F2BB /* CameraAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239FDE89ADF1DE98BF1E059C /* CameraAuthorization.swift */; };
 		4205DC43D0AF16F6FEBDDF6F /* ConditionalProbabilityTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A702925077EDF186478E73B /* ConditionalProbabilityTable.swift */; };
 		435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */; };
+		4867F34167C9CEDE855BFA4E /* PhotoCaptureDateExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0A63F48F04BFCBF2A6DFC /* PhotoCaptureDateExtractor.swift */; };
 		4A4FCBFA40AC20AF26317727 /* ElementSmallerThanOneFinger.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C2821079C3B8F669B9F86B /* ElementSmallerThanOneFinger.json */; };
 		4D0EABE766627635FAC8555E /* QuestionDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB130AAEDCEC9C6D151ACD /* QuestionDefinition.swift */; };
 		4D7ABE83BA7335AB697327BC /* BayesianNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8B734E98C54B34061208E /* BayesianNetworkTests.swift */; };
@@ -78,6 +80,7 @@
 /* Begin PBXFileReference section */
 		00322B04CE1C57B1E6452CF4 /* CloudsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		04C2821079C3B8F669B9F86B /* ElementSmallerThanOneFinger.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ElementSmallerThanOneFinger.json; sourceTree = "<group>"; };
+		04F0A63F48F04BFCBF2A6DFC /* PhotoCaptureDateExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDateExtractor.swift; sourceTree = "<group>"; };
 		084698C267707E6D1131D0E9 /* CloudsTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CloudsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16B54034A604CC69042AE4CE /* DenseWetLowerLayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DenseWetLowerLayer.json; sourceTree = "<group>"; };
 		1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationSessionTests.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		52716D289115DBB34EDCF4A6 /* CloudObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudObservation.swift; sourceTree = "<group>"; };
 		52BE934C340B633C51357138 /* IdentifyPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyPhotoView.swift; sourceTree = "<group>"; };
 		5AF6C397400C0A8328B12AB8 /* GenusNetworkContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenusNetworkContentTests.swift; sourceTree = "<group>"; };
+		5C9A8E76F0F00A121475B5DF /* PhotoCaptureDateExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDateExtractorTests.swift; sourceTree = "<group>"; };
 		5F82A8AB3F7FA9A527959241 /* CameraCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureView.swift; sourceTree = "<group>"; };
 		6723EF65DA1BBEB49FABC321 /* IdentifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyView.swift; sourceTree = "<group>"; };
 		672A070EF3B0822E0BC0B09E /* WhiteWispyFibres.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WhiteWispyFibres.json; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 				DCA3E2E1B6AF160ADAE49BCC /* IdentificationCatalogTests.swift */,
 				1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */,
 				43E26685CF3D07C86D6EC4A1 /* ImageThumbnailerTests.swift */,
+				5C9A8E76F0F00A121475B5DF /* PhotoCaptureDateExtractorTests.swift */,
 				B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */,
 			);
 			path = CloudsTests;
@@ -273,6 +278,7 @@
 				239FDE89ADF1DE98BF1E059C /* CameraAuthorization.swift */,
 				B85C5E80A89C3E64CD74B306 /* ImageThumbnailer.swift */,
 				CF91AC6FC8F5E11FD2D976B7 /* LocationProvider.swift */,
+				04F0A63F48F04BFCBF2A6DFC /* PhotoCaptureDateExtractor.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -446,6 +452,7 @@
 				D23DDB89C225C908EDC51DF4 /* IdentificationCatalogTests.swift in Sources */,
 				2BEEF198249F7F93FA58B04D /* IdentificationSessionTests.swift in Sources */,
 				153DEFF50223301971F612EB /* ImageThumbnailerTests.swift in Sources */,
+				2A14A98B68C2CE9FEE2E0A51 /* PhotoCaptureDateExtractorTests.swift in Sources */,
 				B7C92C201A566730D7AAA36A /* QuestionDefinitionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +493,7 @@
 				7A8EA0F72266141ED7247035 /* ImageThumbnailer.swift in Sources */,
 				32E05F7EFBE924C335502760 /* LocationProvider.swift in Sources */,
 				435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */,
+				4867F34167C9CEDE855BFA4E /* PhotoCaptureDateExtractor.swift in Sources */,
 				B1C0590E823ADC0CAE8C4891 /* QuestionAnswer.swift in Sources */,
 				4D0EABE766627635FAC8555E /* QuestionDefinition.swift in Sources */,
 				A02F59C811B21E1407D8F250 /* SchemaError.swift in Sources */,
