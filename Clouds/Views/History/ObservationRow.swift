@@ -38,6 +38,7 @@ struct ObservationRow: View {
                 .scaledToFill()
                 .frame(width: 44, height: 44)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
+                .accessibilityHidden(true)
         }
     }
 }
