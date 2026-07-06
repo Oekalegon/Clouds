@@ -77,12 +77,16 @@ struct IdentifyView: View {
 
     private func save() {
         guard let genus = session.mostLikelyGenus.flatMap(CloudGenus.init) else { return }
+        let thumbnailData = photoData.flatMap {
+            ImageThumbnailer.downsampledJPEGData(from: $0, maxPixelSize: 300)
+        }
         let observation = CloudObservation(
             latitude: capturedLocation?.coordinate.latitude,
             longitude: capturedLocation?.coordinate.longitude,
             placeName: capturedLocation?.placeName,
             genus: genus.displayName,
-            photoData: photoData
+            photoData: photoData,
+            thumbnailData: thumbnailData
         )
         modelContext.insert(observation)
         dismiss()

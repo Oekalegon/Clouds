@@ -19,6 +19,7 @@ final class CloudObservation {
     var variety: String?
     var specialFeature: String?
     @Attribute(.externalStorage) var photoData: Data?
+    var thumbnailData: Data?
 
     init(
         date: Date = .now,
@@ -29,7 +30,8 @@ final class CloudObservation {
         species: String? = nil,
         variety: String? = nil,
         specialFeature: String? = nil,
-        photoData: Data? = nil
+        photoData: Data? = nil,
+        thumbnailData: Data? = nil
     ) {
         self.date = date
         self.latitude = latitude
@@ -40,6 +42,7 @@ final class CloudObservation {
         self.variety = variety
         self.specialFeature = specialFeature
         self.photoData = photoData
+        self.thumbnailData = thumbnailData
     }
 
     static func sectionKey(for date: Date, calendar: Calendar = .current) -> Date {

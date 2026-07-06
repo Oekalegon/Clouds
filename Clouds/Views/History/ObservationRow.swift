@@ -32,7 +32,7 @@ struct ObservationRow: View {
 
     @ViewBuilder
     private var thumbnail: some View {
-        if let photoData = observation.photoData, let uiImage = UIImage(data: photoData) {
+        if let thumbnailData = observation.thumbnailData, let uiImage = UIImage(data: thumbnailData) {
             Image(uiImage: uiImage)
                 .resizable()
                 .scaledToFill()
