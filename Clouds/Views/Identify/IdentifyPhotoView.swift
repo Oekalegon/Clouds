@@ -21,6 +21,7 @@ struct IdentifyPhotoView: View {
     @State private var isShowingLibraryPicker = false
     @State private var selectedLibraryItem: PhotosPickerItem?
     @State private var libraryLoadErrorMessage: String?
+    @State private var isShowingCameraPermissionDeniedAlert = false
 
     var body: some View {
         VStack(spacing: 24) {
@@ -41,7 +42,15 @@ struct IdentifyPhotoView: View {
         .padding()
         .confirmationDialog("Add Photo", isPresented: $isShowingSourceDialog) {
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                Button("Take Photo") { isShowingCamera = true }
+                Button("Take Photo") {
+                    Task {
+                        if await CameraAuthorization.requestAccess() {
+                            isShowingCamera = true
+                        } else {
+                            isShowingCameraPermissionDeniedAlert = true
+                        }
+                    }
+                }
             }
             Button("Choose from Library") { isShowingLibraryPicker = true }
             if photoData != nil {
@@ -83,6 +92,16 @@ struct IdentifyPhotoView: View {
             Button("OK") { libraryLoadErrorMessage = nil }
         } message: {
             Text(libraryLoadErrorMessage ?? "")
+        }
+        .alert("Camera Access Needed", isPresented: $isShowingCameraPermissionDeniedAlert) {
+            Button("Open Settings") {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url)
+                }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Enable camera access in Settings to take a photo of your cloud observation.")
         }
     }
 
