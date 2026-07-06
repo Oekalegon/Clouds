@@ -135,6 +135,32 @@ struct GenusNetworkContentTests {
         #expect(afterNo < prior)
     }
 
+    /// Regression guard for a bug where the calibration's NotApplicable
+    /// ceiling and `IdentificationSession`'s shipped default threshold had
+    /// silently drifted apart: since a node's marginal
+    /// `P(NotApplicable | evidence)` is a probability-weighted average of
+    /// its per-genus CPT values, it can never exceed the highest calibrated
+    /// value (0.85, see `everyQuestionNodeHasANotApplicableState`'s
+    /// neighbors), so a default threshold at or above that ceiling would
+    /// make the skip-question feature inert in production. Uses
+    /// `IdentificationSession.defaultNotApplicableThreshold` itself (not a
+    /// copied literal) so the two can't drift apart again unnoticed.
+    @Test func notApplicableLikelihoodClearsTheShippedDefaultThresholdOnAClearBranch() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+        let evidence: [NodeID: StateID] = [
+            "LightningOrThunder": "No",
+            "BulgingHeapsOrDomes": "No",
+            "UniformLayerNoElements": "Yes"
+        ]
+
+        let notApplicableProbability = try network.posterior(
+            of: "ElementOneToThreeFingers",
+            given: evidence
+        )[QuestionDefinition.notApplicableStateID] ?? 0
+
+        #expect(notApplicableProbability > IdentificationSession.defaultNotApplicableThreshold)
+    }
+
     private func mostLikelyGenus(_ network: BayesianNetwork, given evidence: [NodeID: StateID]) throws -> StateID {
         let posterior = try network.posterior(of: "Genus", given: evidence)
         return try #require(posterior.max(by: { $0.value < $1.value })?.key)
