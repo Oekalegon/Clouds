@@ -13,7 +13,9 @@ struct IdentifyView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var session = IdentificationSession()
     @State private var locationProvider = LocationProvider()
+    @State private var locationTask: Task<LocationProvider.CapturedLocation?, Never>?
     @State private var capturedLocation: LocationProvider.CapturedLocation?
+    @State private var weatherSnapshot: CloudObservation.WeatherSnapshot?
     @State private var photoData: Data?
     @State private var photoDate: Date?
     @State private var isShowingPhotoStep = true
@@ -46,7 +48,15 @@ struct IdentifyView: View {
                     await session.start()
                 }
                 .task {
-                    capturedLocation = await locationProvider.captureCurrentLocation()
+                    let task = Task { await locationProvider.captureCurrentLocation() }
+                    locationTask = task
+                    capturedLocation = await task.value
+                }
+                .task(id: isShowingPhotoStep) {
+                    guard !isShowingPhotoStep, weatherSnapshot == nil else { return }
+                    guard WeatherProvider.isEligible(photoDate: photoDate) else { return }
+                    guard let coordinate = await locationTask?.value?.coordinate else { return }
+                    weatherSnapshot = await WeatherProvider.currentWeather(at: coordinate)
                 }
         }
     }
@@ -88,7 +98,8 @@ struct IdentifyView: View {
             placeName: capturedLocation?.placeName,
             genus: genus.displayName,
             photoData: photoData,
-            thumbnailData: thumbnailData
+            thumbnailData: thumbnailData,
+            weather: weatherSnapshot
         )
         modelContext.insert(observation)
         dismiss()

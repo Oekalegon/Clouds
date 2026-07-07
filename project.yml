@@ -1,6 +1,6 @@
 name: Clouds
 options:
-  bundleIdPrefix: org.oekalegon
+  bundleIdPrefix: no.oekalegon
   deploymentTarget:
     iOS: "26.0"
   createIntermediateGroups: true
@@ -27,7 +27,7 @@ targets:
       - path: Clouds
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: org.oekalegon.Clouds
+        PRODUCT_BUNDLE_IDENTIFIER: no.oekalegon.Clouds
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad: UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
@@ -36,6 +36,7 @@ targets:
         INFOPLIST_KEY_NSCameraUsageDescription: "Clouds uses your camera to take a photo of an observed cloud."
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_ENTITLEMENTS: Clouds/Clouds.entitlements
 
   CloudsTests:
     type: bundle.unit-test
@@ -46,7 +47,7 @@ targets:
       - target: Clouds
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: org.oekalegon.CloudsTests
+        PRODUCT_BUNDLE_IDENTIFIER: no.oekalegon.CloudsTests
         GENERATE_INFOPLIST_FILE: YES
 
   CloudsUITests:
@@ -58,7 +59,7 @@ targets:
       - target: Clouds
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: org.oekalegon.CloudsUITests
+        PRODUCT_BUNDLE_IDENTIFIER: no.oekalegon.CloudsUITests
         GENERATE_INFOPLIST_FILE: YES
 
 schemes:
