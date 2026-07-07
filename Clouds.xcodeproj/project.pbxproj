@@ -92,7 +92,7 @@
 		00322B04CE1C57B1E6452CF4 /* CloudsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		04C2821079C3B8F669B9F86B /* ElementSmallerThanOneFinger.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ElementSmallerThanOneFinger.json; sourceTree = "<group>"; };
 		04F0A63F48F04BFCBF2A6DFC /* PhotoCaptureDateExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDateExtractor.swift; sourceTree = "<group>"; };
-		084698C267707E6D1131D0E9 /* CloudsTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CloudsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		084698C267707E6D1131D0E9 /* CloudsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0A96F0468D5545E8EEAB81 /* Clouds.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clouds.entitlements; sourceTree = "<group>"; };
 		16B54034A604CC69042AE4CE /* DenseWetLowerLayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DenseWetLowerLayer.json; sourceTree = "<group>"; };
 		1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationSessionTests.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		43E26685CF3D07C86D6EC4A1 /* ImageThumbnailerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageThumbnailerTests.swift; sourceTree = "<group>"; };
 		45AC661D16D07796AE4CA18A /* SkyConditionsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyConditionsSummaryView.swift; sourceTree = "<group>"; };
 		46EA4F7C788DB82047969F09 /* BayesianNetworkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkNode.swift; sourceTree = "<group>"; };
-		4BCA3E4178256FE2FE6805FE /* CloudsUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CloudsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BCA3E4178256FE2FE6805FE /* CloudsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D630CD3DE67D860E4971821 /* BayesianNetwork+Inference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BayesianNetwork+Inference.swift"; sourceTree = "<group>"; };
 		4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsUITests.swift; sourceTree = "<group>"; };
 		52716D289115DBB34EDCF4A6 /* CloudObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudObservation.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		7336203359A0D8A3B8E2BF5D /* PhotoOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOrigin.swift; sourceTree = "<group>"; };
 		74FD05B2BA4FA2289FD625D1 /* BulgingHeapsOrDomes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BulgingHeapsOrDomes.json; sourceTree = "<group>"; };
 		76C0B37358FFBD1E01C627FC /* CloudGenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudGenus.swift; sourceTree = "<group>"; };
-		79A7741295E9D52AF5A9C4EB /* Clouds.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Clouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79A7741295E9D52AF5A9C4EB /* Clouds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAAE73F981E1B912FFB38F0 /* BayesianNetworkTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkTypes.swift; sourceTree = "<group>"; };
 		80B7FFCDE3DECEC6C5189C81 /* WeatherProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherProvider.swift; sourceTree = "<group>"; };
 		88B3CF94B4D7936B3B40150A /* HistoryEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntryTests.swift; sourceTree = "<group>"; };
@@ -569,6 +569,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Clouds/Clouds.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = WTT2LZ6DDG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Clouds uses your camera to take a photo of an observed cloud.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Clouds uses your location to record where you observed each cloud.";
@@ -685,6 +686,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Clouds/Clouds.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = WTT2LZ6DDG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Clouds uses your camera to take a photo of an observed cloud.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Clouds uses your location to record where you observed each cloud.";

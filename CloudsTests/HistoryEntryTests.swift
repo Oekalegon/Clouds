@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 import Testing
 @testable import Clouds
 
@@ -42,5 +43,29 @@ struct HistoryEntryTests {
         let conditions = SkyConditions(date: base)
         let entries = HistoryEntry.chronological(skyConditions: [conditions], standaloneObservations: [])
         #expect(entries.count == 1)
+    }
+
+    /// Runs the exact predicate HistoryView's standalone query uses:
+    /// relationship-to-nil predicates are a quirky corner of SwiftData, and
+    /// if this one ever matched linked observations too, history would show
+    /// them twice.
+    @Test func standalonePredicateExcludesSkyLinkedObservations() throws {
+        let container = try ModelContainer(
+            for: CloudObservation.self, SkyConditions.self,
+            configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+        )
+        let context = ModelContext(container)
+        let conditions = SkyConditions()
+        context.insert(conditions)
+        context.insert(CloudObservation(genus: "Cumulus", skyConditions: conditions))
+        context.insert(CloudObservation(genus: "Cirrus"))
+        try context.save()
+
+        let standalone = try context.fetch(
+            FetchDescriptor(predicate: CloudObservation.standalonePredicate)
+        )
+
+        #expect(standalone.count == 1)
+        #expect(standalone.first?.genus == "Cirrus")
     }
 }

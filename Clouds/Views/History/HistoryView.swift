@@ -14,7 +14,7 @@ struct HistoryView: View {
     private var skyConditions: [SkyConditions]
     /// Only observations without a sky condition appear as standalone
     /// entries; the others render inside their sky condition's section.
-    @Query(filter: #Predicate<CloudObservation> { $0.skyConditions == nil }, sort: \CloudObservation.date, order: .reverse)
+    @Query(filter: CloudObservation.standalonePredicate, sort: \CloudObservation.date, order: .reverse)
     private var standaloneObservations: [CloudObservation]
     @State private var isPresentingIdentify = false
 

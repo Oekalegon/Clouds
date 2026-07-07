@@ -51,4 +51,12 @@ final class CloudObservation {
         self.thumbnailData = thumbnailData
         self.skyConditions = skyConditions
     }
+
+    /// Matches observations not linked to any sky condition, e.g. those
+    /// identified from an old library photo. Shared between the history
+    /// feed's query and its tests, so the tested predicate is the one the
+    /// view actually runs.
+    static var standalonePredicate: Predicate<CloudObservation> {
+        #Predicate { $0.skyConditions == nil }
+    }
 }
