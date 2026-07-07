@@ -20,7 +20,7 @@ final class IdentificationSession {
     }
 
     private static let targetNodeID: NodeID = "Genus"
-    private static let logger = Logger(subsystem: "org.oekalegon.Clouds", category: "Identification")
+    private static let logger = Logger(subsystem: "no.oekalegon.Clouds", category: "Identification")
 
     /// Below the genus-network content's calibrated ceiling for a highly
     /// non-applicable question (0.85 — see `GenusNetworkContentTests`):

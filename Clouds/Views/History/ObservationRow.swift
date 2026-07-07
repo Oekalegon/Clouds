@@ -26,6 +26,11 @@ struct ObservationRow: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
+                if let weather = observation.weather {
+                    Text("\(Int(weather.temperatureCelsius.rounded()))°C, \(weather.condition)")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
         }
     }

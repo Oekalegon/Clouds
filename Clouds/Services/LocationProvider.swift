@@ -20,7 +20,7 @@ final class LocationProvider: NSObject {
         let placeName: String?
     }
 
-    nonisolated private static let logger = Logger(subsystem: "org.oekalegon.Clouds", category: "Location")
+    nonisolated private static let logger = Logger(subsystem: "no.oekalegon.Clouds", category: "Location")
 
     private let manager = CLLocationManager()
     private var authorizationContinuation: CheckedContinuation<Bool, Never>?
