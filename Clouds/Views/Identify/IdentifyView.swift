@@ -161,11 +161,15 @@ struct IdentifyView: View {
         let thumbnailData = photoData.flatMap {
             ImageThumbnailer.downsampledJPEGData(from: $0, maxPixelSize: 300)
         }
+        // A library photo may have been taken far from where the user is
+        // now, so today's location would be confidently wrong — leave it
+        // off. The photo's own EXIF GPS is the honest source (CLD-13).
+        let location = photoOrigin == .library ? nil : capturedLocation
         let observation = CloudObservation(
             date: photoDate ?? .now,
-            latitude: capturedLocation?.coordinate.latitude,
-            longitude: capturedLocation?.coordinate.longitude,
-            placeName: capturedLocation?.placeName,
+            latitude: location?.coordinate.latitude,
+            longitude: location?.coordinate.longitude,
+            placeName: location?.placeName,
             genus: genus.displayName,
             photoData: photoData,
             thumbnailData: thumbnailData
