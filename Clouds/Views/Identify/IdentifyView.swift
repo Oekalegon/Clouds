@@ -20,11 +20,12 @@ struct IdentifyView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var session = IdentificationSession()
     @State private var locationProvider = LocationProvider()
-    @State private var locationTask: Task<LocationProvider.CapturedLocation?, Never>?
-    @State private var capturedLocation: LocationProvider.CapturedLocation?
+    @State private var locationTask: Task<CapturedLocation?, Never>?
+    @State private var capturedLocation: CapturedLocation?
     @State private var weatherSnapshot: SkyConditions.WeatherSnapshot?
     @State private var photoData: Data?
     @State private var photoDate: Date?
+    @State private var photoLocation: CapturedLocation?
     @State private var photoOrigin: PhotoOrigin = .none
     @State private var step: Step = .photo
     @State private var cloudCoverEighths = 0
@@ -97,6 +98,7 @@ struct IdentifyView: View {
             IdentifyPhotoView(
                 photoData: $photoData,
                 photoDate: $photoDate,
+                photoLocation: $photoLocation,
                 photoOrigin: $photoOrigin,
                 allowsLibrary: savedSkyConditions == nil,
                 onStart: {
@@ -171,9 +173,9 @@ struct IdentifyView: View {
             ImageThumbnailer.downsampledJPEGData(from: $0, maxPixelSize: 300)
         }
         // A library photo may have been taken far from where the user is
-        // now, so today's location would be confidently wrong — leave it
-        // off. The photo's own EXIF GPS is the honest source (CLD-13).
-        let location = photoOrigin == .library ? nil : capturedLocation
+        // now, so today's location would be confidently wrong — its own
+        // EXIF GPS (or nothing) is the honest source.
+        let location = photoOrigin == .library ? photoLocation : capturedLocation
         let observation = CloudObservation(
             date: photoDate ?? .now,
             latitude: location?.coordinate.latitude,
@@ -214,6 +216,7 @@ struct IdentifyView: View {
     private func startNextIdentification() {
         photoData = nil
         photoDate = nil
+        photoLocation = nil
         photoOrigin = .none
         step = .photo
         let nextSession = IdentificationSession()
