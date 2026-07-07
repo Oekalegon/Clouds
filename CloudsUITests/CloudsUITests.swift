@@ -77,6 +77,10 @@ final class CloudsUITests: XCTestCase {
         dial.coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.5)).tap()
         XCTAssertTrue(app.staticTexts["2/8"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Few clouds"].exists)
+
+        // A stray tap in the middle (on the value label) must not move it.
+        dial.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        XCTAssertTrue(app.staticTexts["2/8"].exists)
     }
 
     @MainActor

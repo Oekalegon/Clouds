@@ -53,6 +53,26 @@ struct CloudCoverDialTests {
         #expect(CloudCoverDialGeometry.eighths(forFraction: 0.99, previous: 1) == 0)
     }
 
+    @Test func touchOnRingIsAccepted() {
+        // Dial of radius 100: the outer edge and just inside the tolerance
+        // band both count as the ring.
+        #expect(CloudCoverDialGeometry.isOnRing(
+            CGPoint(x: 200, y: 100), center: center, radius: 100, tolerance: 39
+        ))
+        #expect(CloudCoverDialGeometry.isOnRing(
+            CGPoint(x: 100, y: 38), center: center, radius: 100, tolerance: 39
+        ))
+    }
+
+    @Test func touchInCentreIsRejected() {
+        #expect(!CloudCoverDialGeometry.isOnRing(
+            CGPoint(x: 100, y: 100), center: center, radius: 100, tolerance: 39
+        ))
+        #expect(!CloudCoverDialGeometry.isOnRing(
+            CGPoint(x: 130, y: 120), center: center, radius: 100, tolerance: 39
+        ))
+    }
+
     @Test func normalDragMovesFreely() {
         #expect(CloudCoverDialGeometry.eighths(forFraction: 0.5, previous: 2) == 4)
         #expect(CloudCoverDialGeometry.eighths(forFraction: 0.25, previous: 6) == 2)

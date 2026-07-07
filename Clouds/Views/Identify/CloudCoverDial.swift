@@ -25,6 +25,15 @@ enum CloudCoverDialGeometry {
         return fraction < 0 ? fraction + 1 : fraction
     }
 
+    /// Whether a touch lands on the ring itself rather than the dial's
+    /// centre. Touches in the middle (on the value label) are ignored, so a
+    /// stray tap can't jump the recorded value — near the centre a couple
+    /// of points of movement would swing the angle wildly.
+    static func isOnRing(_ location: CGPoint, center: CGPoint, radius: CGFloat, tolerance: CGFloat) -> Bool {
+        let distance = hypot(location.x - center.x, location.y - center.y)
+        return distance >= radius - tolerance
+    }
+
     /// Snaps a turn fraction to whole eighths. Both 0/8 and 8/8 sit at
     /// 12 o'clock, so a drag crossing the top would jump between them;
     /// when the snapped value is more than half the dial away from the
@@ -101,6 +110,14 @@ struct CloudCoverDial: View {
         DragGesture(minimumDistance: 0)
             .onChanged { value in
                 let center = CGPoint(x: diameter / 2, y: diameter / 2)
+                // Judged from the drag's start so a drag that began on the
+                // ring stays alive if the finger strays inward.
+                guard CloudCoverDialGeometry.isOnRing(
+                    value.startLocation,
+                    center: center,
+                    radius: diameter / 2,
+                    tolerance: lineWidth * 1.5
+                ) else { return }
                 let fraction = CloudCoverDialGeometry.fraction(for: value.location, center: center)
                 eighths = CloudCoverDialGeometry.eighths(forFraction: fraction, previous: eighths)
             }
