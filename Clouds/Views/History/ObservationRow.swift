@@ -26,13 +26,27 @@ struct ObservationRow: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
-                if let weather = observation.weather {
-                    Text("\(Int(weather.temperatureCelsius.rounded()))°C, \(weather.condition)")
+                if let skyLine {
+                    Text(skyLine)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
             }
         }
+    }
+
+    /// One line summarising the sky the cloud was seen in, e.g.
+    /// "3/8 cover · 21°C, Partly cloudy" — whichever parts were recorded.
+    private var skyLine: String? {
+        guard let skyConditions = observation.skyConditions else { return nil }
+        var parts: [String] = []
+        if let cover = skyConditions.cloudCoverDescription {
+            parts.append(skyConditions.isSkyObscured ? cover : String(localized: "\(cover) cover"))
+        }
+        if let weather = skyConditions.weather {
+            parts.append("\(Int(weather.temperatureCelsius.rounded()))°C, \(weather.condition)")
+        }
+        return parts.isEmpty ? nil : parts.joined(separator: " · ")
     }
 
     @ViewBuilder

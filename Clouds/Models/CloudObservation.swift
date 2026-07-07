@@ -10,30 +10,6 @@ import SwiftData
 
 @Model
 final class CloudObservation {
-    /// Conditions at the time of observation, from WeatherKit. Stored as a
-    /// single `Codable` property (SwiftData persists these natively) rather
-    /// than flattened scalar fields, since it carries everything
-    /// `CurrentWeather` exposes.
-    struct WeatherSnapshot: Codable {
-        var date: Date
-        var temperatureCelsius: Double
-        var apparentTemperatureCelsius: Double
-        var humidity: Double
-        var dewPointCelsius: Double
-        var pressureHectopascals: Double
-        var pressureTrend: String
-        var cloudCover: Double
-        var visibilityMeters: Double
-        var uvIndex: Int
-        var isDaylight: Bool
-        var condition: String
-        var symbolName: String
-        var windSpeedKph: Double
-        var windGustKph: Double?
-        var windDirectionDegrees: Double
-        var windCompassDirection: String
-    }
-
     var date: Date
     var latitude: Double?
     var longitude: Double?
@@ -44,7 +20,11 @@ final class CloudObservation {
     var specialFeature: String?
     @Attribute(.externalStorage) var photoData: Data?
     var thumbnailData: Data?
-    var weather: WeatherSnapshot?
+    /// The sky-wide conditions (cloud cover, weather) this observation was
+    /// made under; shared between observations when several cloud types are
+    /// identified at the same time. Inverse is declared on
+    /// `SkyConditions.observations`.
+    var skyConditions: SkyConditions?
 
     init(
         date: Date = .now,
@@ -57,7 +37,7 @@ final class CloudObservation {
         specialFeature: String? = nil,
         photoData: Data? = nil,
         thumbnailData: Data? = nil,
-        weather: WeatherSnapshot? = nil
+        skyConditions: SkyConditions? = nil
     ) {
         self.date = date
         self.latitude = latitude
@@ -69,7 +49,7 @@ final class CloudObservation {
         self.specialFeature = specialFeature
         self.photoData = photoData
         self.thumbnailData = thumbnailData
-        self.weather = weather
+        self.skyConditions = skyConditions
     }
 
     static func sectionKey(for date: Date, calendar: Calendar = .current) -> Date {

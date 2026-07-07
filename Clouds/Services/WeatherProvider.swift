@@ -23,11 +23,11 @@ enum WeatherProvider {
 
     /// Returns `nil` on any failure, since a failed weather lookup should
     /// never block saving an observation — mirrors `LocationProvider`.
-    static func currentWeather(at coordinate: CLLocationCoordinate2D) async -> CloudObservation.WeatherSnapshot? {
+    static func currentWeather(at coordinate: CLLocationCoordinate2D) async -> SkyConditions.WeatherSnapshot? {
         let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         do {
             let current = try await WeatherService.shared.weather(for: location, including: .current)
-            return CloudObservation.WeatherSnapshot(current)
+            return SkyConditions.WeatherSnapshot(current)
         } catch {
             logger.error("Weather lookup failed: \(error.localizedDescription, privacy: .public)")
             return nil
@@ -43,7 +43,7 @@ enum WeatherProvider {
     }
 }
 
-private extension CloudObservation.WeatherSnapshot {
+private extension SkyConditions.WeatherSnapshot {
     init(_ current: CurrentWeather) {
         self.init(
             date: current.date,
