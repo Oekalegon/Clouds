@@ -62,17 +62,8 @@ struct IdentifySkyConditionsView: View {
     @ViewBuilder
     private var weatherSummary: some View {
         if let weather {
-            VStack(spacing: 4) {
-                Label(
-                    "\(Int(weather.temperatureCelsius.rounded()))°C, \(weather.condition)",
-                    systemImage: weather.symbolName
-                )
-                .font(.subheadline)
-                Text("\(Int(weather.pressureHectopascals.rounded())) hPa · \(Int((weather.humidity * 100).rounded()))% humidity")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-            .transition(.opacity)
+            WeatherSummaryView(weather: weather)
+                .transition(.opacity)
         }
     }
 }

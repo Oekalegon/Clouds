@@ -26,6 +26,28 @@ struct SkyConditionsTests {
         #expect(conditions.cloudCoverDescription == "Sky obscured")
     }
 
+    @Test func summaryLineIsNilWhenNothingRecorded() {
+        #expect(SkyConditions().summaryLine == nil)
+    }
+
+    @Test func summaryLineShowsCoverAlone() {
+        #expect(SkyConditions(cloudCoverEighths: 3).summaryLine == "3/8 cover")
+    }
+
+    @Test func summaryLineShowsObscuredWithoutCoverSuffix() {
+        #expect(SkyConditions(isSkyObscured: true).summaryLine == "Sky obscured")
+    }
+
+    @Test func summaryLineJoinsCoverAndWeather() {
+        let conditions = SkyConditions(cloudCoverEighths: 5, weather: makeWeather(temperatureCelsius: 20.7, condition: "Partly Cloudy"))
+        #expect(conditions.summaryLine == "5/8 cover · 21°C, Partly Cloudy")
+    }
+
+    @Test func summaryLineShowsWeatherAlone() {
+        let conditions = SkyConditions(weather: makeWeather(temperatureCelsius: 4.2, condition: "Rain"))
+        #expect(conditions.summaryLine == "4°C, Rain")
+    }
+
     @Test func coverNamesFollowOktaBuckets() {
         #expect(SkyConditions.coverName(forEighths: 0) == "Clear")
         #expect(SkyConditions.coverName(forEighths: 1) == "Few clouds")
@@ -65,6 +87,28 @@ struct SkyConditionsTests {
 
         #expect(observation.skyConditions == nil)
         #expect(observation.genus == "Stratus")
+    }
+
+    private func makeWeather(temperatureCelsius: Double, condition: String) -> SkyConditions.WeatherSnapshot {
+        SkyConditions.WeatherSnapshot(
+            date: .now,
+            temperatureCelsius: temperatureCelsius,
+            apparentTemperatureCelsius: temperatureCelsius,
+            humidity: 0.5,
+            dewPointCelsius: 10,
+            pressureHectopascals: 1013,
+            pressureTrend: "steady",
+            cloudCover: 0.5,
+            visibilityMeters: 10_000,
+            uvIndex: 3,
+            isDaylight: true,
+            condition: condition,
+            symbolName: "cloud",
+            windSpeedKph: 10,
+            windGustKph: nil,
+            windDirectionDegrees: 180,
+            windCompassDirection: "south"
+        )
     }
 
     private func makeInMemoryContext() throws -> ModelContext {

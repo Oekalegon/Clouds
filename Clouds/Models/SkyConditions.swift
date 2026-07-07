@@ -61,6 +61,20 @@ final class SkyConditions {
         self.weather = weather
     }
 
+    /// One line summarising these conditions for lists, e.g.
+    /// "3/8 cover · 21°C, Partly Cloudy" — whichever parts were recorded;
+    /// `nil` when there is nothing to show.
+    var summaryLine: String? {
+        var parts: [String] = []
+        if let cover = cloudCoverDescription {
+            parts.append(isSkyObscured ? cover : String(localized: "\(cover) cover"))
+        }
+        if let weather {
+            parts.append("\(Int(weather.temperatureCelsius.rounded()))°C, \(weather.condition)")
+        }
+        return parts.isEmpty ? nil : parts.joined(separator: " · ")
+    }
+
     /// User-facing summary of the recorded cover, e.g. "3/8" or
     /// "Sky obscured"; `nil` when nothing was recorded.
     var cloudCoverDescription: String? {

@@ -51,18 +51,4 @@ final class CloudObservation {
         self.thumbnailData = thumbnailData
         self.skyConditions = skyConditions
     }
-
-    static func sectionKey(for date: Date, calendar: Calendar = .current) -> Date {
-        calendar.startOfDay(for: date)
-    }
-
-    static func grouped(
-        _ observations: [CloudObservation],
-        calendar: Calendar = .current
-    ) -> [(day: Date, items: [CloudObservation])] {
-        let grouped = Dictionary(grouping: observations) { sectionKey(for: $0.date, calendar: calendar) }
-        return grouped
-            .sorted { $0.key > $1.key }
-            .map { (day: $0.key, items: $0.value) }
-    }
 }

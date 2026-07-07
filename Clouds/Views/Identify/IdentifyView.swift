@@ -10,25 +10,29 @@ import SwiftData
 
 struct IdentifyView: View {
     private enum Step {
-        case skyConditions
         case photo
+        case skyConditions
         case questions
+        case summary
     }
 
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @State private var session = IdentificationSession()
     @State private var locationProvider = LocationProvider()
+    @State private var locationTask: Task<LocationProvider.CapturedLocation?, Never>?
     @State private var capturedLocation: LocationProvider.CapturedLocation?
     @State private var weatherSnapshot: SkyConditions.WeatherSnapshot?
     @State private var photoData: Data?
     @State private var photoDate: Date?
-    @State private var step: Step = .skyConditions
+    @State private var photoOrigin: PhotoOrigin = .none
+    @State private var step: Step = .photo
     @State private var cloudCoverEighths = 0
     @State private var isSkyObscured = false
     /// The sky conditions saved with the first observation of this session,
     /// reused when the user identifies further clouds present in the same
-    /// sky.
+    /// sky. Stays `nil` for library-photo sessions, whose observations are
+    /// saved standalone.
     @State private var savedSkyConditions: SkyConditions?
 
     var body: some View {
@@ -59,14 +63,22 @@ struct IdentifyView: View {
                     await session.start()
                 }
                 .task {
-                    // The flow opens on the sky-conditions step, so this is
-                    // always an in-the-moment observation: fetch location and
-                    // then current weather straight away, so the conditions
-                    // can appear on the sky screen while the user dials in
-                    // the cover.
-                    capturedLocation = await locationProvider.captureCurrentLocation()
-                    if let coordinate = capturedLocation?.coordinate {
-                        weatherSnapshot = await WeatherProvider.currentWeather(at: coordinate)
+                    let task = Task { await locationProvider.captureCurrentLocation() }
+                    locationTask = task
+                    capturedLocation = await task.value
+                }
+                .task(id: step) {
+                    // Weather belongs to sky conditions, so it's only worth
+                    // fetching for an in-the-moment session — a library
+                    // photo's sky may be long gone. Fires once the photo
+                    // step is left, when the origin is known.
+                    guard step != .photo, photoOrigin != .library, weatherSnapshot == nil else { return }
+                    guard let coordinate = await locationTask?.value?.coordinate else { return }
+                    weatherSnapshot = await WeatherProvider.currentWeather(at: coordinate)
+                    // The fetch races the user through the flow: fill in
+                    // sky conditions that were already saved without it.
+                    if let savedSkyConditions, savedSkyConditions.weather == nil {
+                        savedSkyConditions.weather = weatherSnapshot
                     }
                 }
         }
@@ -75,17 +87,40 @@ struct IdentifyView: View {
     @ViewBuilder
     private var content: some View {
         switch step {
+        case .photo:
+            IdentifyPhotoView(
+                photoData: $photoData,
+                photoDate: $photoDate,
+                photoOrigin: $photoOrigin,
+                allowsLibrary: savedSkyConditions == nil,
+                onStart: {
+                    // Library photos skip the sky-conditions step entirely;
+                    // in-session additions skip it because the cover was
+                    // already recorded.
+                    if photoOrigin == .library || savedSkyConditions != nil {
+                        step = .questions
+                    } else {
+                        step = .skyConditions
+                    }
+                }
+            )
         case .skyConditions:
             IdentifySkyConditionsView(
                 cloudCoverEighths: $cloudCoverEighths,
                 isSkyObscured: $isSkyObscured,
                 weather: weatherSnapshot,
-                onContinue: { step = .photo }
+                onContinue: { step = .questions }
             )
-        case .photo:
-            IdentifyPhotoView(photoData: $photoData, photoDate: $photoDate, onStart: { step = .questions })
         case .questions:
             questionContent
+        case .summary:
+            if let savedSkyConditions {
+                SkyConditionsSummaryView(
+                    skyConditions: savedSkyConditions,
+                    onAddObservation: startNextIdentification,
+                    onDone: { dismiss() }
+                )
+            }
         }
     }
 
@@ -99,11 +134,13 @@ struct IdentifyView: View {
                 confidence: session.posterior.values.max() ?? 0,
                 onSave: {
                     save()
-                    dismiss()
-                },
-                onSaveAndAddAnother: {
-                    save()
-                    startNextIdentification()
+                    // A standalone library observation has no sky-condition
+                    // session to return to.
+                    if photoOrigin == .library {
+                        dismiss()
+                    } else {
+                        step = .summary
+                    }
                 }
             )
         } else if let question = session.currentQuestion() {
@@ -121,14 +158,6 @@ struct IdentifyView: View {
 
     private func save() {
         guard let genus = session.mostLikelyGenus.flatMap(CloudGenus.init) else { return }
-        let skyConditions = savedSkyConditions ?? makeSkyConditions()
-        savedSkyConditions = skyConditions
-        // The fetch races the user through the flow, so a snapshot that
-        // arrived after the sky conditions were first saved is filled in
-        // here.
-        if skyConditions.weather == nil {
-            skyConditions.weather = weatherSnapshot
-        }
         let thumbnailData = photoData.flatMap {
             ImageThumbnailer.downsampledJPEGData(from: $0, maxPixelSize: 300)
         }
@@ -139,9 +168,19 @@ struct IdentifyView: View {
             placeName: capturedLocation?.placeName,
             genus: genus.displayName,
             photoData: photoData,
-            thumbnailData: thumbnailData,
-            skyConditions: skyConditions
+            thumbnailData: thumbnailData
         )
+        // A library photo may show a sky from any time in the past, so its
+        // observation stays standalone; everything else joins this
+        // session's sky conditions.
+        if photoOrigin != .library {
+            let skyConditions = savedSkyConditions ?? makeSkyConditions()
+            savedSkyConditions = skyConditions
+            if skyConditions.weather == nil {
+                skyConditions.weather = weatherSnapshot
+            }
+            observation.skyConditions = skyConditions
+        }
         modelContext.insert(observation)
     }
 
@@ -155,12 +194,13 @@ struct IdentifyView: View {
         return skyConditions
     }
 
-    /// Loops back to the photo step for another cloud in the same sky:
-    /// fresh photo and Q&A, but the sky-conditions step is skipped since
-    /// the cover was already recorded for this session.
+    /// Loops back to the photo step for another observation in the same
+    /// sky: fresh photo and Q&A, but the sky-conditions step is skipped
+    /// since the cover was already recorded for this session.
     private func startNextIdentification() {
         photoData = nil
         photoDate = nil
+        photoOrigin = .none
         step = .photo
         let nextSession = IdentificationSession()
         session = nextSession

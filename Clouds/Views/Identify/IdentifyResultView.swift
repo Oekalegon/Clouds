@@ -11,9 +11,6 @@ struct IdentifyResultView: View {
     let genus: CloudGenus?
     let confidence: Double
     let onSave: () -> Void
-    /// Saves this observation and starts identifying another cloud present
-    /// in the same sky, sharing the already-recorded sky conditions.
-    let onSaveAndAddAnother: () -> Void
 
     var body: some View {
         VStack(spacing: 16) {
@@ -36,17 +33,11 @@ struct IdentifyResultView: View {
             }
             .buttonStyle(.borderedProminent)
             .disabled(genus == nil)
-
-            Button("Save & Identify Another Cloud") {
-                onSaveAndAddAnother()
-            }
-            .buttonStyle(.bordered)
-            .disabled(genus == nil)
         }
         .padding()
     }
 }
 
 #Preview {
-    IdentifyResultView(genus: .cumulonimbus, confidence: 0.92, onSave: {}, onSaveAndAddAnother: {})
+    IdentifyResultView(genus: .cumulonimbus, confidence: 0.92, onSave: {})
 }
