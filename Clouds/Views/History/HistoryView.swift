@@ -10,11 +10,19 @@ import SwiftData
 
 struct HistoryView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \CloudObservation.date, order: .reverse) private var observations: [CloudObservation]
+    @Query(sort: \SkyConditions.date, order: .reverse)
+    private var skyConditions: [SkyConditions]
+    /// Only observations without a sky condition appear as standalone
+    /// entries; the others render inside their sky condition's section.
+    @Query(filter: CloudObservation.standalonePredicate, sort: \CloudObservation.date, order: .reverse)
+    private var standaloneObservations: [CloudObservation]
     @State private var isPresentingIdentify = false
 
-    private var sections: [(day: Date, items: [CloudObservation])] {
-        CloudObservation.grouped(observations)
+    private var entries: [HistoryEntry] {
+        HistoryEntry.chronological(
+            skyConditions: skyConditions,
+            standaloneObservations: standaloneObservations
+        )
     }
 
     var body: some View {
@@ -36,7 +44,7 @@ struct HistoryView: View {
 
     @ViewBuilder
     private var content: some View {
-        if observations.isEmpty {
+        if entries.isEmpty {
             ContentUnavailableView(
                 "No Observations Yet",
                 systemImage: "cloud",
@@ -44,16 +52,39 @@ struct HistoryView: View {
             )
         } else {
             List {
-                ForEach(sections, id: \.day) { section in
-                    Section {
-                        ForEach(section.items) { observation in
-                            ObservationRow(observation: observation)
-                        }
-                    } header: {
-                        Text(section.day, format: .dateTime.day().month().year())
+                ForEach(entries) { entry in
+                    switch entry {
+                    case .skyConditions(let skyConditions):
+                        skyConditionsSection(skyConditions)
+                    case .observation(let observation):
+                        standaloneSection(observation)
                     }
                 }
             }
+        }
+    }
+
+    private func skyConditionsSection(_ skyConditions: SkyConditions) -> some View {
+        Section {
+            ForEach(skyConditions.observationsByDate) { observation in
+                ObservationRow(observation: observation)
+            }
+        } header: {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(skyConditions.date, format: .dateTime.day().month().year().hour().minute())
+                if let summaryLine = skyConditions.summaryLine {
+                    Text(summaryLine)
+                        .textCase(nil)
+                }
+            }
+        }
+    }
+
+    private func standaloneSection(_ observation: CloudObservation) -> some View {
+        Section {
+            ObservationRow(observation: observation)
+        } header: {
+            Text(observation.date, format: .dateTime.day().month().year().hour().minute())
         }
     }
 }

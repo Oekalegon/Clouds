@@ -18,15 +18,18 @@
 		15FE3F137E95A4B53059FCDF /* IdentifyQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35235DD1F40B6E2B2D31A3F3 /* IdentifyQuestionView.swift */; };
 		1910CE03337AEFD3EAC76BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03FD643277470D745D53F47 /* Assets.xcassets */; };
 		1DA43621059DD691264D30D8 /* CloudsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */; };
+		1E9E7D26EDD33F3DC225AD08 /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D173CD5EEACD898327D42A5 /* HistoryEntry.swift */; };
 		2A14A98B68C2CE9FEE2E0A51 /* PhotoCaptureDateExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A8E76F0F00A121475B5DF /* PhotoCaptureDateExtractorTests.swift */; };
 		2BEEF198249F7F93FA58B04D /* IdentificationSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */; };
 		32E05F7EFBE924C335502760 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91AC6FC8F5E11FD2D976B7 /* LocationProvider.swift */; };
 		355CEEFA412E978237F8CCBB /* WeatherProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7FFCDE3DECEC6C5189C81 /* WeatherProvider.swift */; };
 		37F0B8760E07F1A29279E224 /* CameraCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F82A8AB3F7FA9A527959241 /* CameraCaptureView.swift */; };
 		3BA80C2923281AFD2335F2BB /* CameraAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239FDE89ADF1DE98BF1E059C /* CameraAuthorization.swift */; };
+		41CF4589C1F3410E0AAB7190 /* IdentifySkyConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC054878F271CD8B53CCD0DC /* IdentifySkyConditionsView.swift */; };
 		4205DC43D0AF16F6FEBDDF6F /* ConditionalProbabilityTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A702925077EDF186478E73B /* ConditionalProbabilityTable.swift */; };
 		435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */; };
 		4867F34167C9CEDE855BFA4E /* PhotoCaptureDateExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0A63F48F04BFCBF2A6DFC /* PhotoCaptureDateExtractor.swift */; };
+		4961F241FB3FD94E6B541E4D /* CloudCoverDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438944F91B6DCEC460C6934 /* CloudCoverDial.swift */; };
 		4A4FCBFA40AC20AF26317727 /* ElementSmallerThanOneFinger.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C2821079C3B8F669B9F86B /* ElementSmallerThanOneFinger.json */; };
 		4D0EABE766627635FAC8555E /* QuestionDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB130AAEDCEC9C6D151ACD /* QuestionDefinition.swift */; };
 		4D7ABE83BA7335AB697327BC /* BayesianNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8B734E98C54B34061208E /* BayesianNetworkTests.swift */; };
@@ -35,12 +38,12 @@
 		5E5B67C470292F15A3664C16 /* IdentifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6723EF65DA1BBEB49FABC321 /* IdentifyView.swift */; };
 		61939F7505ADCA08D5229DA4 /* WhiteWispyFibres.json in Resources */ = {isa = PBXBuildFile; fileRef = 672A070EF3B0822E0BC0B09E /* WhiteWispyFibres.json */; };
 		6573685E3EABCBAB09576A27 /* BayesianNetworkFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9143FD4EBE882E8F881C48 /* BayesianNetworkFileTests.swift */; };
-		699E307DCB022E547E9C0D8C /* WeatherProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD794AB609E15F9DDD839E /* WeatherProviderTests.swift */; };
 		6C428D2FB3E9E848886F9DDB /* UniformLayerNoElements.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A2DF7AA241887CD58513687 /* UniformLayerNoElements.json */; };
 		7A8EA0F72266141ED7247035 /* ImageThumbnailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C5E80A89C3E64CD74B306 /* ImageThumbnailer.swift */; };
 		85A2AF714D075CEA973D3FF5 /* BayesianNetworkFileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF83FDE6FE19C308F55C1551 /* BayesianNetworkFileNode.swift */; };
 		8D341620A9368821BA5B6571 /* CloudsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E36FBD2E4069F00893290 /* CloudsTests.swift */; };
 		97CCA870806DC21020A05EC6 /* SunOrMoonBrightPatch.json in Resources */ = {isa = PBXBuildFile; fileRef = CE320D13DD2209A18A8D3ECD /* SunOrMoonBrightPatch.json */; };
+		9EB55AE6DFCDC212052AB13A /* SkyConditionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E23939C94B8B42F6C23D7 /* SkyConditionsTests.swift */; };
 		A02F59C811B21E1407D8F250 /* SchemaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358E1EBEDC2898244A3031C /* SchemaError.swift */; };
 		A05ABE4A05FD862997F5F79C /* BulgingHeapsOrDomes.json in Resources */ = {isa = PBXBuildFile; fileRef = 74FD05B2BA4FA2289FD625D1 /* BulgingHeapsOrDomes.json */; };
 		A6FED8BE84B75700F03448FD /* ElevatedGreySheet.json in Resources */ = {isa = PBXBuildFile; fileRef = FB1315337268972F0CEAF892 /* ElevatedGreySheet.json */; };
@@ -49,6 +52,7 @@
 		B7674EEBC6079942D18D0325 /* BayesianNetwork+Inference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D630CD3DE67D860E4971821 /* BayesianNetwork+Inference.swift */; };
 		B7C92C201A566730D7AAA36A /* QuestionDefinitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */; };
 		C11624CE051975D66084F9D1 /* CloudGenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C0B37358FFBD1E01C627FC /* CloudGenus.swift */; };
+		C4FECE0CFED005FB4985E646 /* WeatherSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF2D4EA2CCA5CD2F1CC921 /* WeatherSummaryView.swift */; };
 		C7AB1D674BE124DCC73B4FB2 /* BayesianNetworkFileCPTRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB107D714889A4D4378AC2 /* BayesianNetworkFileCPTRow.swift */; };
 		C9F7FA330DE4BBE876847066 /* IdentifyResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101201FF2D5D81A7BADBA9B /* IdentifyResultView.swift */; };
 		CF1277D20E19AEFF91B64B05 /* ElementOneToThreeFingers.json in Resources */ = {isa = PBXBuildFile; fileRef = EB12330E34D9AE1B1CC3B75E /* ElementOneToThreeFingers.json */; };
@@ -58,8 +62,13 @@
 		DA04EA594D465962F3AC99AD /* BayesianNetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAE73F981E1B912FFB38F0 /* BayesianNetworkTypes.swift */; };
 		DA2F47AF2D6C218AC5441FAF /* BayesianNetworkFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E702BF2101569DA4774C95AF /* BayesianNetworkFile.swift */; };
 		E3CADD68F04D3A632C6B83CD /* BayesianNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22913B2E238E33E6A578D0FC /* BayesianNetwork.swift */; };
+		EAB04F55912F2AD7890626F7 /* CloudCoverDialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208874B36C713B6FF267BAFA /* CloudCoverDialTests.swift */; };
 		EB20768A9A9CF2CA20F9E1FA /* IdentifyPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BE934C340B633C51357138 /* IdentifyPhotoView.swift */; };
+		EBB74A52309FFD490D78D65E /* SkyConditionsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC661D16D07796AE4CA18A /* SkyConditionsSummaryView.swift */; };
+		F01FA4F30CB44E03DFF2B0CE /* SkyConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B4B5ADFC1B45A6E53989BA /* SkyConditions.swift */; };
 		F40B5B3B6439819B78BFF2D3 /* genus-network.json in Resources */ = {isa = PBXBuildFile; fileRef = F0C3A25C83679D0EAFE9D653 /* genus-network.json */; };
+		F8990189EF5269D8146FE379 /* HistoryEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B3CF94B4D7936B3B40150A /* HistoryEntryTests.swift */; };
+		FAFE19F7B982005E7730CDE8 /* PhotoOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7336203359A0D8A3B8E2BF5D /* PhotoOrigin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,19 +92,22 @@
 		00322B04CE1C57B1E6452CF4 /* CloudsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		04C2821079C3B8F669B9F86B /* ElementSmallerThanOneFinger.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ElementSmallerThanOneFinger.json; sourceTree = "<group>"; };
 		04F0A63F48F04BFCBF2A6DFC /* PhotoCaptureDateExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDateExtractor.swift; sourceTree = "<group>"; };
-		084698C267707E6D1131D0E9 /* CloudsTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CloudsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		084698C267707E6D1131D0E9 /* CloudsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0A96F0468D5545E8EEAB81 /* Clouds.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clouds.entitlements; sourceTree = "<group>"; };
 		16B54034A604CC69042AE4CE /* DenseWetLowerLayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DenseWetLowerLayer.json; sourceTree = "<group>"; };
 		1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationSessionTests.swift; sourceTree = "<group>"; };
 		1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationRow.swift; sourceTree = "<group>"; };
+		208874B36C713B6FF267BAFA /* CloudCoverDialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudCoverDialTests.swift; sourceTree = "<group>"; };
 		22913B2E238E33E6A578D0FC /* BayesianNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetwork.swift; sourceTree = "<group>"; };
 		239FDE89ADF1DE98BF1E059C /* CameraAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAuthorization.swift; sourceTree = "<group>"; };
 		32F8B734E98C54B34061208E /* BayesianNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkTests.swift; sourceTree = "<group>"; };
 		35235DD1F40B6E2B2D31A3F3 /* IdentifyQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyQuestionView.swift; sourceTree = "<group>"; };
 		3A2DF7AA241887CD58513687 /* UniformLayerNoElements.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UniformLayerNoElements.json; sourceTree = "<group>"; };
+		3D173CD5EEACD898327D42A5 /* HistoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = "<group>"; };
 		43E26685CF3D07C86D6EC4A1 /* ImageThumbnailerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageThumbnailerTests.swift; sourceTree = "<group>"; };
+		45AC661D16D07796AE4CA18A /* SkyConditionsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyConditionsSummaryView.swift; sourceTree = "<group>"; };
 		46EA4F7C788DB82047969F09 /* BayesianNetworkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkNode.swift; sourceTree = "<group>"; };
-		4BCA3E4178256FE2FE6805FE /* CloudsUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CloudsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BCA3E4178256FE2FE6805FE /* CloudsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D630CD3DE67D860E4971821 /* BayesianNetwork+Inference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BayesianNetwork+Inference.swift"; sourceTree = "<group>"; };
 		4E97BB4E6FA0306E3C89B863 /* CloudsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsUITests.swift; sourceTree = "<group>"; };
 		52716D289115DBB34EDCF4A6 /* CloudObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudObservation.swift; sourceTree = "<group>"; };
@@ -109,20 +121,24 @@
 		6AFBE492B520E3F1D3E63206 /* LightningOrThunder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LightningOrThunder.json; sourceTree = "<group>"; };
 		6BCB130AAEDCEC9C6D151ACD /* QuestionDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDefinition.swift; sourceTree = "<group>"; };
 		6F241FD23AD7F3B59F30F10A /* IdentificationCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationCatalog.swift; sourceTree = "<group>"; };
+		6FCF2D4EA2CCA5CD2F1CC921 /* WeatherSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSummaryView.swift; sourceTree = "<group>"; };
+		7336203359A0D8A3B8E2BF5D /* PhotoOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOrigin.swift; sourceTree = "<group>"; };
 		74FD05B2BA4FA2289FD625D1 /* BulgingHeapsOrDomes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BulgingHeapsOrDomes.json; sourceTree = "<group>"; };
 		76C0B37358FFBD1E01C627FC /* CloudGenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudGenus.swift; sourceTree = "<group>"; };
-		79A7741295E9D52AF5A9C4EB /* Clouds.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Clouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79A7741295E9D52AF5A9C4EB /* Clouds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAAE73F981E1B912FFB38F0 /* BayesianNetworkTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkTypes.swift; sourceTree = "<group>"; };
 		80B7FFCDE3DECEC6C5189C81 /* WeatherProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherProvider.swift; sourceTree = "<group>"; };
+		88B3CF94B4D7936B3B40150A /* HistoryEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntryTests.swift; sourceTree = "<group>"; };
 		9101201FF2D5D81A7BADBA9B /* IdentifyResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyResultView.swift; sourceTree = "<group>"; };
 		98CCDD66D32EF7CE61976689 /* CloudsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsApp.swift; sourceTree = "<group>"; };
 		9A702925077EDF186478E73B /* ConditionalProbabilityTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalProbabilityTable.swift; sourceTree = "<group>"; };
 		9B9143FD4EBE882E8F881C48 /* BayesianNetworkFileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileTests.swift; sourceTree = "<group>"; };
 		A907BFB6E840EFB9088F386C /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		AC054878F271CD8B53CCD0DC /* IdentifySkyConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifySkyConditionsView.swift; sourceTree = "<group>"; };
 		ADCB107D714889A4D4378AC2 /* BayesianNetworkFileCPTRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileCPTRow.swift; sourceTree = "<group>"; };
 		B07E36FBD2E4069F00893290 /* CloudsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsTests.swift; sourceTree = "<group>"; };
 		B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDefinitionTests.swift; sourceTree = "<group>"; };
-		B6BD794AB609E15F9DDD839E /* WeatherProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherProviderTests.swift; sourceTree = "<group>"; };
+		B4B4B5ADFC1B45A6E53989BA /* SkyConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyConditions.swift; sourceTree = "<group>"; };
 		B85C5E80A89C3E64CD74B306 /* ImageThumbnailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageThumbnailer.swift; sourceTree = "<group>"; };
 		C7F82D5F2E6BF1E209E50399 /* IdentificationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationSession.swift; sourceTree = "<group>"; };
 		C9E1F1C0088EF73B31FFB761 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
@@ -130,8 +146,10 @@
 		CF83FDE6FE19C308F55C1551 /* BayesianNetworkFileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFileNode.swift; sourceTree = "<group>"; };
 		CF91AC6FC8F5E11FD2D976B7 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		D06EED6AADC2C4B097722EC3 /* CloudGenusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudGenusTests.swift; sourceTree = "<group>"; };
+		D438944F91B6DCEC460C6934 /* CloudCoverDial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudCoverDial.swift; sourceTree = "<group>"; };
 		DAD499EB07C78B41C91EEB0C /* QuestionAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswer.swift; sourceTree = "<group>"; };
 		DCA3E2E1B6AF160ADAE49BCC /* IdentificationCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationCatalogTests.swift; sourceTree = "<group>"; };
+		E04E23939C94B8B42F6C23D7 /* SkyConditionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyConditionsTests.swift; sourceTree = "<group>"; };
 		E702BF2101569DA4774C95AF /* BayesianNetworkFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFile.swift; sourceTree = "<group>"; };
 		EB12330E34D9AE1B1CC3B75E /* ElementOneToThreeFingers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ElementOneToThreeFingers.json; sourceTree = "<group>"; };
 		F03FD643277470D745D53F47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -216,10 +234,15 @@
 			isa = PBXGroup;
 			children = (
 				5F82A8AB3F7FA9A527959241 /* CameraCaptureView.swift */,
+				D438944F91B6DCEC460C6934 /* CloudCoverDial.swift */,
 				52BE934C340B633C51357138 /* IdentifyPhotoView.swift */,
 				35235DD1F40B6E2B2D31A3F3 /* IdentifyQuestionView.swift */,
 				9101201FF2D5D81A7BADBA9B /* IdentifyResultView.swift */,
+				AC054878F271CD8B53CCD0DC /* IdentifySkyConditionsView.swift */,
 				6723EF65DA1BBEB49FABC321 /* IdentifyView.swift */,
+				7336203359A0D8A3B8E2BF5D /* PhotoOrigin.swift */,
+				45AC661D16D07796AE4CA18A /* SkyConditionsSummaryView.swift */,
+				6FCF2D4EA2CCA5CD2F1CC921 /* WeatherSummaryView.swift */,
 			);
 			path = Identify;
 			sourceTree = "<group>";
@@ -257,15 +280,17 @@
 			children = (
 				9B9143FD4EBE882E8F881C48 /* BayesianNetworkFileTests.swift */,
 				32F8B734E98C54B34061208E /* BayesianNetworkTests.swift */,
+				208874B36C713B6FF267BAFA /* CloudCoverDialTests.swift */,
 				D06EED6AADC2C4B097722EC3 /* CloudGenusTests.swift */,
 				B07E36FBD2E4069F00893290 /* CloudsTests.swift */,
 				5AF6C397400C0A8328B12AB8 /* GenusNetworkContentTests.swift */,
+				88B3CF94B4D7936B3B40150A /* HistoryEntryTests.swift */,
 				DCA3E2E1B6AF160ADAE49BCC /* IdentificationCatalogTests.swift */,
 				1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */,
 				43E26685CF3D07C86D6EC4A1 /* ImageThumbnailerTests.swift */,
 				5C9A8E76F0F00A121475B5DF /* PhotoCaptureDateExtractorTests.swift */,
 				B389BBCBF8A90F12B369D14D /* QuestionDefinitionTests.swift */,
-				B6BD794AB609E15F9DDD839E /* WeatherProviderTests.swift */,
+				E04E23939C94B8B42F6C23D7 /* SkyConditionsTests.swift */,
 			);
 			path = CloudsTests;
 			sourceTree = "<group>";
@@ -303,6 +328,8 @@
 			isa = PBXGroup;
 			children = (
 				52716D289115DBB34EDCF4A6 /* CloudObservation.swift */,
+				3D173CD5EEACD898327D42A5 /* HistoryEntry.swift */,
+				B4B4B5ADFC1B45A6E53989BA /* SkyConditions.swift */,
 				1D2E3F2502A40E3978BDEC3F /* BayesianNetwork */,
 				FFFE0C52C9689F8E6CCBA577 /* Identification */,
 			);
@@ -454,15 +481,17 @@
 			files = (
 				6573685E3EABCBAB09576A27 /* BayesianNetworkFileTests.swift in Sources */,
 				4D7ABE83BA7335AB697327BC /* BayesianNetworkTests.swift in Sources */,
+				EAB04F55912F2AD7890626F7 /* CloudCoverDialTests.swift in Sources */,
 				090A60715653D48A9884E88B /* CloudGenusTests.swift in Sources */,
 				8D341620A9368821BA5B6571 /* CloudsTests.swift in Sources */,
 				0ACCFEE9E02806DE54295303 /* GenusNetworkContentTests.swift in Sources */,
+				F8990189EF5269D8146FE379 /* HistoryEntryTests.swift in Sources */,
 				D23DDB89C225C908EDC51DF4 /* IdentificationCatalogTests.swift in Sources */,
 				2BEEF198249F7F93FA58B04D /* IdentificationSessionTests.swift in Sources */,
 				153DEFF50223301971F612EB /* ImageThumbnailerTests.swift in Sources */,
 				2A14A98B68C2CE9FEE2E0A51 /* PhotoCaptureDateExtractorTests.swift in Sources */,
 				B7C92C201A566730D7AAA36A /* QuestionDefinitionTests.swift in Sources */,
-				699E307DCB022E547E9C0D8C /* WeatherProviderTests.swift in Sources */,
+				9EB55AE6DFCDC212052AB13A /* SkyConditionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,25 +517,32 @@
 				DA04EA594D465962F3AC99AD /* BayesianNetworkTypes.swift in Sources */,
 				3BA80C2923281AFD2335F2BB /* CameraAuthorization.swift in Sources */,
 				37F0B8760E07F1A29279E224 /* CameraCaptureView.swift in Sources */,
+				4961F241FB3FD94E6B541E4D /* CloudCoverDial.swift in Sources */,
 				C11624CE051975D66084F9D1 /* CloudGenus.swift in Sources */,
 				018A5F6B168C1A3851BE5825 /* CloudObservation.swift in Sources */,
 				CFA2420D838A886542163FE0 /* CloudsApp.swift in Sources */,
 				4205DC43D0AF16F6FEBDDF6F /* ConditionalProbabilityTable.swift in Sources */,
+				1E9E7D26EDD33F3DC225AD08 /* HistoryEntry.swift in Sources */,
 				00D31B2F3287427F28053B3A /* HistoryView.swift in Sources */,
 				5AF6D534768EA74054AD5F9F /* IdentificationCatalog.swift in Sources */,
 				119EEF67FD7C39B5238FAD55 /* IdentificationSession.swift in Sources */,
 				EB20768A9A9CF2CA20F9E1FA /* IdentifyPhotoView.swift in Sources */,
 				15FE3F137E95A4B53059FCDF /* IdentifyQuestionView.swift in Sources */,
 				C9F7FA330DE4BBE876847066 /* IdentifyResultView.swift in Sources */,
+				41CF4589C1F3410E0AAB7190 /* IdentifySkyConditionsView.swift in Sources */,
 				5E5B67C470292F15A3664C16 /* IdentifyView.swift in Sources */,
 				7A8EA0F72266141ED7247035 /* ImageThumbnailer.swift in Sources */,
 				32E05F7EFBE924C335502760 /* LocationProvider.swift in Sources */,
 				435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */,
 				4867F34167C9CEDE855BFA4E /* PhotoCaptureDateExtractor.swift in Sources */,
+				FAFE19F7B982005E7730CDE8 /* PhotoOrigin.swift in Sources */,
 				B1C0590E823ADC0CAE8C4891 /* QuestionAnswer.swift in Sources */,
 				4D0EABE766627635FAC8555E /* QuestionDefinition.swift in Sources */,
 				A02F59C811B21E1407D8F250 /* SchemaError.swift in Sources */,
+				F01FA4F30CB44E03DFF2B0CE /* SkyConditions.swift in Sources */,
+				EBB74A52309FFD490D78D65E /* SkyConditionsSummaryView.swift in Sources */,
 				355CEEFA412E978237F8CCBB /* WeatherProvider.swift in Sources */,
+				C4FECE0CFED005FB4985E646 /* WeatherSummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +569,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Clouds/Clouds.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = WTT2LZ6DDG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Clouds uses your camera to take a photo of an observed cloud.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Clouds uses your location to record where you observed each cloud.";
@@ -649,6 +686,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Clouds/Clouds.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = WTT2LZ6DDG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Clouds uses your camera to take a photo of an observed cloud.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Clouds uses your location to record where you observed each cloud.";

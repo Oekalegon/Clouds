@@ -19,6 +19,12 @@ struct IdentifyPhotoView: View {
     /// than when it was added. `nil` for camera captures, which are already
     /// happening in the moment.
     @Binding var photoDate: Date?
+    /// Where the current photo came from — the caller shapes the rest of
+    /// the flow on this (a library photo skips the sky-conditions steps).
+    @Binding var photoOrigin: PhotoOrigin
+    /// Additional observations under an already-recorded sky condition
+    /// must show the current sky, so the library option is hidden for them.
+    var allowsLibrary = true
     let onStart: () -> Void
 
     private enum PhotoSource: Equatable {
@@ -79,11 +85,14 @@ struct IdentifyPhotoView: View {
                     }
                 }
             }
-            Button("Choose from Library") { activePhotoSource = .library }
+            if allowsLibrary {
+                Button("Choose from Library") { activePhotoSource = .library }
+            }
             if photoData != nil {
                 Button("Remove Photo", role: .destructive) {
                     photoData = nil
                     photoDate = nil
+                    photoOrigin = .none
                     selectedLibraryItem = nil
                 }
             }
@@ -93,6 +102,7 @@ struct IdentifyPhotoView: View {
                 if let data {
                     photoData = data
                     photoDate = nil
+                    photoOrigin = .camera
                     selectedLibraryItem = nil
                 }
                 activePhotoSource = nil
@@ -106,6 +116,7 @@ struct IdentifyPhotoView: View {
                     if let newItem, let data = try await newItem.loadTransferable(type: Data.self) {
                         photoData = data
                         photoDate = PhotoCaptureDateExtractor.captureDate(from: data)
+                        photoOrigin = .library
                     }
                 } catch {
                     libraryLoadErrorMessage = "Couldn't load that photo. Please try again."
@@ -156,5 +167,10 @@ struct IdentifyPhotoView: View {
 }
 
 #Preview {
-    IdentifyPhotoView(photoData: .constant(nil), photoDate: .constant(nil), onStart: {})
+    IdentifyPhotoView(
+        photoData: .constant(nil),
+        photoDate: .constant(nil),
+        photoOrigin: .constant(.none),
+        onStart: {}
+    )
 }

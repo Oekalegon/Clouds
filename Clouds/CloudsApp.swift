@@ -12,7 +12,8 @@ import SwiftData
 struct CloudsApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            CloudObservation.self
+            CloudObservation.self,
+            SkyConditions.self
         ])
         // UI tests launch with this flag so each test run gets an
         // isolated, empty store instead of accumulating data in the
