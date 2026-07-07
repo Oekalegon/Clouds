@@ -66,7 +66,7 @@ struct HistoryView: View {
 
     private func skyConditionsSection(_ skyConditions: SkyConditions) -> some View {
         Section {
-            ForEach(skyConditions.observations.sorted { $0.date < $1.date }) { observation in
+            ForEach(skyConditions.observationsByDate) { observation in
                 ObservationRow(observation: observation)
             }
         } header: {

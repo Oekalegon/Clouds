@@ -22,8 +22,8 @@ struct SkyConditionsSummaryView: View {
             VStack(spacing: 8) {
                 Text("Current Sky")
                     .font(.headline)
-                if let cover = skyConditions.cloudCoverDescription {
-                    Text(skyConditions.isSkyObscured ? cover : "\(cover) cover")
+                if let coverLine = skyConditions.coverLine {
+                    Text(coverLine)
                         .font(.title2.bold())
                 }
                 if let weather = skyConditions.weather {
@@ -34,7 +34,7 @@ struct SkyConditionsSummaryView: View {
 
             List {
                 Section("Observations") {
-                    ForEach(skyConditions.observations.sorted { $0.date < $1.date }) { observation in
+                    ForEach(skyConditions.observationsByDate) { observation in
                         ObservationRow(observation: observation)
                     }
                 }

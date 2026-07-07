@@ -67,12 +67,14 @@ struct IdentifyView: View {
                     locationTask = task
                     capturedLocation = await task.value
                 }
-                .task(id: step) {
+                .task(id: shouldFetchWeather) {
                     // Weather belongs to sky conditions, so it's only worth
                     // fetching for an in-the-moment session — a library
-                    // photo's sky may be long gone. Fires once the photo
-                    // step is left, when the origin is known.
-                    guard step != .photo, photoOrigin != .library, weatherSnapshot == nil else { return }
+                    // photo's sky may be long gone. Keyed on the one
+                    // transition that matters (leaving the photo step, once
+                    // the origin is known) rather than on every step change,
+                    // which would cancel and restart an in-flight fetch.
+                    guard shouldFetchWeather, weatherSnapshot == nil else { return }
                     guard let coordinate = await locationTask?.value?.coordinate else { return }
                     weatherSnapshot = await WeatherProvider.currentWeather(at: coordinate)
                     // The fetch races the user through the flow: fill in
@@ -82,6 +84,10 @@ struct IdentifyView: View {
                     }
                 }
         }
+    }
+
+    private var shouldFetchWeather: Bool {
+        step != .photo && photoOrigin != .library
     }
 
     @ViewBuilder
@@ -133,7 +139,7 @@ struct IdentifyView: View {
                 genus: session.mostLikelyGenus.flatMap(CloudGenus.init),
                 confidence: session.posterior.values.max() ?? 0,
                 onSave: {
-                    save()
+                    guard save() else { return }
                     // A standalone library observation has no sky-condition
                     // session to return to.
                     if photoOrigin == .library {
@@ -156,8 +162,11 @@ struct IdentifyView: View {
         }
     }
 
-    private func save() {
-        guard let genus = session.mostLikelyGenus.flatMap(CloudGenus.init) else { return }
+    /// Returns whether an observation was actually saved, so the caller
+    /// never navigates onwards (to the summary, or dismissal) after the
+    /// no-genus guard bailed out.
+    private func save() -> Bool {
+        guard let genus = session.mostLikelyGenus.flatMap(CloudGenus.init) else { return false }
         let thumbnailData = photoData.flatMap {
             ImageThumbnailer.downsampledJPEGData(from: $0, maxPixelSize: 300)
         }
@@ -186,11 +195,12 @@ struct IdentifyView: View {
             observation.skyConditions = skyConditions
         }
         modelContext.insert(observation)
+        return true
     }
 
     private func makeSkyConditions() -> SkyConditions {
         let skyConditions = SkyConditions(
-            cloudCoverEighths: isSkyObscured ? nil : cloudCoverEighths,
+            cloudCoverEighths: cloudCoverEighths,
             isSkyObscured: isSkyObscured,
             weather: weatherSnapshot
         )

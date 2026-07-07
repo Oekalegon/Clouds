@@ -26,6 +26,38 @@ struct SkyConditionsTests {
         #expect(conditions.cloudCoverDescription == "Sky obscured")
     }
 
+    @Test func initDropsCoverWhenSkyObscured() {
+        // An obscured sky has no judgeable cover: the invariant is enforced
+        // by the model, not left to each call site.
+        #expect(SkyConditions(cloudCoverEighths: 3, isSkyObscured: true).cloudCoverEighths == nil)
+        #expect(SkyConditions(cloudCoverEighths: 3).cloudCoverEighths == 3)
+    }
+
+    @Test func coverLineIsNilWhenNothingRecorded() {
+        #expect(SkyConditions().coverLine == nil)
+    }
+
+    @Test func coverLineAppendsCoverSuffix() {
+        #expect(SkyConditions(cloudCoverEighths: 3).coverLine == "3/8 cover")
+    }
+
+    @Test func coverLineShowsObscuredWithoutSuffix() {
+        #expect(SkyConditions(isSkyObscured: true).coverLine == "Sky obscured")
+    }
+
+    @Test func observationsByDateSortsOldestFirst() throws {
+        let context = try makeInMemoryContext()
+        let conditions = SkyConditions()
+        context.insert(conditions)
+        let later = CloudObservation(date: Date(timeIntervalSinceReferenceDate: 2000), genus: "Cirrus", skyConditions: conditions)
+        let earlier = CloudObservation(date: Date(timeIntervalSinceReferenceDate: 1000), genus: "Cumulus", skyConditions: conditions)
+        context.insert(later)
+        context.insert(earlier)
+        try context.save()
+
+        #expect(conditions.observationsByDate.map(\.genus) == ["Cumulus", "Cirrus"])
+    }
+
     @Test func summaryLineIsNilWhenNothingRecorded() {
         #expect(SkyConditions().summaryLine == nil)
     }

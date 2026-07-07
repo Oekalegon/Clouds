@@ -56,9 +56,24 @@ final class SkyConditions {
         weather: WeatherSnapshot? = nil
     ) {
         self.date = date
-        self.cloudCoverEighths = cloudCoverEighths
+        // An obscured sky has no judgeable cover; normalising here keeps
+        // the invariant out of the callers' hands.
+        self.cloudCoverEighths = isSkyObscured ? nil : cloudCoverEighths
         self.isSkyObscured = isSkyObscured
         self.weather = weather
+    }
+
+    /// Observations under this sky, oldest first — the order they were
+    /// added during the session.
+    var observationsByDate: [CloudObservation] {
+        observations.sorted { $0.date < $1.date }
+    }
+
+    /// The recorded cover as a display line, e.g. "3/8 cover" or
+    /// "Sky obscured"; `nil` when nothing was recorded.
+    var coverLine: String? {
+        guard let cover = cloudCoverDescription else { return nil }
+        return isSkyObscured ? cover : String(localized: "\(cover) cover")
     }
 
     /// One line summarising these conditions for lists, e.g.
@@ -66,8 +81,8 @@ final class SkyConditions {
     /// `nil` when there is nothing to show.
     var summaryLine: String? {
         var parts: [String] = []
-        if let cover = cloudCoverDescription {
-            parts.append(isSkyObscured ? cover : String(localized: "\(cover) cover"))
+        if let coverLine {
+            parts.append(coverLine)
         }
         if let weather {
             parts.append("\(Int(weather.temperatureCelsius.rounded()))°C, \(weather.condition)")
