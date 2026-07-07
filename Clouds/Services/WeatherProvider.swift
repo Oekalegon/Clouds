@@ -10,16 +10,11 @@ import WeatherKit
 import os
 
 /// Fetches current conditions for an observation's coordinate. WeatherKit
-/// only exposes current/forecast data, not a historical archive, so callers
-/// should only invoke this for "in the moment" observations — see
-/// `isEligible(photoDate:)`.
+/// only exposes current/forecast data, not a historical archive, which is
+/// fine here: the identify flow opens on the sky-conditions step, so the
+/// fetch always describes the sky the user is looking at.
 enum WeatherProvider {
     nonisolated private static let logger = Logger(subsystem: "no.oekalegon.Clouds", category: "Weather")
-
-    /// How stale a library photo's EXIF capture date can be before current
-    /// conditions are no longer a reasonable stand-in for what it was like
-    /// when the cloud was actually photographed.
-    private static let maxPhotoAge: TimeInterval = 15 * 60
 
     /// Returns `nil` on any failure, since a failed weather lookup should
     /// never block saving an observation — mirrors `LocationProvider`.
@@ -32,14 +27,6 @@ enum WeatherProvider {
             logger.error("Weather lookup failed: \(error.localizedDescription, privacy: .public)")
             return nil
         }
-    }
-
-    /// Whether weather is worth fetching for a given photo's capture date.
-    /// `nil` covers both a camera capture (happening live) and no photo at
-    /// all; either way there's no EXIF date to check.
-    static func isEligible(photoDate: Date?, now: Date = .now) -> Bool {
-        guard let photoDate else { return true }
-        return now.timeIntervalSince(photoDate) <= maxPhotoAge
     }
 }
 
