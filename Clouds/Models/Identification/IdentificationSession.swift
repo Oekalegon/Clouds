@@ -133,6 +133,7 @@ final class IdentificationSession {
             isFinished = true
             currentQuestionID = nil
             isComputingNextQuestion = false
+            logTestSetEntry()
             return
         }
 
@@ -159,6 +160,9 @@ final class IdentificationSession {
         currentQuestionID = next
         isFinished = next == nil
         isComputingNextQuestion = false
+        if isFinished {
+            logTestSetEntry()
+        }
     }
 
     /// Logs the current genus posterior, sorted most-to-least likely, with
@@ -178,5 +182,29 @@ final class IdentificationSession {
         } else {
             Self.logger.info("Initial posterior: \(ranked, privacy: .public)")
         }
+    }
+
+    /// TEMPORARY (CLD-9 debugging): dumps a ready-to-paste test-set entry
+    /// once the session finishes — every question asked with its answer as
+    /// a Swift evidence dict, plus the resulting genus posterior — so real
+    /// Q&A walks can be captured straight into `GenusNetworkContentTests`
+    /// while the network's calibration is still being tuned.
+    private func logTestSetEntry() {
+        let evidence = history
+            .map { "\"\($0.questionID)\": \"\($0.answer)\"" }
+            .joined(separator: ", ")
+        let ranked = posterior
+            .sorted { $0.value > $1.value }
+            .map { state, probability in
+                let name = CloudGenus(rawValue: state)?.displayName ?? state
+                return "\(name): \(String(format: "%.1f", probability * 100))%"
+            }
+            .joined(separator: ", ")
+
+        Self.logger.info("""
+        TESTSET entry:
+        let evidence: [NodeID: StateID] = [\(evidence, privacy: .public)]
+        // Posterior: \(ranked, privacy: .public)
+        """)
     }
 }
