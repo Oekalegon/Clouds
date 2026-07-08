@@ -19,6 +19,13 @@ struct IdentifyPhotoView: View {
     /// than when it was added. `nil` for camera captures, which are already
     /// happening in the moment.
     @Binding var photoDate: Date?
+    /// The photo's own EXIF GPS location when it came from the library, so
+    /// the observation can be placed where the photo was actually taken
+    /// rather than wherever the user happens to be now. `nil` for camera
+    /// captures, which use the device's current location. Set immediately
+    /// with the bare coordinate; the reverse-geocoded place name fills in
+    /// once the lookup finishes.
+    @Binding var photoLocation: CapturedLocation?
     /// Where the current photo came from — the caller shapes the rest of
     /// the flow on this (a library photo skips the sky-conditions steps).
     @Binding var photoOrigin: PhotoOrigin
@@ -92,6 +99,7 @@ struct IdentifyPhotoView: View {
                 Button("Remove Photo", role: .destructive) {
                     photoData = nil
                     photoDate = nil
+                    photoLocation = nil
                     photoOrigin = .none
                     selectedLibraryItem = nil
                 }
@@ -102,6 +110,7 @@ struct IdentifyPhotoView: View {
                 if let data {
                     photoData = data
                     photoDate = nil
+                    photoLocation = nil
                     photoOrigin = .camera
                     selectedLibraryItem = nil
                 }
@@ -117,6 +126,7 @@ struct IdentifyPhotoView: View {
                         photoData = data
                         photoDate = PhotoCaptureDateExtractor.captureDate(from: data)
                         photoOrigin = .library
+                        await updatePhotoLocation(for: data)
                     }
                 } catch {
                     libraryLoadErrorMessage = "Couldn't load that photo. Please try again."
@@ -146,6 +156,22 @@ struct IdentifyPhotoView: View {
         }
     }
 
+    /// Publishes the library photo's EXIF GPS coordinate right away, then
+    /// fills in the reverse-geocoded place name once the lookup finishes —
+    /// so a user who races through the flow still gets the coordinate saved.
+    /// The geocoding result is dropped if the photo changed underneath it.
+    private func updatePhotoLocation(for data: Data) async {
+        guard let coordinate = PhotoGPSCoordinateExtractor.coordinate(from: data) else {
+            photoLocation = nil
+            return
+        }
+        photoLocation = CapturedLocation(coordinate: coordinate, placeName: nil)
+        let placeName = await ReverseGeocoder.placeName(for: coordinate)
+        if photoData == data {
+            photoLocation = CapturedLocation(coordinate: coordinate, placeName: placeName)
+        }
+    }
+
     @ViewBuilder
     private var photoWell: some View {
         RoundedRectangle(cornerRadius: 16)
@@ -170,6 +196,7 @@ struct IdentifyPhotoView: View {
     IdentifyPhotoView(
         photoData: .constant(nil),
         photoDate: .constant(nil),
+        photoLocation: .constant(nil),
         photoOrigin: .constant(.none),
         onStart: {}
     )

@@ -6,7 +6,6 @@
 //
 
 import CoreLocation
-import MapKit
 import os
 
 /// Requests a single current-location fix, plus its reverse-geocoded place
@@ -15,11 +14,6 @@ import os
 /// Location has no first-party async API for a one-shot location request.
 @MainActor
 final class LocationProvider: NSObject {
-    struct CapturedLocation {
-        let coordinate: CLLocationCoordinate2D
-        let placeName: String?
-    }
-
     nonisolated private static let logger = Logger(subsystem: "no.oekalegon.Clouds", category: "Location")
 
     private let manager = CLLocationManager()
@@ -40,7 +34,7 @@ final class LocationProvider: NSObject {
     func captureCurrentLocation() async -> CapturedLocation? {
         guard await ensureAuthorization() else { return nil }
         guard let coordinate = await requestCoordinate() else { return nil }
-        let placeName = await reverseGeocode(coordinate)
+        let placeName = await ReverseGeocoder.placeName(for: coordinate)
         return CapturedLocation(coordinate: coordinate, placeName: placeName)
     }
 
@@ -48,21 +42,6 @@ final class LocationProvider: NSObject {
         await withCheckedContinuation { continuation in
             locationContinuation = continuation
             manager.requestLocation()
-        }
-    }
-
-    /// `nonisolated` so the request and its result, neither of which are
-    /// `Sendable`, are constructed and consumed entirely off the main actor
-    /// instead of crossing the actor boundary.
-    nonisolated private func reverseGeocode(_ coordinate: CLLocationCoordinate2D) async -> String? {
-        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        guard let request = MKReverseGeocodingRequest(location: location) else { return nil }
-        do {
-            let mapItem = try await request.mapItems.first
-            return mapItem?.addressRepresentations?.cityWithContext(.full)
-        } catch {
-            Self.logger.error("Reverse geocoding failed: \(error.localizedDescription, privacy: .public)")
-            return nil
         }
     }
 
