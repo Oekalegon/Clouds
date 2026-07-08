@@ -10,6 +10,7 @@ import SwiftUI
 struct IdentifyResultView: View {
     let genus: CloudGenus?
     let confidence: Double
+    let posterior: [StateID: Double]
     let onSave: () -> Void
 
     var body: some View {
@@ -35,9 +36,18 @@ struct IdentifyResultView: View {
             .disabled(genus == nil)
         }
         .padding()
+        .overlay(alignment: .topTrailing) {
+            DebugPosteriorView(posterior: posterior)
+                .padding()
+        }
     }
 }
 
 #Preview {
-    IdentifyResultView(genus: .cumulonimbus, confidence: 0.92, onSave: {})
+    IdentifyResultView(
+        genus: .cumulonimbus,
+        confidence: 0.92,
+        posterior: ["Cb": 0.92, "Cu": 0.05, "Sc": 0.02, "Ac": 0.01],
+        onSave: {}
+    )
 }

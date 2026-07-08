@@ -11,6 +11,7 @@ import UIKit
 struct IdentifyQuestionView: View {
     let question: QuestionDefinition
     let selectedAnswer: StateID?
+    let posterior: [StateID: Double]
     let onSelect: (StateID) -> Void
 
     var body: some View {
@@ -51,6 +52,10 @@ struct IdentifyQuestionView: View {
             .padding()
             .background(.thinMaterial)
         }
+        .overlay(alignment: .topTrailing) {
+            DebugPosteriorView(posterior: posterior)
+                .padding()
+        }
     }
 
     @ViewBuilder
@@ -82,6 +87,7 @@ struct IdentifyQuestionView: View {
             ]
         ),
         selectedAnswer: nil,
+        posterior: ["Cb": 0.62, "Cu": 0.21, "Sc": 0.09, "Ac": 0.05, "St": 0.02, "Ci": 0.01],
         onSelect: { _ in }
     )
 }

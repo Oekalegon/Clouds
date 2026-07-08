@@ -140,6 +140,7 @@ struct IdentifyView: View {
             IdentifyResultView(
                 genus: session.mostLikelyGenus.flatMap(CloudGenus.init),
                 confidence: session.posterior.values.max() ?? 0,
+                posterior: session.posterior,
                 onSave: {
                     guard save() else { return }
                     // A standalone library observation has no sky-condition
@@ -155,6 +156,7 @@ struct IdentifyView: View {
             IdentifyQuestionView(
                 question: question,
                 selectedAnswer: session.currentAnswer,
+                posterior: session.posterior,
                 onSelect: { state in
                     Task { await session.selectAnswer(state) }
                 }
