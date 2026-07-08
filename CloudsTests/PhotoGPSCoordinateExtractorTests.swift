@@ -86,6 +86,17 @@ struct PhotoGPSCoordinateExtractorTests {
         #expect(coordinate == nil)
     }
 
+    @Test func coordinateRejectsNullIslandAsWriterArtifact() {
+        let coordinate = PhotoGPSCoordinateExtractor.coordinate(fromGPSDictionary: [
+            kCGImagePropertyGPSLatitude: 0.0,
+            kCGImagePropertyGPSLatitudeRef: "N",
+            kCGImagePropertyGPSLongitude: 0.0,
+            kCGImagePropertyGPSLongitudeRef: "E"
+        ])
+
+        #expect(coordinate == nil)
+    }
+
     @Test func coordinateReturnsNilForOutOfRangeValues() {
         let coordinate = PhotoGPSCoordinateExtractor.coordinate(fromGPSDictionary: [
             kCGImagePropertyGPSLatitude: 91.0,

@@ -41,6 +41,12 @@ enum PhotoGPSCoordinateExtractor {
             )
         else { return nil }
 
+        // Exact 0°N 0°E ("null island") is overwhelmingly a broken writer
+        // zero-filling the GPS tags, not a real capture location — and a
+        // confidently wrong location is exactly what this extractor exists
+        // to avoid.
+        guard !(latitude == 0 && longitude == 0) else { return nil }
+
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         guard CLLocationCoordinate2DIsValid(coordinate) else { return nil }
         return coordinate
