@@ -1,0 +1,16 @@
+{
+  "id": "LightningSeen",
+  "text": "Is lightning seen to be associated with this cloud?",
+  "description": "Only count lightning you can see coming from this specific cloud, not a flash elsewhere in the sky.",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

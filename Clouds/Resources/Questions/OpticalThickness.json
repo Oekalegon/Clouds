@@ -1,0 +1,22 @@
+{
+  "id": "OpticalThickness",
+  "text": "Does the cloud appear thin, translucent, or opaque?",
+  "description": "Thin: the disc of the Sun or Moon can be seen through the cloud. Translucent: you can tell where the Sun or Moon is, but no clear disc is visible. Opaque: you can't tell where the Sun or Moon is at all.",
+  "image": null,
+  "answers": [
+    {
+      "id": "Thin",
+      "label": "Thin",
+      "description": "The disc of the Sun or Moon can be seen through the cloud."
+    },
+    {
+      "id": "Translucent",
+      "label": "Translucent",
+      "description": "The position of the Sun or Moon can be determined, but no clear disc is visible."
+    },
+    {
+      "id": "Opaque",
+      "label": "Opaque"
+    }
+  ]
+}

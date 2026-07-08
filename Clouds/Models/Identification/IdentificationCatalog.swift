@@ -18,8 +18,12 @@ struct IdentificationCatalog: Sendable {
     let network: BayesianNetwork
     let questions: [NodeID: QuestionDefinition]
 
-    /// Every question node id, in the order declared in the network file,
-    /// excluding the root "Genus" classification node.
+    /// Every askable question node id, in the order declared in the
+    /// network file. A node is a question iff a matching `QuestionDefinition`
+    /// was supplied (CLD-3's rule) — this excludes both the root "Genus"
+    /// classification node and any hidden/derived nodes (e.g. CLD-9's
+    /// "LightningThunderAssociated", never asked directly, only inferred
+    /// from the questions that are its children).
     let questionNodeIDs: [NodeID]
 
     private static let genusNodeID: NodeID = "Genus"
@@ -40,7 +44,7 @@ struct IdentificationCatalog: Sendable {
 
         self.network = network
         self.questions = questionsByID
-        self.questionNodeIDs = networkFile.nodes.map(\.id).filter { $0 != Self.genusNodeID }
+        self.questionNodeIDs = networkFile.nodes.map(\.id).filter { questionsByID[$0] != nil }
     }
 
     /// Loads the real content from the app bundle. Resources are looked up
@@ -57,9 +61,12 @@ struct IdentificationCatalog: Sendable {
         let networkFile = try decoder.decode(BayesianNetworkFile.self, from: Data(contentsOf: networkURL))
 
         let questionIDs = networkFile.nodes.map(\.id).filter { $0 != Self.genusNodeID }
-        let questionFiles = try questionIDs.map { id -> QuestionDefinition in
+        let questionFiles = try questionIDs.compactMap { id -> QuestionDefinition? in
             guard let url = Self.resourceURL(named: id, extension: "json", subdirectory: "Questions", in: bundle) else {
-                throw IdentificationCatalogError.missingResource("\(id).json")
+                // No matching file means this is a hidden/derived node
+                // (e.g. "LightningThunderAssociated"), not a missing
+                // resource — it's never asked directly.
+                return nil
             }
             return try decoder.decode(QuestionDefinition.self, from: Data(contentsOf: url))
         }

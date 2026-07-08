@@ -255,32 +255,41 @@ struct IdentificationSessionTests {
         let networkFile = try decoder.decode(BayesianNetworkFile.self, from: Data(contentsOf: networkURL))
 
         let questionIDs = networkFile.nodes.map(\.id).filter { $0 != "Genus" }
-        let questionFiles = try questionIDs.map { id in
-            try decoder.decode(
-                QuestionDefinition.self,
-                from: Data(contentsOf: Self.resourcesURL.appendingPathComponent("Questions/\(id).json"))
-            )
+        let questionFiles: [QuestionDefinition] = questionIDs.compactMap { id in
+            let url = Self.resourcesURL.appendingPathComponent("Questions/\(id).json")
+            guard let data = try? Data(contentsOf: url) else { return nil }
+            return try? decoder.decode(QuestionDefinition.self, from: data)
         }
 
         return try IdentificationCatalog(networkFile: networkFile, questionFiles: questionFiles)
     }
 
-    /// A truthful "user" for `trueGenus`: whichever real (non-NotApplicable)
-    /// answer is most likely for that genus on the asked question, straight
-    /// from the network's own CPT — never the answer a fixed tree-order
-    /// walk would give, since `bestNextQuestion` doesn't respect tree order.
-    private func oracleAnswer(for questionID: NodeID, trueGenus: StateID, network: BayesianNetwork) -> StateID {
-        let distribution = network.cpts[questionID]?.distribution(givenParents: Assignment(["Genus": trueGenus])) ?? [:]
-        let realAnswers = distribution.filter { $0.key != QuestionDefinition.notApplicableStateID }
-        return realAnswers.max { $0.value < $1.value }?.key ?? "Unsure"
+    /// A single, fully-determined "true cloud": the most likely answer for
+    /// every node, sampled once in topological order so a node with
+    /// non-Genus parents (e.g. CLD-9's "ElementSize", which also depends on
+    /// "SpreadAsVeil"/"Granular") is resolved against that same cloud's
+    /// other true answers rather than Genus alone. This fixed ground truth
+    /// is consulted regardless of the order `bestNextQuestion` actually
+    /// asks in, since adaptive selection doesn't respect topological order.
+    private func groundTruth(trueGenus: StateID, network: BayesianNetwork) -> [NodeID: StateID] {
+        var truth: [NodeID: StateID] = ["Genus": trueGenus]
+        for nodeID in network.topologicalOrder where nodeID != "Genus" {
+            guard let node = network.nodes[nodeID], let cpt = network.cpts[nodeID] else { continue }
+            let given = Assignment(Dictionary(uniqueKeysWithValues: node.parentIDs.map { ($0, truth[$0] ?? "") }))
+            let distribution = cpt.distribution(givenParents: given) ?? [:]
+            let realAnswers = distribution.filter { $0.key != QuestionDefinition.notApplicableStateID }
+            truth[nodeID] = (realAnswers.isEmpty ? distribution : realAnswers).max { $0.value < $1.value }?.key
+        }
+        return truth
     }
 
     private func runSessionToCompletion(catalog: IdentificationCatalog, trueGenus: StateID) async -> IdentificationSession {
+        let truth = groundTruth(trueGenus: trueGenus, network: catalog.network)
         let session = IdentificationSession(catalog: catalog)
         await session.start()
 
         while !session.isFinished, let questionID = session.currentQuestionID {
-            let answer = oracleAnswer(for: questionID, trueGenus: trueGenus, network: catalog.network)
+            let answer = truth[questionID] ?? "No"
             await session.selectAnswer(answer)
         }
 
@@ -290,29 +299,15 @@ struct IdentificationSessionTests {
     /// End-to-end regression guard: for each real genus, a "user" who
     /// truthfully answers whatever question `bestNextQuestion` actually
     /// asks (not a fixed tree-order walk) should end up with that genus as
-    /// `mostLikelyGenus`. This is the test that would have caught CLD-8's
-    /// NotApplicable-calibration bug, where genera with a short
-    /// "applicable" question set (Ci, Cs, Cu, Cb) get systematically
-    /// misclassified once a real answer's likelihood is distorted by the
-    /// per-genus NotApplicable rescaling.
-    ///
-    /// Those four genera are wrapped in `withKnownIssue` rather than fixed
-    /// here: the real fix is an engine-level renormalization (or a full
-    /// Bayesian-network restructuring), tracked as separate follow-up work.
-    /// `withKnownIssue` will itself fail once that fix lands and one of
-    /// these starts passing — that's the signal to remove it from this set.
+    /// `mostLikelyGenus`. CLD-9's redesigned content (see
+    /// `GenusNetworkContentTests`) replaces CLD-7/CLD-8's flowchart-only
+    /// tree, which had four genera permanently miscalibrated under
+    /// adaptive question selection — all ten now converge correctly.
     @Test(arguments: CloudGenus.allCases)
     func endToEndSessionIdentifiesTheTrueGenusFromTruthfulAnswers(genus: CloudGenus) async throws {
-        let knownlyMiscalibrated: Set<CloudGenus> = [.cirrus, .cirrostratus, .cumulus, .cumulonimbus]
         let catalog = try loadRealCatalog()
         let session = await runSessionToCompletion(catalog: catalog, trueGenus: genus.rawValue)
 
-        if knownlyMiscalibrated.contains(genus) {
-            withKnownIssue("CLD-8's NotApplicable calibration misclassifies this genus under adaptive question selection; tracked for the planned Bayesian network restructuring") {
-                #expect(session.mostLikelyGenus == genus.rawValue)
-            }
-        } else {
-            #expect(session.mostLikelyGenus == genus.rawValue)
-        }
+        #expect(session.mostLikelyGenus == genus.rawValue)
     }
 }

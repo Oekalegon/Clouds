@@ -1,0 +1,21 @@
+{
+  "id": "Shading",
+  "text": "Is any shading apparent in the cloud?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "NoShading",
+      "label": "No shading"
+    },
+    {
+      "id": "PartlyShaded",
+      "label": "Partly shaded"
+    },
+    {
+      "id": "FullyShaded",
+      "label": "Fully shaded",
+      "description": "The cloud has a greyish appearance throughout."
+    }
+  ]
+}

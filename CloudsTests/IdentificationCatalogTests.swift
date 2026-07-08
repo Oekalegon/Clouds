@@ -27,11 +27,10 @@ struct IdentificationCatalogTests {
         let networkFile = try decoder.decode(BayesianNetworkFile.self, from: Data(contentsOf: networkURL))
 
         let questionIDs = networkFile.nodes.map(\.id).filter { $0 != "Genus" }
-        let questionFiles = try questionIDs.map { id in
-            try decoder.decode(
-                QuestionDefinition.self,
-                from: Data(contentsOf: Self.resourcesURL.appendingPathComponent("Questions/\(id).json"))
-            )
+        let questionFiles: [QuestionDefinition] = questionIDs.compactMap { id in
+            let url = Self.resourcesURL.appendingPathComponent("Questions/\(id).json")
+            guard let data = try? Data(contentsOf: url) else { return nil }
+            return try? decoder.decode(QuestionDefinition.self, from: data)
         }
 
         return try IdentificationCatalog(networkFile: networkFile, questionFiles: questionFiles)
@@ -55,8 +54,9 @@ struct IdentificationCatalogTests {
         let catalog = try loadRealCatalog()
 
         #expect(catalog.network.nodes["Genus"]?.states.count == 10)
-        #expect(catalog.questionNodeIDs.count == 10)
+        #expect(catalog.questionNodeIDs.count == 18)
         #expect(!catalog.questionNodeIDs.contains("Genus"))
+        #expect(!catalog.questionNodeIDs.contains("LightningThunderAssociated"))
         #expect(Set(catalog.questions.keys) == Set(catalog.questionNodeIDs))
     }
 

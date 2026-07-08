@@ -1,0 +1,16 @@
+{
+  "id": "Granular",
+  "text": "Does the cloud consist of many granular elements?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

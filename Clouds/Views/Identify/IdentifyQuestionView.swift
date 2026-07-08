@@ -32,8 +32,15 @@ struct IdentifyQuestionView: View {
                         Button {
                             onSelect(answer.id)
                         } label: {
-                            Text(answer.label)
-                                .frame(maxWidth: .infinity)
+                            VStack(spacing: 2) {
+                                Text(answer.label)
+                                if let description = answer.description {
+                                    Text(description)
+                                        .font(.caption)
+                                        .multilineTextAlignment(.center)
+                                }
+                            }
+                            .frame(maxWidth: .infinity)
                         }
                         .buttonStyle(.borderedProminent)
                         .tint(answer.id == selectedAnswer ? .accentColor : .secondary)
@@ -65,14 +72,13 @@ struct IdentifyQuestionView: View {
 #Preview {
     IdentifyQuestionView(
         question: QuestionDefinition(
-            id: "LightningOrThunder",
-            text: "Is lightning seen or thunder heard?",
-            description: "This is the clearest sign of a Cumulonimbus, even when the cloud's shape is hard to judge.",
+            id: "LightningSeen",
+            text: "Is lightning seen to be associated with this cloud?",
+            description: "Only count lightning you can see coming from this specific cloud, not a flash elsewhere in the sky.",
             image: nil,
             answers: [
-                QuestionAnswer(id: "Yes", label: "Yes"),
-                QuestionAnswer(id: "No", label: "No"),
-                QuestionAnswer(id: "Unsure", label: "Not sure")
+                QuestionAnswer(id: "Yes", label: "Yes", description: "A flash you can see coming from this cloud"),
+                QuestionAnswer(id: "No", label: "No")
             ]
         ),
         selectedAnswer: nil,

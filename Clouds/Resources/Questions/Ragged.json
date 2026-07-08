@@ -1,0 +1,16 @@
+{
+  "id": "Ragged",
+  "text": "Does the cloud have a ragged, torn-apart, or shredded appearance?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "FlattenedBase",
+  "text": "Does the cloud have a flattened base?",
+  "description": "The base is often, but not necessarily, a bit darker than the rest of the cloud.",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

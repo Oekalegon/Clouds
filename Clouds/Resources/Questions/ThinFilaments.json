@@ -1,0 +1,16 @@
+{
+  "id": "ThinFilaments",
+  "text": "Does the cloud appear thin with hair-like filaments?",
+  "description": "The filaments should be, for the most part, distinct from one another.",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

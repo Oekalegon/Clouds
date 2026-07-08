@@ -32,11 +32,404 @@
       ]
     },
     {
-      "id": "LightningOrThunder",
+      "id": "LightningThunderAssociated",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.99
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.99
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.99
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.99
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.99
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.99
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.99
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.99
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.01,
+            "No": 0.99
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.4,
+            "No": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "LightningSeen",
       "states": [
         "Yes",
         "No",
-        "Unsure",
+        "NotApplicable"
+      ],
+      "parents": [
+        "LightningThunderAssociated"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "LightningThunderAssociated": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.6,
+            "No": 0.35,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "LightningThunderAssociated": "No"
+          },
+          "distribution": {
+            "Yes": 0.02,
+            "No": 0.93,
+            "NotApplicable": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "ThunderHeard",
+      "states": [
+        "Yes",
+        "No",
+        "NotApplicable"
+      ],
+      "parents": [
+        "LightningThunderAssociated"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "LightningThunderAssociated": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.5,
+            "No": 0.45,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "LightningThunderAssociated": "No"
+          },
+          "distribution": {
+            "Yes": 0.15,
+            "No": 0.8,
+            "NotApplicable": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "OpticalThickness",
+      "states": [
+        "Thin",
+        "Translucent",
+        "Opaque"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Thin": 0.666666,
+            "Translucent": 0.266667,
+            "Opaque": 0.066667
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Thin": 0.666666,
+            "Translucent": 0.266667,
+            "Opaque": 0.066667
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Thin": 0.90909,
+            "Translucent": 0.045455,
+            "Opaque": 0.045455
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Thin": 0.222222,
+            "Translucent": 0.555556,
+            "Opaque": 0.222222
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Thin": 0.047619,
+            "Translucent": 0.476191,
+            "Opaque": 0.47619
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Thin": 0.083333,
+            "Translucent": 0.083333,
+            "Opaque": 0.833334
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Thin": 0.333334,
+            "Translucent": 0.333333,
+            "Opaque": 0.333333
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Thin": 0.444445,
+            "Translucent": 0.444444,
+            "Opaque": 0.111111
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Thin": 0.444445,
+            "Translucent": 0.444444,
+            "Opaque": 0.111111
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Thin": 0.166667,
+            "Translucent": 0.166667,
+            "Opaque": 0.666666
+          }
+        }
+      ]
+    },
+    {
+      "id": "Shading",
+      "states": [
+        "NoShading",
+        "PartlyShaded",
+        "FullyShaded"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "NoShading": 0.833334,
+            "PartlyShaded": 0.083333,
+            "FullyShaded": 0.083333
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "NoShading": 0.90909,
+            "PartlyShaded": 0.045455,
+            "FullyShaded": 0.045455
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "NoShading": 0.833334,
+            "PartlyShaded": 0.083333,
+            "FullyShaded": 0.083333
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "NoShading": 0.222222,
+            "PartlyShaded": 0.555556,
+            "FullyShaded": 0.222222
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "NoShading": 0.083333,
+            "PartlyShaded": 0.083333,
+            "FullyShaded": 0.833334
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "NoShading": 0.083333,
+            "PartlyShaded": 0.083333,
+            "FullyShaded": 0.833334
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "NoShading": 0.222222,
+            "PartlyShaded": 0.555556,
+            "FullyShaded": 0.222222
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "NoShading": 0.266667,
+            "PartlyShaded": 0.066667,
+            "FullyShaded": 0.666666
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "NoShading": 0.266667,
+            "PartlyShaded": 0.666666,
+            "FullyShaded": 0.066667
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "NoShading": 0.066667,
+            "PartlyShaded": 0.666666,
+            "FullyShaded": 0.266667
+          }
+        }
+      ]
+    },
+    {
+      "id": "SpreadAsVeil",
+      "states": [
+        "Yes",
+        "No",
         "NotApplicable"
       ],
       "parents": [
@@ -48,9 +441,8 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.0095,
-            "No": 0.893,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -59,9 +451,8 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.0095,
-            "No": 0.893,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -70,9 +461,8 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.0095,
-            "No": 0.893,
-            "Unsure": 0.0475,
+            "Yes": 0.904762,
+            "No": 0.045238,
             "NotApplicable": 0.05
           }
         },
@@ -81,9 +471,8 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.0095,
-            "No": 0.893,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -92,9 +481,8 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.0095,
-            "No": 0.893,
-            "Unsure": 0.0475,
+            "Yes": 0.904762,
+            "No": 0.045238,
             "NotApplicable": 0.05
           }
         },
@@ -103,9 +491,8 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.0095,
-            "No": 0.893,
-            "Unsure": 0.0475,
+            "Yes": 0.904762,
+            "No": 0.045238,
             "NotApplicable": 0.05
           }
         },
@@ -114,9 +501,8 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.0095,
-            "No": 0.893,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -125,9 +511,8 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.0095,
-            "No": 0.893,
-            "Unsure": 0.0475,
+            "Yes": 0.863636,
+            "No": 0.086364,
             "NotApplicable": 0.05
           }
         },
@@ -136,9 +521,8 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.0285,
-            "No": 0.874,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -147,20 +531,18 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.38,
-            "No": 0.5225,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         }
       ]
     },
     {
-      "id": "BulgingHeapsOrDomes",
+      "id": "FlattenedBase",
       "states": [
         "Yes",
         "No",
-        "Unsure",
         "NotApplicable"
       ],
       "parents": [
@@ -172,9 +554,8 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.0285,
-            "No": 0.874,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -183,9 +564,8 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.0475,
-            "No": 0.855,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -194,9 +574,8 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.019,
-            "No": 0.8835,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -205,9 +584,8 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.2375,
-            "No": 0.665,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -216,9 +594,8 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.019,
-            "No": 0.8835,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -227,9 +604,8 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.0285,
-            "No": 0.874,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -238,9 +614,8 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.2375,
-            "No": 0.665,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -249,269 +624,19 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.0285,
-            "No": 0.874,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
         {
           "given": {
             "Genus": "Cu"
-          },
-          "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
-          }
-        },
-        {
-          "given": {
-            "Genus": "Cb"
-          },
-          "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
-          }
-        }
-      ]
-    },
-    {
-      "id": "FuzzyUpperOutline",
-      "states": [
-        "Yes",
-        "No",
-        "Unsure",
-        "NotApplicable"
-      ],
-      "parents": [
-        "Genus"
-      ],
-      "cpt": [
-        {
-          "given": {
-            "Genus": "Ci"
-          },
-          "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
-          }
-        },
-        {
-          "given": {
-            "Genus": "Cc"
-          },
-          "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
-          }
-        },
-        {
-          "given": {
-            "Genus": "Cs"
-          },
-          "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
-          }
-        },
-        {
-          "given": {
-            "Genus": "Ac"
-          },
-          "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
-          }
-        },
-        {
-          "given": {
-            "Genus": "As"
-          },
-          "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
-          }
-        },
-        {
-          "given": {
-            "Genus": "Ns"
-          },
-          "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
-          }
-        },
-        {
-          "given": {
-            "Genus": "Sc"
-          },
-          "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
-          }
-        },
-        {
-          "given": {
-            "Genus": "St"
-          },
-          "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
-          }
-        },
-        {
-          "given": {
-            "Genus": "Cu"
-          },
-          "distribution": {
-            "Yes": 0.0475,
-            "No": 0.855,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
-          }
-        },
-        {
-          "given": {
-            "Genus": "Cb"
-          },
-          "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
-          }
-        }
-      ]
-    },
-    {
-      "id": "UniformLayerNoElements",
-      "states": [
-        "Yes",
-        "No",
-        "Unsure",
-        "NotApplicable"
-      ],
-      "parents": [
-        "Genus"
-      ],
-      "cpt": [
-        {
-          "given": {
-            "Genus": "Ci"
-          },
-          "distribution": {
-            "Yes": 0.1425,
-            "No": 0.76,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
-          }
-        },
-        {
-          "given": {
-            "Genus": "Cc"
-          },
-          "distribution": {
-            "Yes": 0.0475,
-            "No": 0.855,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
-          }
-        },
-        {
-          "given": {
-            "Genus": "Cs"
           },
           "distribution": {
             "Yes": 0.76,
-            "No": 0.1425,
-            "Unsure": 0.0475,
+            "No": 0.19,
             "NotApplicable": 0.05
-          }
-        },
-        {
-          "given": {
-            "Genus": "Ac"
-          },
-          "distribution": {
-            "Yes": 0.0475,
-            "No": 0.855,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
-          }
-        },
-        {
-          "given": {
-            "Genus": "As"
-          },
-          "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
-          }
-        },
-        {
-          "given": {
-            "Genus": "Ns"
-          },
-          "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
-          }
-        },
-        {
-          "given": {
-            "Genus": "Sc"
-          },
-          "distribution": {
-            "Yes": 0.0475,
-            "No": 0.855,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
-          }
-        },
-        {
-          "given": {
-            "Genus": "St"
-          },
-          "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
-          }
-        },
-        {
-          "given": {
-            "Genus": "Cu"
-          },
-          "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
           }
         },
         {
@@ -519,20 +644,19 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         }
       ]
     },
     {
-      "id": "SunOrMoonBrightPatch",
+      "id": "VerticalDevelopment",
       "states": [
-        "Yes",
+        "YesDetached",
+        "YesCommonBase",
         "No",
-        "Unsure",
         "NotApplicable"
       ],
       "parents": [
@@ -544,10 +668,10 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.045,
-            "No": 0.0975,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "YesDetached": 0.422223,
+            "YesCommonBase": 0.422222,
+            "No": 0.105555,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -555,10 +679,10 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.1125,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "YesDetached": 0.422223,
+            "YesCommonBase": 0.422222,
+            "No": 0.105555,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -566,9 +690,9 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
+            "YesDetached": 0.316668,
+            "YesCommonBase": 0.316666,
+            "No": 0.316666,
             "NotApplicable": 0.05
           }
         },
@@ -577,10 +701,10 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.0225,
-            "No": 0.12,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "YesDetached": 0.422223,
+            "YesCommonBase": 0.422222,
+            "No": 0.105555,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -588,9 +712,9 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.2375,
-            "No": 0.665,
-            "Unsure": 0.0475,
+            "YesDetached": 0.316668,
+            "YesCommonBase": 0.316666,
+            "No": 0.316666,
             "NotApplicable": 0.05
           }
         },
@@ -599,9 +723,9 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.019,
-            "No": 0.8835,
-            "Unsure": 0.0475,
+            "YesDetached": 0.316668,
+            "YesCommonBase": 0.316666,
+            "No": 0.316666,
             "NotApplicable": 0.05
           }
         },
@@ -610,10 +734,10 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.0225,
-            "No": 0.12,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "YesDetached": 0.422223,
+            "YesCommonBase": 0.422222,
+            "No": 0.105555,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -621,9 +745,9 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.1425,
-            "No": 0.76,
-            "Unsure": 0.0475,
+            "YesDetached": 0.316668,
+            "YesCommonBase": 0.316666,
+            "No": 0.316666,
             "NotApplicable": 0.05
           }
         },
@@ -632,10 +756,10 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.015,
-            "No": 0.1275,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "YesDetached": 0.791668,
+            "YesCommonBase": 0.079166,
+            "No": 0.079166,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -643,20 +767,19 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "YesDetached": 0.791668,
+            "YesCommonBase": 0.079166,
+            "No": 0.079166,
+            "NotApplicable": 0.05
           }
         }
       ]
     },
     {
-      "id": "ElevatedGreySheet",
+      "id": "ThinFilaments",
       "states": [
         "Yes",
         "No",
-        "Unsure",
         "NotApplicable"
       ],
       "parents": [
@@ -668,10 +791,9 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.0075,
-            "No": 0.135,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.863636,
+            "No": 0.086364,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -679,10 +801,9 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.0075,
-            "No": 0.135,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -690,10 +811,9 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.0225,
-            "No": 0.12,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -701,10 +821,9 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.015,
-            "No": 0.1275,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -712,9 +831,8 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -723,9 +841,8 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.3325,
-            "No": 0.57,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -734,10 +851,9 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.015,
-            "No": 0.1275,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -745,9 +861,8 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.095,
-            "No": 0.8075,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -756,10 +871,9 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -767,20 +881,18 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.0075,
-            "No": 0.135,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         }
       ]
     },
     {
-      "id": "DenseWetLowerLayer",
+      "id": "Sheaves",
       "states": [
         "Yes",
         "No",
-        "Unsure",
         "NotApplicable"
       ],
       "parents": [
@@ -792,10 +904,9 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.863636,
+            "No": 0.086364,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -803,10 +914,9 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -814,10 +924,9 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -825,10 +934,9 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -836,10 +944,9 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.03,
-            "No": 0.1125,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -847,9 +954,8 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -858,10 +964,9 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.0075,
-            "No": 0.135,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -869,9 +974,8 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.1425,
-            "No": 0.76,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -880,10 +984,9 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -891,20 +994,18 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.0075,
-            "No": 0.135,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         }
       ]
     },
     {
-      "id": "WhiteWispyFibres",
+      "id": "HookOrTuft",
       "states": [
         "Yes",
         "No",
-        "Unsure",
         "NotApplicable"
       ],
       "parents": [
@@ -916,9 +1017,8 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
+            "Yes": 0.863636,
+            "No": 0.086364,
             "NotApplicable": 0.05
           }
         },
@@ -927,9 +1027,8 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.0475,
-            "No": 0.855,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -938,10 +1037,9 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.045,
-            "No": 0.0975,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -949,9 +1047,8 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.0285,
-            "No": 0.874,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -960,10 +1057,9 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.0075,
-            "No": 0.135,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -971,10 +1067,9 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -982,9 +1077,8 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.0285,
-            "No": 0.874,
-            "Unsure": 0.0475,
+            "Yes": 0.135714,
+            "No": 0.814286,
             "NotApplicable": 0.05
           }
         },
@@ -993,10 +1087,9 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -1004,10 +1097,9 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         },
         {
@@ -1015,21 +1107,1549 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.015,
-            "No": 0.1275,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
           }
         }
       ]
     },
     {
-      "id": "ElementSmallerThanOneFinger",
+      "id": "Granular",
       "states": [
         "Yes",
         "No",
-        "Unsure",
         "NotApplicable"
+      ],
+      "parents": [
+        "Genus",
+        "SpreadAsVeil"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.090909,
+            "No": 0.009091,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "No"
+          },
+          "distribution": {
+            "Yes": 0.863636,
+            "No": 0.086364,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.863636,
+            "No": 0.086364,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.08,
+            "No": 0.02,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "No"
+          },
+          "distribution": {
+            "Yes": 0.76,
+            "No": 0.19,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.76,
+            "No": 0.19,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "ElementSize",
+      "states": [
+        "LessThanOneDegree",
+        "OneToFiveDegrees",
+        "MoreThanFiveDegrees",
+        "NotApplicable"
+      ],
+      "parents": [
+        "Genus",
+        "SpreadAsVeil",
+        "Granular"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "Yes",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "Yes",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "Yes",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "No",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "No",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "No",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "Yes",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.09091,
+            "OneToFiveDegrees": 0.004545,
+            "MoreThanFiveDegrees": 0.004545,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "Yes",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.09091,
+            "OneToFiveDegrees": 0.004545,
+            "MoreThanFiveDegrees": 0.004545,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "Yes",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.09091,
+            "OneToFiveDegrees": 0.004545,
+            "MoreThanFiveDegrees": 0.004545,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "No",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.863636,
+            "OneToFiveDegrees": 0.043182,
+            "MoreThanFiveDegrees": 0.043182,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "No",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.590908,
+            "OneToFiveDegrees": 0.029546,
+            "MoreThanFiveDegrees": 0.029546,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "No",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.590908,
+            "OneToFiveDegrees": 0.029546,
+            "MoreThanFiveDegrees": 0.029546,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.863636,
+            "OneToFiveDegrees": 0.043182,
+            "MoreThanFiveDegrees": 0.043182,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.590908,
+            "OneToFiveDegrees": 0.029546,
+            "MoreThanFiveDegrees": 0.029546,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.590908,
+            "OneToFiveDegrees": 0.029546,
+            "MoreThanFiveDegrees": 0.029546,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "Yes",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "Yes",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "Yes",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "No",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "No",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "No",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "Yes",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.008333,
+            "OneToFiveDegrees": 0.083334,
+            "MoreThanFiveDegrees": 0.008333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "Yes",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.008333,
+            "OneToFiveDegrees": 0.083334,
+            "MoreThanFiveDegrees": 0.008333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "Yes",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.008333,
+            "OneToFiveDegrees": 0.083334,
+            "MoreThanFiveDegrees": 0.008333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "No",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.079166,
+            "OneToFiveDegrees": 0.791668,
+            "MoreThanFiveDegrees": 0.079166,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "No",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.054166,
+            "OneToFiveDegrees": 0.541668,
+            "MoreThanFiveDegrees": 0.054166,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "No",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.054166,
+            "OneToFiveDegrees": 0.541668,
+            "MoreThanFiveDegrees": 0.054166,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.079166,
+            "OneToFiveDegrees": 0.791668,
+            "MoreThanFiveDegrees": 0.079166,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.054166,
+            "OneToFiveDegrees": 0.541668,
+            "MoreThanFiveDegrees": 0.054166,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.054166,
+            "OneToFiveDegrees": 0.541668,
+            "MoreThanFiveDegrees": 0.054166,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "Yes",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "Yes",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "Yes",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "No",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "No",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "No",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "Yes",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "Yes",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "Yes",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "No",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "No",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "No",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "Yes",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.004545,
+            "OneToFiveDegrees": 0.004545,
+            "MoreThanFiveDegrees": 0.09091,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "Yes",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.004545,
+            "OneToFiveDegrees": 0.004545,
+            "MoreThanFiveDegrees": 0.09091,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "Yes",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.004545,
+            "OneToFiveDegrees": 0.004545,
+            "MoreThanFiveDegrees": 0.09091,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "No",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.043182,
+            "OneToFiveDegrees": 0.043182,
+            "MoreThanFiveDegrees": 0.863636,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "No",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.029546,
+            "OneToFiveDegrees": 0.029546,
+            "MoreThanFiveDegrees": 0.590908,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "No",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.029546,
+            "OneToFiveDegrees": 0.029546,
+            "MoreThanFiveDegrees": 0.590908,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.043182,
+            "OneToFiveDegrees": 0.043182,
+            "MoreThanFiveDegrees": 0.863636,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.029546,
+            "OneToFiveDegrees": 0.029546,
+            "MoreThanFiveDegrees": 0.590908,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.029546,
+            "OneToFiveDegrees": 0.029546,
+            "MoreThanFiveDegrees": 0.590908,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "Yes",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "Yes",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "Yes",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "No",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "No",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "No",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "Yes",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "Yes",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "Yes",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "No",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "No",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "No",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "Yes",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "Yes",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "Yes",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.033334,
+            "OneToFiveDegrees": 0.033333,
+            "MoreThanFiveDegrees": 0.033333,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "No",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "No",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "No",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "Yes"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.316668,
+            "OneToFiveDegrees": 0.316666,
+            "MoreThanFiveDegrees": 0.316666,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "No"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "SpreadAsVeil": "NotApplicable",
+            "Granular": "NotApplicable"
+          },
+          "distribution": {
+            "LessThanOneDegree": 0.216668,
+            "OneToFiveDegrees": 0.216666,
+            "MoreThanFiveDegrees": 0.216666,
+            "NotApplicable": 0.35
+          }
+        }
+      ]
+    },
+    {
+      "id": "SilkySheen",
+      "states": [
+        "Yes",
+        "YesAtSummit",
+        "No"
       ],
       "parents": [
         "Genus"
@@ -1040,10 +2660,9 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.0075,
-            "No": 0.135,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.833334,
+            "YesAtSummit": 0.083333,
+            "No": 0.083333
           }
         },
         {
@@ -1051,10 +2670,9 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
+            "Yes": 0.666666,
+            "YesAtSummit": 0.166667,
+            "No": 0.166667
           }
         },
         {
@@ -1062,10 +2680,9 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.0075,
-            "No": 0.135,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.666666,
+            "YesAtSummit": 0.166667,
+            "No": 0.166667
           }
         },
         {
@@ -1073,10 +2690,9 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.1425,
-            "No": 0.76,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
+            "Yes": 0.333334,
+            "YesAtSummit": 0.333333,
+            "No": 0.333333
           }
         },
         {
@@ -1084,10 +2700,9 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.333334,
+            "YesAtSummit": 0.333333,
+            "No": 0.333333
           }
         },
         {
@@ -1095,10 +2710,9 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.333334,
+            "YesAtSummit": 0.333333,
+            "No": 0.333333
           }
         },
         {
@@ -1106,10 +2720,9 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.0475,
-            "No": 0.855,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
+            "Yes": 0.333334,
+            "YesAtSummit": 0.333333,
+            "No": 0.333333
           }
         },
         {
@@ -1117,10 +2730,9 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.333334,
+            "YesAtSummit": 0.333333,
+            "No": 0.333333
           }
         },
         {
@@ -1128,10 +2740,9 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.333334,
+            "YesAtSummit": 0.333333,
+            "No": 0.333333
           }
         },
         {
@@ -1139,21 +2750,19 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.166667,
+            "YesAtSummit": 0.666666,
+            "No": 0.166667
           }
         }
       ]
     },
     {
-      "id": "ElementOneToThreeFingers",
+      "id": "Fibrous",
       "states": [
         "Yes",
-        "No",
-        "Unsure",
-        "NotApplicable"
+        "YesAtSummit",
+        "No"
       ],
       "parents": [
         "Genus"
@@ -1164,10 +2773,9 @@
             "Genus": "Ci"
           },
           "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.833334,
+            "YesAtSummit": 0.083333,
+            "No": 0.083333
           }
         },
         {
@@ -1175,10 +2783,9 @@
             "Genus": "Cc"
           },
           "distribution": {
-            "Yes": 0.015,
-            "No": 0.1275,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.333334,
+            "YesAtSummit": 0.333333,
+            "No": 0.333333
           }
         },
         {
@@ -1186,10 +2793,9 @@
             "Genus": "Cs"
           },
           "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.666666,
+            "YesAtSummit": 0.166667,
+            "No": 0.166667
           }
         },
         {
@@ -1197,10 +2803,9 @@
             "Genus": "Ac"
           },
           "distribution": {
-            "Yes": 0.8075,
-            "No": 0.095,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
+            "Yes": 0.666666,
+            "YesAtSummit": 0.166667,
+            "No": 0.166667
           }
         },
         {
@@ -1208,10 +2813,9 @@
             "Genus": "As"
           },
           "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.666666,
+            "YesAtSummit": 0.166667,
+            "No": 0.166667
           }
         },
         {
@@ -1219,10 +2823,9 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.003,
-            "No": 0.1395,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.333334,
+            "YesAtSummit": 0.333333,
+            "No": 0.333333
           }
         },
         {
@@ -1230,10 +2833,9 @@
             "Genus": "Sc"
           },
           "distribution": {
-            "Yes": 0.1425,
-            "No": 0.76,
-            "Unsure": 0.0475,
-            "NotApplicable": 0.05
+            "Yes": 0.333334,
+            "YesAtSummit": 0.333333,
+            "No": 0.333333
           }
         },
         {
@@ -1241,10 +2843,9 @@
             "Genus": "St"
           },
           "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.333334,
+            "YesAtSummit": 0.333333,
+            "No": 0.333333
           }
         },
         {
@@ -1252,10 +2853,9 @@
             "Genus": "Cu"
           },
           "distribution": {
-            "Yes": 0.0075,
-            "No": 0.135,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.333334,
+            "YesAtSummit": 0.333333,
+            "No": 0.333333
           }
         },
         {
@@ -1263,10 +2863,549 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.0045,
-            "No": 0.138,
-            "Unsure": 0.0075,
-            "NotApplicable": 0.85
+            "Yes": 0.166667,
+            "YesAtSummit": 0.666666,
+            "No": 0.166667
+          }
+        }
+      ]
+    },
+    {
+      "id": "Undulated",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.909091,
+            "No": 0.090909
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.8,
+            "No": 0.2
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.8,
+            "No": 0.2
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.8,
+            "No": 0.2
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.8,
+            "No": 0.2
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.8,
+            "No": 0.2
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        }
+      ]
+    },
+    {
+      "id": "UniformBase",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.909091,
+            "No": 0.090909
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.909091,
+            "No": 0.090909
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.909091,
+            "No": 0.090909
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.909091,
+            "No": 0.090909
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.909091,
+            "No": 0.090909
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.8,
+            "No": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Ragged",
+      "states": [
+        "Yes",
+        "No",
+        "NotApplicable"
+      ],
+      "parents": [
+        "Genus",
+        "UniformBase"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci",
+            "UniformBase": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "UniformBase": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "UniformBase": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "UniformBase": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "UniformBase": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "UniformBase": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "UniformBase": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "UniformBase": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "UniformBase": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "UniformBase": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "UniformBase": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "UniformBase": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "UniformBase": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "UniformBase": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "UniformBase": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.08,
+            "No": 0.02,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "UniformBase": "No"
+          },
+          "distribution": {
+            "Yes": 0.76,
+            "No": 0.19,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "UniformBase": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.08,
+            "No": 0.02,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "UniformBase": "No"
+          },
+          "distribution": {
+            "Yes": 0.76,
+            "No": 0.19,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "UniformBase": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.014286,
+            "No": 0.085714,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "UniformBase": "No"
+          },
+          "distribution": {
+            "Yes": 0.135714,
+            "No": 0.814286,
+            "NotApplicable": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "DiffuseBase",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.8,
+            "No": 0.2
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.909091,
+            "No": 0.090909
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.8,
+            "No": 0.2
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.142857,
+            "No": 0.857143
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.8,
+            "No": 0.2
           }
         }
       ]
