@@ -54,7 +54,7 @@ struct IdentificationCatalogTests {
         let catalog = try loadRealCatalog()
 
         #expect(catalog.network.nodes["Genus"]?.states.count == 10)
-        #expect(catalog.questionNodeIDs.count == 18)
+        #expect(catalog.questionNodeIDs.count == 20)
         #expect(!catalog.questionNodeIDs.contains("Genus"))
         #expect(!catalog.questionNodeIDs.contains("LightningThunderAssociated"))
         #expect(Set(catalog.questions.keys) == Set(catalog.questionNodeIDs))

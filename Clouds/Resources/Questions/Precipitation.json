@@ -1,0 +1,10 @@
+{
+  "id": "Precipitation",
+  "text": "Does the cloud appear to be producing rain or snow?",
+  "description": "Look for streaks or a hazy curtain falling from the cloud's base, whether or not it reaches the ground.",
+  "image": null,
+  "answers": [
+    { "id": "Yes", "label": "Yes" },
+    { "id": "No", "label": "No" }
+  ]
+}

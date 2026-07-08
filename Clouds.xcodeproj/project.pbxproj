@@ -31,10 +31,12 @@
 		32E05F7EFBE924C335502760 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91AC6FC8F5E11FD2D976B7 /* LocationProvider.swift */; };
 		355CEEFA412E978237F8CCBB /* WeatherProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7FFCDE3DECEC6C5189C81 /* WeatherProvider.swift */; };
 		37F0B8760E07F1A29279E224 /* CameraCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F82A8AB3F7FA9A527959241 /* CameraCaptureView.swift */; };
+		3AD7261359D3E1DCB7AC0E5B /* HasDistinctElements.json in Resources */ = {isa = PBXBuildFile; fileRef = DD1A667DDEBAD7DE99EBC0C7 /* HasDistinctElements.json */; };
 		3BA80C2923281AFD2335F2BB /* CameraAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239FDE89ADF1DE98BF1E059C /* CameraAuthorization.swift */; };
 		3D7E24D1ECC30C69E6992B87 /* VerticalDevelopment.json in Resources */ = {isa = PBXBuildFile; fileRef = FF1C26C884F0C9D5E3536310 /* VerticalDevelopment.json */; };
 		41CF4589C1F3410E0AAB7190 /* IdentifySkyConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC054878F271CD8B53CCD0DC /* IdentifySkyConditionsView.swift */; };
 		4205DC43D0AF16F6FEBDDF6F /* ConditionalProbabilityTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A702925077EDF186478E73B /* ConditionalProbabilityTable.swift */; };
+		43324D8B99B5CA819F8E7123 /* Precipitation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F3874EA9EAE060E3DE7EA77 /* Precipitation.json */; };
 		435A5E280FE3181D1D4A19C0 /* ObservationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */; };
 		4867F34167C9CEDE855BFA4E /* PhotoCaptureDateExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0A63F48F04BFCBF2A6DFC /* PhotoCaptureDateExtractor.swift */; };
 		4920B6D3AF3CBD468858DFEC /* LightningSeen.json in Resources */ = {isa = PBXBuildFile; fileRef = 26A976E54A0E3FD792A5421B /* LightningSeen.json */; };
@@ -112,6 +114,7 @@
 		1A6A1F778BA3BA49B5B042FD /* IdentificationSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationSessionTests.swift; sourceTree = "<group>"; };
 		1AE63D7736A6F418E47C0EC1 /* ObservationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationRow.swift; sourceTree = "<group>"; };
 		1D2B60BC92457D2BED89046B /* Fibrous.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fibrous.json; sourceTree = "<group>"; };
+		1F3874EA9EAE060E3DE7EA77 /* Precipitation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Precipitation.json; sourceTree = "<group>"; };
 		208874B36C713B6FF267BAFA /* CloudCoverDialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudCoverDialTests.swift; sourceTree = "<group>"; };
 		22913B2E238E33E6A578D0FC /* BayesianNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetwork.swift; sourceTree = "<group>"; };
 		239FDE89ADF1DE98BF1E059C /* CameraAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAuthorization.swift; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 		D438944F91B6DCEC460C6934 /* CloudCoverDial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudCoverDial.swift; sourceTree = "<group>"; };
 		DAD499EB07C78B41C91EEB0C /* QuestionAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswer.swift; sourceTree = "<group>"; };
 		DCA3E2E1B6AF160ADAE49BCC /* IdentificationCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationCatalogTests.swift; sourceTree = "<group>"; };
+		DD1A667DDEBAD7DE99EBC0C7 /* HasDistinctElements.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HasDistinctElements.json; sourceTree = "<group>"; };
 		DD50D5AE7B9E71E708EC2EED /* DebugPosteriorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPosteriorView.swift; sourceTree = "<group>"; };
 		E04E23939C94B8B42F6C23D7 /* SkyConditionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyConditionsTests.swift; sourceTree = "<group>"; };
 		E702BF2101569DA4774C95AF /* BayesianNetworkFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayesianNetworkFile.swift; sourceTree = "<group>"; };
@@ -215,9 +219,11 @@
 				1D2B60BC92457D2BED89046B /* Fibrous.json */,
 				4B5B3D3C00BAAF61CE95D342 /* FlattenedBase.json */,
 				BD3DC8FBA8D842066AE7AAC5 /* Granular.json */,
+				DD1A667DDEBAD7DE99EBC0C7 /* HasDistinctElements.json */,
 				C0A8C6A73A4E972F2F1FA759 /* HookOrTuft.json */,
 				26A976E54A0E3FD792A5421B /* LightningSeen.json */,
 				349C48546775C4A01BB9E5B3 /* OpticalThickness.json */,
+				1F3874EA9EAE060E3DE7EA77 /* Precipitation.json */,
 				FAD6B91981B59DE99644B4DE /* Ragged.json */,
 				F646B1685A9C440FC4A5FE0E /* Shading.json */,
 				18ABA9F9A6A703B5E4619823 /* Sheaves.json */,
@@ -502,9 +508,11 @@
 				D467C14DE9F4CB51F95EDC12 /* Fibrous.json in Resources */,
 				E7A7707752036B108AD1957B /* FlattenedBase.json in Resources */,
 				BD47E0B742845122639AD412 /* Granular.json in Resources */,
+				3AD7261359D3E1DCB7AC0E5B /* HasDistinctElements.json in Resources */,
 				713711282F1FACCA3A555247 /* HookOrTuft.json in Resources */,
 				4920B6D3AF3CBD468858DFEC /* LightningSeen.json in Resources */,
 				126AE8A3B52DB4F9E95741C2 /* OpticalThickness.json in Resources */,
+				43324D8B99B5CA819F8E7123 /* Precipitation.json in Resources */,
 				2BF898D27DBC80D5E054055B /* Ragged.json in Resources */,
 				9CBB20A50379E9BE0DF5404B /* Shading.json in Resources */,
 				54B92EEC465A3E46B2692F9F /* Sheaves.json in Resources */,

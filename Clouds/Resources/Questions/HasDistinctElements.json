@@ -1,0 +1,10 @@
+{
+  "id": "HasDistinctElements",
+  "text": "Is the cloud made up of many distinct, separate elements or cloudlets, rather than one continuous mass?",
+  "description": "This is about small, repeated cloudlets arranged in a patch, sheet, or layer — not a single cloud, and not thin filaments or a smooth veil, which don't count as \"elements\" here.",
+  "image": null,
+  "answers": [
+    { "id": "Yes", "label": "Yes" },
+    { "id": "No", "label": "No" }
+  ]
+}

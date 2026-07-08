@@ -20,9 +20,20 @@ import Foundation
 /// (cloudatlas.wmo.int/en/tabular-guide-genus.html), most questions
 /// conditioned directly on `Genus`, plus one genuine causal chain
 /// (`Genus` -> `LightningThunderAssociated` -> `LightningSeen`/
-/// `ThunderHeard`) and three cross-question "not applicable" dependencies
-/// dictated by `BayesianNetworkDesign.md` (`SpreadAsVeil` gates `Granular`
-/// and `ElementSize`; `UniformBase` gates `Ragged`).
+/// `ThunderHeard`) and cross-question "not applicable" dependencies
+/// (`HasDistinctElements` gates `Granular` and `ElementSize`; `UniformBase`
+/// gates `Ragged`).
+///
+/// `HasDistinctElements` and `Precipitation` were added, and every binary
+/// Yes/No question recalibrated, after a real-world test pass
+/// (`TestCases.md`, tracked outside the repo) found: (1) a calibration bug
+/// where "Possible" and "Usual" labels both produced a ~80-95% Yes
+/// probability, collapsing the Tabular Guide's E/U/P distinction and
+/// making a "No" answer look like strong evidence for *any* completely
+/// unlabelled genus; and (2) `Granular`/`ElementSize` being asked (and
+/// answerable) for clouds that aren't actually elemental at all — a single
+/// detached Cumulus, or a ragged Stratus sheet — because the only gate
+/// was "not a veil", which doesn't rule out non-veil, non-elemental clouds.
 struct GenusNetworkContentTests {
 
     private static let resourcesURL = URL(fileURLWithPath: #filePath)
@@ -36,8 +47,8 @@ struct GenusNetworkContentTests {
     private static let questionNodeIDs = [
         "LightningSeen", "ThunderHeard", "OpticalThickness", "Shading",
         "SpreadAsVeil", "FlattenedBase", "VerticalDevelopment", "ThinFilaments",
-        "Sheaves", "HookOrTuft", "Granular", "ElementSize", "SilkySheen",
-        "Fibrous", "Undulated", "UniformBase", "Ragged", "DiffuseBase"
+        "Sheaves", "HookOrTuft", "HasDistinctElements", "Granular", "ElementSize", "SilkySheen",
+        "Fibrous", "Undulated", "UniformBase", "Ragged", "DiffuseBase", "Precipitation"
     ]
 
     /// Nodes whose applicability genuinely varies with evidence, so they
@@ -165,40 +176,41 @@ struct GenusNetworkContentTests {
 
     // MARK: - Cross-question NotApplicable relations
 
-    /// Q-VEIL -> Q-GRAN: a veil cloud has no distinct elements to judge as
-    /// granular or not.
-    @Test func granularBecomesNotApplicableOnceSpreadAsVeilIsYes() throws {
+    /// "HasDistinctElements" gates "Granular": a cloud that isn't made of
+    /// distinct elements at all (a veil, or a single convective mass) has
+    /// nothing to judge as granular or not (CLD-9 TestCases.md review).
+    @Test func granularBecomesNotApplicableWhenThereAreNoDistinctElements() throws {
         let network = try decodeNetworkFile().makeNetwork()
-        let whenVeiled = try network.posterior(of: "Granular", given: ["SpreadAsVeil": "Yes"])[
+        let withoutElements = try network.posterior(of: "Granular", given: ["HasDistinctElements": "No"])[
             QuestionDefinition.notApplicableStateID
         ] ?? 0
-        let whenNotVeiled = try network.posterior(of: "Granular", given: ["SpreadAsVeil": "No"])[
+        let withElements = try network.posterior(of: "Granular", given: ["HasDistinctElements": "Yes"])[
             QuestionDefinition.notApplicableStateID
         ] ?? 0
 
-        #expect(whenVeiled > 0.8)
-        #expect(whenNotVeiled < 0.2)
+        #expect(withoutElements > 0.8)
+        #expect(withElements < 0.2)
     }
 
-    /// Q-VEIL -> Q-SIZE and Q-GRAN -> Q-SIZE: not applicable once veiled;
-    /// clearly applicable once non-veiled and confirmed granular; only
-    /// partially applicable ("can be applicable") when non-veiled but not
-    /// granular.
-    @Test func elementSizeApplicabilityFollowsVeilAndGranularEvidence() throws {
+    /// "HasDistinctElements" and "Granular" both gate "ElementSize": not
+    /// applicable at all when the cloud isn't elemental; clearly applicable
+    /// once it is and confirmed granular; only partially applicable ("can
+    /// be applicable") when elemental but not granular.
+    @Test func elementSizeApplicabilityFollowsHasDistinctElementsAndGranularEvidence() throws {
         let network = try decodeNetworkFile().makeNetwork()
         let notApplicable = QuestionDefinition.notApplicableStateID
 
-        let veiled = try network.posterior(
-            of: "ElementSize", given: ["SpreadAsVeil": "Yes"]
+        let noElements = try network.posterior(
+            of: "ElementSize", given: ["HasDistinctElements": "No"]
         )[notApplicable] ?? 0
         let granular = try network.posterior(
-            of: "ElementSize", given: ["SpreadAsVeil": "No", "Granular": "Yes"]
+            of: "ElementSize", given: ["HasDistinctElements": "Yes", "Granular": "Yes"]
         )[notApplicable] ?? 0
         let notGranular = try network.posterior(
-            of: "ElementSize", given: ["SpreadAsVeil": "No", "Granular": "No"]
+            of: "ElementSize", given: ["HasDistinctElements": "Yes", "Granular": "No"]
         )[notApplicable] ?? 0
 
-        #expect(veiled > granular)
+        #expect(noElements > granular)
         #expect(notGranular > granular)
     }
 
@@ -233,7 +245,7 @@ struct GenusNetworkContentTests {
     @Test func smallGranularElementsFavorCirrocumulus() throws {
         let network = try decodeNetworkFile().makeNetwork()
         let evidence: [NodeID: StateID] = [
-            "SpreadAsVeil": "No", "Granular": "Yes", "ElementSize": "LessThanOneDegree"
+            "HasDistinctElements": "Yes", "Granular": "Yes", "ElementSize": "LessThanOneDegree"
         ]
         #expect(try mostLikelyGenus(network, given: evidence) == "Cc")
     }
@@ -241,7 +253,7 @@ struct GenusNetworkContentTests {
     @Test func largeElementsFavorStratocumulus() throws {
         let network = try decodeNetworkFile().makeNetwork()
         let evidence: [NodeID: StateID] = [
-            "SpreadAsVeil": "No", "Granular": "Yes", "ElementSize": "MoreThanFiveDegrees"
+            "HasDistinctElements": "Yes", "Granular": "Yes", "ElementSize": "MoreThanFiveDegrees"
         ]
         #expect(try mostLikelyGenus(network, given: evidence) == "Sc")
     }
@@ -258,6 +270,113 @@ struct GenusNetworkContentTests {
         let network = try decodeNetworkFile().makeNetwork()
         let evidence: [NodeID: StateID] = [
             "FlattenedBase": "Yes", "VerticalDevelopment": "YesDetached", "LightningSeen": "No"
+        ]
+        #expect(try mostLikelyGenus(network, given: evidence) == "Cu")
+    }
+
+    /// A single detached Cumulus isn't "made of elements" (that's Cc/Ac/Sc's
+    /// defining structure per the WMO Tabular Guide), so answering "No" to
+    /// "HasDistinctElements" should rule ElementSize/Granular out rather
+    /// than leaving Cumulus to be dragged toward Stratocumulus by a forced
+    /// element-size answer (TestCases.md case 5).
+    @Test func noDistinctElementsWithFlattenedDetachedBaseFavorsCumulusOverStratocumulus() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+        let evidence: [NodeID: StateID] = [
+            "HasDistinctElements": "No", "FlattenedBase": "Yes", "VerticalDevelopment": "YesDetached"
+        ]
+        #expect(try mostLikelyGenus(network, given: evidence) == "Cu")
+    }
+
+    /// Continuous rain/snow reaching the ground is Nimbostratus's actual
+    /// defining feature per the WMO Tabular Guide — observing its absence
+    /// should weigh heavily against Ns even when other features (a diffuse
+    /// base, a uniform veil) are shared with Altostratus/Stratus
+    /// (TestCases.md case 2).
+    @Test func noPrecipitationWeighsAgainstNimbostratus() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+        let prior = try network.posterior(of: "Genus")["Ns"] ?? 0
+        let posterior = try network.posterior(of: "Genus", given: ["Precipitation": "No"])["Ns"] ?? 0
+
+        #expect(posterior < prior)
+    }
+
+    // MARK: - Calibration regression (the ticket's E/U/P collapse bug)
+
+    /// Regression guard for a bug where every labelled genus (Essential,
+    /// Usual, *or* merely Possible) got an ~80-95% Yes probability, and
+    /// only a completely unlabelled genus got a low one — collapsing the
+    /// Tabular Guide's Essential/Usual/Possible distinction into "labelled
+    /// vs not", and making completely unrelated, unlabelled genera look
+    /// like *better* fits for a "No" answer than genera the guide
+    /// documents as occasionally showing the feature (TestCases.md case 2:
+    /// Nimbostratus, wholly unlabelled for "Undulated", beat Altostratus/
+    /// Stratus, both genuinely "Possible" there, on a "No" answer).
+    @Test func possibleLabelYesProbabilityIsClearlyBetweenUnlabelledAndUsual() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+
+        // "Undulated": Cs is "Possible", Ns carries no label at all.
+        let possibleYes = try network.posterior(of: "Undulated", given: ["Genus": "Cs"])["Yes"] ?? 0
+        let unlabelledYes = try network.posterior(of: "Undulated", given: ["Genus": "Ns"])["Yes"] ?? 0
+        // "Undulated": Cc is "Usual".
+        let usualYes = try network.posterior(of: "Undulated", given: ["Genus": "Cc"])["Yes"] ?? 0
+
+        #expect(unlabelledYes < possibleYes)
+        #expect(possibleYes < usualYes)
+        #expect(possibleYes < 0.4)
+    }
+
+    // MARK: - Real-world test cases (TestCases.md, captured 2026-07-08)
+
+    /// Each of these mirrors one full Q&A walk a real tester actually
+    /// answered for a real cloud, captured via `IdentificationSession`'s
+    /// TESTSET debug logging. Case 1 (a Stratus fractus) is wrapped in
+    /// `withKnownIssue`: fractus is a *species*-level distinction (a torn,
+    /// ragged Stratus variant) that this genus-only network can't
+    /// separate from a similarly "detached, non-uniform-based" Cumulus —
+    /// modelling it needs the Species content the design doc explicitly
+    /// defers to a later ticket, not a genus-level CPT tweak.
+    @Test func testCase1StratusFractusIsAKnownGenusVsSpeciesAmbiguity() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+        let evidence: [NodeID: StateID] = [
+            "Shading": "PartlyShaded", "UniformBase": "No", "Undulated": "No", "DiffuseBase": "No",
+            "ThinFilaments": "No", "Ragged": "Yes", "FlattenedBase": "No",
+            "VerticalDevelopment": "YesDetached", "OpticalThickness": "Opaque", "LightningSeen": "No",
+            "Fibrous": "No", "SilkySheen": "No", "ThunderHeard": "No", "SpreadAsVeil": "No",
+            "Sheaves": "No", "HookOrTuft": "No", "HasDistinctElements": "No", "Precipitation": "No"
+        ]
+
+        let genus = try mostLikelyGenus(network, given: evidence)
+        withKnownIssue("Fractus is a Stratus species, not yet modelled by this genus-only network") {
+            #expect(genus == "St")
+        }
+    }
+
+    @Test func testCase3SmallGranularElementsFavorCirrocumulus() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+        let evidence: [NodeID: StateID] = [
+            "Shading": "NoShading", "Granular": "Yes", "ElementSize": "LessThanOneDegree",
+            "HasDistinctElements": "Yes"
+        ]
+        #expect(try mostLikelyGenus(network, given: evidence) == "Cc")
+    }
+
+    @Test func testCase4ThinFilamentsWithHookFavorCirrus() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+        let evidence: [NodeID: StateID] = [
+            "Shading": "NoShading", "Granular": "No", "ThinFilaments": "Yes", "Sheaves": "No",
+            "UniformBase": "No", "HookOrTuft": "Yes", "Undulated": "No", "HasDistinctElements": "No"
+        ]
+        #expect(try mostLikelyGenus(network, given: evidence) == "Ci")
+    }
+
+    @Test func testCase5FlattenedDetachedNonElementalCloudFavorsCumulus() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+        let evidence: [NodeID: StateID] = [
+            "Shading": "PartlyShaded", "UniformBase": "No", "Undulated": "No", "DiffuseBase": "No",
+            "HookOrTuft": "No", "Ragged": "No", "VerticalDevelopment": "YesDetached",
+            "FlattenedBase": "Yes", "OpticalThickness": "Opaque", "LightningSeen": "No",
+            "Fibrous": "No", "SilkySheen": "No", "ThunderHeard": "No", "SpreadAsVeil": "No",
+            "ThinFilaments": "No", "Sheaves": "No", "HasDistinctElements": "No", "Precipitation": "No"
         ]
         #expect(try mostLikelyGenus(network, given: evidence) == "Cu")
     }
