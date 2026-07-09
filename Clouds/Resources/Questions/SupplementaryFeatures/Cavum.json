@@ -1,0 +1,16 @@
+{
+  "id": "Cavum",
+  "text": "Is there a well-defined, generally circular (sometimes linear) hole in the cloud layer, often with wisps of cloud or fall-streaks trailing from its centre?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

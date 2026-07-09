@@ -3015,6 +3015,5937 @@
     {
       "id": "Precipitation",
       "states": [
+        "Uniform",
+        "Showers",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Uniform": 0.05,
+            "Showers": 0.05,
+            "No": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Uniform": 0.05,
+            "Showers": 0.05,
+            "No": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Uniform": 0.05,
+            "Showers": 0.05,
+            "No": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Uniform": 0.05,
+            "Showers": 0.05,
+            "No": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Uniform": 0.25,
+            "Showers": 0.05,
+            "No": 0.7
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Uniform": 0.7,
+            "Showers": 0.05,
+            "No": 0.25
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Uniform": 0.25,
+            "Showers": 0.05,
+            "No": 0.7
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Uniform": 0.25,
+            "Showers": 0.05,
+            "No": 0.7
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Uniform": 0.05,
+            "Showers": 0.25,
+            "No": 0.7
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Uniform": 0.05,
+            "Showers": 0.7,
+            "No": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mamma",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "Virga",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.7,
+            "No": 0.30000000000000004
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.7,
+            "No": 0.30000000000000004
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "Arcus",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.15,
+            "No": 0.85
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.35,
+            "No": 0.65
+          }
+        }
+      ]
+    },
+    {
+      "id": "Tuba",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.15,
+            "No": 0.85
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.35,
+            "No": 0.65
+          }
+        }
+      ]
+    },
+    {
+      "id": "Asperitas",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        }
+      ]
+    },
+    {
+      "id": "Murus",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "Cauda",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "Cavum",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.1,
+            "No": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        }
+      ]
+    },
+    {
+      "id": "Fluctus",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.1,
+            "No": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        }
+      ]
+    },
+    {
+      "id": "Incus",
+      "states": [
+        "Yes",
+        "No",
+        "NotApplicable"
+      ],
+      "parents": [
+        "Genus",
+        "VerticalDevelopment",
+        "LightningSeen",
+        "ThunderHeard"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ci",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "As",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "St",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.005,
+            "No": 0.095,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.0475,
+            "No": 0.9025,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.0325,
+            "No": 0.6175,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesDetached",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "YesCommonBase",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.025,
+            "No": 0.075,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.025,
+            "No": 0.075,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.025,
+            "No": 0.075,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.025,
+            "No": 0.075,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.025,
+            "No": 0.075,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.025,
+            "No": 0.075,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.025,
+            "No": 0.075,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.025,
+            "No": 0.075,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "No",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.025,
+            "No": 0.075,
+            "NotApplicable": 0.9
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "Yes",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "No",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "Yes"
+          },
+          "distribution": {
+            "Yes": 0.2375,
+            "No": 0.7125,
+            "NotApplicable": 0.05
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "No"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb",
+            "VerticalDevelopment": "NotApplicable",
+            "LightningSeen": "NotApplicable",
+            "ThunderHeard": "NotApplicable"
+          },
+          "distribution": {
+            "Yes": 0.1625,
+            "No": 0.4875,
+            "NotApplicable": 0.35
+          }
+        }
+      ]
+    },
+    {
+      "id": "Pileus",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "Velum",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.25,
+            "No": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "Pannus",
+      "states": [
         "Yes",
         "No"
       ],
@@ -3072,8 +9003,8 @@
             "Genus": "Ns"
           },
           "distribution": {
-            "Yes": 0.92,
-            "No": 0.07999999999999996
+            "Yes": 0.7,
+            "No": 0.30000000000000004
           }
         },
         {
@@ -3090,8 +9021,110 @@
             "Genus": "St"
           },
           "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cu"
+          },
+          "distribution": {
             "Yes": 0.25,
             "No": 0.75
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cb"
+          },
+          "distribution": {
+            "Yes": 0.7,
+            "No": 0.30000000000000004
+          }
+        }
+      ]
+    },
+    {
+      "id": "Flumen",
+      "states": [
+        "Yes",
+        "No"
+      ],
+      "parents": [
+        "Genus"
+      ],
+      "cpt": [
+        {
+          "given": {
+            "Genus": "Ci"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Cs"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ac"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "As"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Ns"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "Sc"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
+          }
+        },
+        {
+          "given": {
+            "Genus": "St"
+          },
+          "distribution": {
+            "Yes": 0.05,
+            "No": 0.95
           }
         },
         {
@@ -3108,8 +9141,8 @@
             "Genus": "Cb"
           },
           "distribution": {
-            "Yes": 0.7,
-            "No": 0.30000000000000004
+            "Yes": 0.25,
+            "No": 0.75
           }
         }
       ]

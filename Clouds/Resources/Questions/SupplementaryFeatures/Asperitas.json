@@ -1,0 +1,16 @@
+{
+  "id": "Asperitas",
+  "text": "Does the underside of the cloud show well-defined, chaotic, wave-like structures, as if viewing a roughened sea surface from below?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

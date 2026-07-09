@@ -1,0 +1,16 @@
+{
+  "id": "Velum",
+  "text": "Is there a veil of cloud of great horizontal extent close above or attached to the upper part of the cloud, which the cloud often appears to be piercing through?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

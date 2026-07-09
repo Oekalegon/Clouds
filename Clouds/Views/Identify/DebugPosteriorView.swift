@@ -13,6 +13,8 @@ import SwiftUI
 /// trusted enough not to need this.
 struct DebugPosteriorView: View {
     let posterior: [StateID: Double]
+    var supplementaryFeatures: [NodeID] = []
+    var accessoryClouds: [NodeID] = []
 
     private static let maxGeneraShown = 5
 
@@ -28,6 +30,14 @@ struct DebugPosteriorView: View {
                 Text("\(CloudGenus(rawValue: state)?.displayName ?? state): \(probability, format: .percent.precision(.fractionLength(1)))")
                     .font(.caption2.monospacedDigit())
             }
+            if !supplementaryFeatures.isEmpty {
+                Text("Features: \(supplementaryFeatures.joined(separator: ", "))")
+                    .font(.caption2)
+            }
+            if !accessoryClouds.isEmpty {
+                Text("Accessory: \(accessoryClouds.joined(separator: ", "))")
+                    .font(.caption2)
+            }
         }
         .padding(8)
         .background(.yellow.opacity(0.9), in: RoundedRectangle(cornerRadius: 8))
@@ -36,7 +46,9 @@ struct DebugPosteriorView: View {
 }
 
 #Preview {
-    DebugPosteriorView(posterior: [
-        "Cb": 0.62, "Cu": 0.21, "Sc": 0.09, "Ac": 0.05, "St": 0.02, "Ci": 0.01
-    ])
+    DebugPosteriorView(
+        posterior: ["Cb": 0.62, "Cu": 0.21, "Sc": 0.09, "Ac": 0.05, "St": 0.02, "Ci": 0.01],
+        supplementaryFeatures: ["Incus", "Mamma"],
+        accessoryClouds: ["Pannus"]
+    )
 }

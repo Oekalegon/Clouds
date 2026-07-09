@@ -36,19 +36,20 @@ import Foundation
 /// was "not a veil", which doesn't rule out non-veil, non-elemental clouds.
 struct GenusNetworkContentTests {
 
-    private static let resourcesURL = URL(fileURLWithPath: #filePath)
-        .deletingLastPathComponent()
-        .deletingLastPathComponent()
-        .appendingPathComponent("Clouds/Resources")
-
     /// Every askable question node id — excludes both "Genus" and the
     /// hidden "LightningThunderAssociated" node, which has no
-    /// `QuestionDefinition` and is never asked directly.
+    /// `QuestionDefinition` and is never asked directly. Includes the
+    /// Supplementary Features/Accessory Clouds added after genus
+    /// identification (CLD-9), since they're real network nodes with the
+    /// same structural requirements (answer-button budget, NotApplicable
+    /// state consistency) as any other question.
     private static let questionNodeIDs = [
         "LightningSeen", "ThunderHeard", "OpticalThickness", "Shading",
         "SpreadAsVeil", "FlattenedBase", "VerticalDevelopment", "ThinFilaments",
         "Sheaves", "HookOrTuft", "HasDistinctElements", "Granular", "ElementSize", "SilkySheen",
-        "Fibrous", "Undulated", "UniformBase", "Ragged", "DiffuseBase", "Precipitation"
+        "Fibrous", "Undulated", "UniformBase", "Ragged", "DiffuseBase", "Precipitation",
+        "Incus", "Mamma", "Virga", "Arcus", "Tuba", "Asperitas", "Murus", "Cauda", "Cavum", "Fluctus",
+        "Pileus", "Velum", "Pannus", "Flumen"
     ]
 
     /// Nodes whose applicability genuinely varies with evidence, so they
@@ -58,20 +59,18 @@ struct GenusNetworkContentTests {
     private static let notApplicableNodeIDs: Set<String> = [
         "LightningSeen", "ThunderHeard", "SpreadAsVeil", "FlattenedBase",
         "VerticalDevelopment", "ThinFilaments", "Sheaves", "HookOrTuft",
-        "Granular", "ElementSize", "Ragged"
+        "Granular", "ElementSize", "Ragged", "Incus"
     ]
 
     /// Every question must fit an answer-buttons UI without scrolling.
     private static let maxAnswersPerQuestion = 4
 
     private func decodeNetworkFile() throws -> BayesianNetworkFile {
-        let url = Self.resourcesURL.appendingPathComponent("BayesianNetwork/genus-network.json")
-        return try JSONDecoder().decode(BayesianNetworkFile.self, from: Data(contentsOf: url))
+        try RealContentLoading.decodeNetworkFile()
     }
 
     private func decodeQuestion(_ id: String) throws -> QuestionDefinition {
-        let url = Self.resourcesURL.appendingPathComponent("Questions/\(id).json")
-        return try JSONDecoder().decode(QuestionDefinition.self, from: Data(contentsOf: url))
+        try #require(RealContentLoading.decodeQuestion(id))
     }
 
     private func mostLikelyGenus(_ network: BayesianNetwork, given evidence: [NodeID: StateID]) throws -> StateID {
@@ -131,8 +130,7 @@ struct GenusNetworkContentTests {
     /// hidden node, per the design's `Genus -> F-LIG -> {Q-LIG, Q-THUN}`
     /// chain), so it must never show up as something the UI would try to ask.
     @Test func hiddenAssociationNodeHasNoQuestionFile() throws {
-        let url = Self.resourcesURL.appendingPathComponent("Questions/LightningThunderAssociated.json")
-        #expect(!FileManager.default.fileExists(atPath: url.path))
+        #expect(RealContentLoading.decodeQuestion("LightningThunderAssociated") == nil)
     }
 
     // MARK: - The F-LIG causal chain (the ticket's core correctness fix)
@@ -226,6 +224,42 @@ struct GenusNetworkContentTests {
 
         #expect(whenUniform > 0.8)
         #expect(whenNotUniform < 0.2)
+    }
+
+    // MARK: - Supplementary Features / Accessory Clouds (CLD-9)
+
+    /// Incus (Q-INCU) is the one Supplementary Feature with real
+    /// not-applicable gating: an anvil needs vertical development to
+    /// exist at all, and is only worth asking about once lightning/
+    /// thunder has already made Cb plausible — per
+    /// `BayesianNetworkDesign.md`'s own not-applicable relations for it.
+    @Test func incusRequiresVerticalDevelopmentAndIsMoreApplicableWithLightningOrThunder() throws {
+        let network = try decodeNetworkFile().makeNetwork()
+        let notApplicable = QuestionDefinition.notApplicableStateID
+
+        let noVerticalDevelopment = try network.posterior(
+            of: "Incus", given: ["VerticalDevelopment": "No"]
+        )[notApplicable] ?? 0
+        let withLightning = try network.posterior(
+            of: "Incus", given: ["VerticalDevelopment": "YesDetached", "LightningSeen": "Yes"]
+        )[notApplicable] ?? 0
+        let withoutLightningOrThunder = try network.posterior(
+            of: "Incus", given: ["VerticalDevelopment": "YesDetached", "LightningSeen": "No", "ThunderHeard": "No"]
+        )[notApplicable] ?? 0
+
+        #expect(noVerticalDevelopment > withoutLightningOrThunder)
+        #expect(withoutLightningOrThunder > withLightning)
+    }
+
+    /// Every Supplementary Feature/Accessory Cloud is Genus-conditioned
+    /// only (a single question per feature doesn't need Lightning/
+    /// Thunder's hidden-node treatment) — except Incus, gated as above.
+    @Test func everySupplementaryFeatureAndAccessoryCloudIsGenusConditionedExceptIncus() throws {
+        let catalog = try RealContentLoading.loadCatalog()
+        for id in catalog.supplementaryFeatureNodeIDs + catalog.accessoryCloudNodeIDs where id != "Incus" {
+            #expect(catalog.network.nodes[id]?.parentIDs == ["Genus"], "\(id) should depend only on Genus")
+        }
+        #expect(catalog.network.nodes["Incus"]?.parentIDs.contains("Genus") == true)
     }
 
     // MARK: - Directional genus classification

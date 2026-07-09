@@ -12,6 +12,8 @@ struct IdentifyQuestionView: View {
     let question: QuestionDefinition
     let selectedAnswer: StateID?
     let posterior: [StateID: Double]
+    var supplementaryFeatures: [NodeID] = []
+    var accessoryClouds: [NodeID] = []
     let onSelect: (StateID) -> Void
 
     var body: some View {
@@ -53,8 +55,12 @@ struct IdentifyQuestionView: View {
             .background(.thinMaterial)
         }
         .overlay(alignment: .topTrailing) {
-            DebugPosteriorView(posterior: posterior)
-                .padding()
+            DebugPosteriorView(
+                posterior: posterior,
+                supplementaryFeatures: supplementaryFeatures,
+                accessoryClouds: accessoryClouds
+            )
+            .padding()
         }
     }
 

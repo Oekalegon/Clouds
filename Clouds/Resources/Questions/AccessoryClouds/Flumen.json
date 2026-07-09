@@ -1,0 +1,16 @@
+{
+  "id": "Flumen",
+  "text": "Are there band-shaped low clouds running parallel to the low-level wind and moving into the cloud, not attached to it and with a higher base?",
+  "description": "Sometimes called a \"beaver's tail\".",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

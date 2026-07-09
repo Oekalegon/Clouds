@@ -11,29 +11,8 @@ import Foundation
 
 struct IdentificationCatalogTests {
 
-    /// Same technique as `GenusNetworkContentTests`: read the real,
-    /// production JSON straight off disk (not via `Bundle`, since this
-    /// unit-test target isn't app-hosted) to get real regression coverage
-    /// of the pure assembly initializer.
-    private static let resourcesURL = URL(fileURLWithPath: #filePath)
-        .deletingLastPathComponent()
-        .deletingLastPathComponent()
-        .appendingPathComponent("Clouds/Resources")
-
     private func loadRealCatalog() throws -> IdentificationCatalog {
-        let decoder = JSONDecoder()
-
-        let networkURL = Self.resourcesURL.appendingPathComponent("BayesianNetwork/genus-network.json")
-        let networkFile = try decoder.decode(BayesianNetworkFile.self, from: Data(contentsOf: networkURL))
-
-        let questionIDs = networkFile.nodes.map(\.id).filter { $0 != "Genus" }
-        let questionFiles: [QuestionDefinition] = questionIDs.compactMap { id in
-            let url = Self.resourcesURL.appendingPathComponent("Questions/\(id).json")
-            guard let data = try? Data(contentsOf: url) else { return nil }
-            return try? decoder.decode(QuestionDefinition.self, from: data)
-        }
-
-        return try IdentificationCatalog(networkFile: networkFile, questionFiles: questionFiles)
+        try RealContentLoading.loadCatalog()
     }
 
     /// Regression guard: the very first `bestNextQuestion` call (zero
@@ -54,10 +33,13 @@ struct IdentificationCatalogTests {
         let catalog = try loadRealCatalog()
 
         #expect(catalog.network.nodes["Genus"]?.states.count == 10)
-        #expect(catalog.questionNodeIDs.count == 20)
+        #expect(catalog.questionNodeIDs.count == 34)
         #expect(!catalog.questionNodeIDs.contains("Genus"))
         #expect(!catalog.questionNodeIDs.contains("LightningThunderAssociated"))
         #expect(Set(catalog.questions.keys) == Set(catalog.questionNodeIDs))
+        #expect(catalog.supplementaryFeatureNodeIDs.count == 10)
+        #expect(catalog.accessoryCloudNodeIDs.count == 4)
+        #expect(catalog.genusIdentificationNodeIDs.count == 20)
     }
 
     @Test func throwsWhenAQuestionHasNoMatchingNode() throws {

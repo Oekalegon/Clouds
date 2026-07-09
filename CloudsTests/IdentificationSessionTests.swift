@@ -87,6 +87,96 @@ struct IdentificationSessionTests {
     }
     """
 
+    /// Genus(A,B) + Q1 (near-deterministic genus signal) + FeatureX (a
+    /// "supplementary feature") + AccessoryY (an "accessory cloud"), both
+    /// clearly associated with A (0.25) and essentially absent for B
+    /// (0.05 baseline) — mirrors CLD-9's real content, where every
+    /// feature/accessory node is Genus-conditioned only.
+    private static let featurePhaseNetworkJSON = """
+    {
+      "nodes": [
+        { "id": "Genus", "states": ["A", "B"], "cpt": [{ "distribution": { "A": 0.5, "B": 0.5 } }] },
+        {
+          "id": "Q1", "states": ["Yes", "No"], "parents": ["Genus"],
+          "cpt": [
+            { "given": { "Genus": "A" }, "distribution": { "Yes": 0.99, "No": 0.01 } },
+            { "given": { "Genus": "B" }, "distribution": { "Yes": 0.01, "No": 0.99 } }
+          ]
+        },
+        {
+          "id": "FeatureX", "states": ["Yes", "No"], "parents": ["Genus"],
+          "cpt": [
+            { "given": { "Genus": "A" }, "distribution": { "Yes": 0.25, "No": 0.75 } },
+            { "given": { "Genus": "B" }, "distribution": { "Yes": 0.05, "No": 0.95 } }
+          ]
+        },
+        {
+          "id": "AccessoryY", "states": ["Yes", "No"], "parents": ["Genus"],
+          "cpt": [
+            { "given": { "Genus": "A" }, "distribution": { "Yes": 0.25, "No": 0.75 } },
+            { "given": { "Genus": "B" }, "distribution": { "Yes": 0.05, "No": 0.95 } }
+          ]
+        }
+      ]
+    }
+    """
+
+    private func featurePhaseSession(confidenceThreshold: Double = 0.9) throws -> IdentificationSession {
+        let networkFile = try JSONDecoder().decode(BayesianNetworkFile.self, from: Data(Self.featurePhaseNetworkJSON.utf8))
+        let questions = [
+            question("Q1", states: ["Yes", "No"]),
+            question("FeatureX", states: ["Yes", "No"]),
+            question("AccessoryY", states: ["Yes", "No"]),
+        ]
+        let catalog = try IdentificationCatalog(
+            networkFile: networkFile,
+            questionFiles: questions,
+            supplementaryFeatureIDs: ["FeatureX"],
+            accessoryCloudIDs: ["AccessoryY"]
+        )
+        return IdentificationSession(catalog: catalog, confidenceThreshold: confidenceThreshold)
+    }
+
+    /// Once Q1 confidently settles the genus on A, both FeatureX and
+    /// AccessoryY are still plausible for A (0.25, above the 0.15
+    /// relevance floor) and should be asked next, in a phase distinct
+    /// from genus identification — the session shouldn't finish just
+    /// because genus confidence was reached.
+    @Test func featureAndAccessoryQuestionsAreAskedWhenRelevantToTheDeterminedGenus() async throws {
+        let session = try featurePhaseSession()
+        await session.start()
+        await session.selectAnswer("Yes")  // Q1 -> confidently Genus=A
+
+        #expect(!session.isFinished)
+        let first = try #require(session.currentQuestionID)
+        #expect(Set([first]).isSubset(of: ["FeatureX", "AccessoryY"]))
+
+        await session.selectAnswer("Yes")
+        #expect(!session.isFinished)
+        let second = try #require(session.currentQuestionID)
+        #expect(Set([first, second]) == Set(["FeatureX", "AccessoryY"]))
+
+        await session.selectAnswer("Yes")
+        #expect(session.isFinished)
+        #expect(session.detectedSupplementaryFeatures == ["FeatureX"])
+        #expect(session.detectedAccessoryClouds == ["AccessoryY"])
+    }
+
+    /// Once Q1 confidently settles the genus on B, FeatureX/AccessoryY are
+    /// essentially absent (0.05, below the relevance floor) and should be
+    /// skipped entirely rather than asked and answered "No" — the session
+    /// finishes right after genus identification.
+    @Test func featureAndAccessoryQuestionsAreSkippedWhenNotRelevantToTheDeterminedGenus() async throws {
+        let session = try featurePhaseSession()
+        await session.start()
+        await session.selectAnswer("No")  // Q1 -> confidently Genus=B
+
+        #expect(session.isFinished)
+        #expect(session.currentQuestionID == nil)
+        #expect(session.detectedSupplementaryFeatures.isEmpty)
+        #expect(session.detectedAccessoryClouds.isEmpty)
+    }
+
     private func question(_ id: NodeID, states: [StateID]) -> QuestionDefinition {
         QuestionDefinition(
             id: id,
@@ -240,28 +330,8 @@ struct IdentificationSessionTests {
 
     // MARK: - End-to-end sessions against the real bundled content
 
-    /// Same technique as `IdentificationCatalogTests`/`GenusNetworkContentTests`:
-    /// read the real, production JSON straight off disk rather than via
-    /// `Bundle`, since this unit-test target isn't app-hosted.
-    private static let resourcesURL = URL(fileURLWithPath: #filePath)
-        .deletingLastPathComponent()
-        .deletingLastPathComponent()
-        .appendingPathComponent("Clouds/Resources")
-
     private func loadRealCatalog() throws -> IdentificationCatalog {
-        let decoder = JSONDecoder()
-
-        let networkURL = Self.resourcesURL.appendingPathComponent("BayesianNetwork/genus-network.json")
-        let networkFile = try decoder.decode(BayesianNetworkFile.self, from: Data(contentsOf: networkURL))
-
-        let questionIDs = networkFile.nodes.map(\.id).filter { $0 != "Genus" }
-        let questionFiles: [QuestionDefinition] = questionIDs.compactMap { id in
-            let url = Self.resourcesURL.appendingPathComponent("Questions/\(id).json")
-            guard let data = try? Data(contentsOf: url) else { return nil }
-            return try? decoder.decode(QuestionDefinition.self, from: data)
-        }
-
-        return try IdentificationCatalog(networkFile: networkFile, questionFiles: questionFiles)
+        try RealContentLoading.loadCatalog()
     }
 
     /// A single, fully-determined "true cloud": the most likely answer for

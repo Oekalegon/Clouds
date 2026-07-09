@@ -23,14 +23,44 @@ struct IdentificationCatalog: Sendable {
     /// was supplied (CLD-3's rule) — this excludes both the root "Genus"
     /// classification node and any hidden/derived nodes (e.g. CLD-9's
     /// "LightningThunderAssociated", never asked directly, only inferred
-    /// from the questions that are its children).
+    /// from the questions that are its children). Includes supplementary
+    /// features and accessory clouds too: they're valid genus evidence
+    /// like any other question, so `bestNextQuestion` can pick them during
+    /// genus identification if they're ever the most informative choice.
     let questionNodeIDs: [NodeID]
+
+    /// The subset of `questionNodeIDs` that are WMO Supplementary Features
+    /// (Incus, Mamma, ...) rather than genus-identification questions —
+    /// see `QuestionCategories`. Asked in a follow-up pass once the genus
+    /// itself is confidently known, so a session's final report can note
+    /// which were actually observed.
+    let supplementaryFeatureNodeIDs: [NodeID]
+
+    /// The subset of `questionNodeIDs` that are WMO Accessory Clouds
+    /// (Pileus, Velum, ...) — see `supplementaryFeatureNodeIDs`.
+    let accessoryCloudNodeIDs: [NodeID]
+
+    /// `questionNodeIDs` minus the two feature categories above — what
+    /// `IdentificationSession`'s genus-identification phase actually
+    /// selects from.
+    var genusIdentificationNodeIDs: [NodeID] {
+        let featureIDs = Set(supplementaryFeatureNodeIDs).union(accessoryCloudNodeIDs)
+        return questionNodeIDs.filter { !featureIDs.contains($0) }
+    }
 
     private static let genusNodeID: NodeID = "Genus"
 
     /// Pure assembly: builds the network and cross-validates every
     /// question against its node's states. No I/O, fully unit-testable.
-    init(networkFile: BayesianNetworkFile, questionFiles: [QuestionDefinition]) throws {
+    /// `supplementaryFeatureIDs`/`accessoryCloudIDs` default to empty so
+    /// existing call sites that don't care about categorization (most
+    /// tests) don't need to pass them.
+    init(
+        networkFile: BayesianNetworkFile,
+        questionFiles: [QuestionDefinition],
+        supplementaryFeatureIDs: Set<NodeID> = [],
+        accessoryCloudIDs: Set<NodeID> = []
+    ) throws {
         let network = try networkFile.makeNetwork()
 
         var questionsByID: [NodeID: QuestionDefinition] = [:]
@@ -45,6 +75,8 @@ struct IdentificationCatalog: Sendable {
         self.network = network
         self.questions = questionsByID
         self.questionNodeIDs = networkFile.nodes.map(\.id).filter { questionsByID[$0] != nil }
+        self.supplementaryFeatureNodeIDs = self.questionNodeIDs.filter { supplementaryFeatureIDs.contains($0) }
+        self.accessoryCloudNodeIDs = self.questionNodeIDs.filter { accessoryCloudIDs.contains($0) }
     }
 
     /// Loads the real content from the app bundle. Resources are looked up
@@ -71,7 +103,19 @@ struct IdentificationCatalog: Sendable {
             return try decoder.decode(QuestionDefinition.self, from: Data(contentsOf: url))
         }
 
-        try self.init(networkFile: networkFile, questionFiles: questionFiles)
+        guard let categoriesURL = Self.resourceURL(
+            named: "QuestionCategories", extension: "json", subdirectory: "", in: bundle
+        ) else {
+            throw IdentificationCatalogError.missingResource("QuestionCategories.json")
+        }
+        let categories = try decoder.decode(QuestionCategories.self, from: Data(contentsOf: categoriesURL))
+
+        try self.init(
+            networkFile: networkFile,
+            questionFiles: questionFiles,
+            supplementaryFeatureIDs: Set(categories.supplementaryFeatures),
+            accessoryCloudIDs: Set(categories.accessoryClouds)
+        )
     }
 
     private static func resourceURL(named name: String, extension ext: String, subdirectory: String, in bundle: Bundle) -> URL? {
