@@ -297,6 +297,13 @@ Whether it falls uniformly (from a layered cloud, intermittent or continuous) or
             * Possible for Ac and Cc, and rarely for Sc — give Sc a lower P(Yes) than Ac/Cc in the CPT rather than the same flat "Possible" value.
         * No
 
+### Fluctus
+* A relatively short-lived wave formation, usually on the top surface of the cloud, in the form of curls or breaking waves (Kelvin-Helmholtz waves).
+    * Q-FLUCTUS: Is there a short-lived wave formation on the top surface of the cloud, in the form of curls or breaking waves, like breaking ocean waves?
+        * Yes
+            * Possible for Ci, Ac, Sc, and St, and occasionally for Cu — give Cu a lower P(Yes) than the others in the CPT rather than the same flat "Possible" value.
+        * No
+
 ## Accessory clouds
 A cloud can have multiple accessory clouds, therefore, each  accessory cloud has its own node. Each  accessory cloud node is connected to the genus node, and each accessory cloud has one or more questions (G->Ac->Q).
 
