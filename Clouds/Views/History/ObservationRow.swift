@@ -26,6 +26,11 @@ struct ObservationRow: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
+                if let specialFeature = observation.specialFeature {
+                    Text(specialFeature)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
         }
     }
