@@ -1,0 +1,16 @@
+{
+  "id": "DiffuseBase",
+  "text": "Does the cloud have a diffuse, blurry base?",
+  "description": "The base is diffuse when its bottom and sides don't have a sharp edge.",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

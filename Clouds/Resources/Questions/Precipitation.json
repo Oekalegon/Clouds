@@ -1,0 +1,11 @@
+{
+  "id": "Precipitation",
+  "text": "Does the cloud appear to be producing rain or snow that reaches the ground?",
+  "description": "Look for streaks or a hazy curtain falling from the cloud's base and reaching the surface. If it trails off and evaporates before reaching the ground, that's not this.",
+  "image": null,
+  "answers": [
+    { "id": "No", "label": "No" },
+    { "id": "Uniform", "label": "Yes, uniform (intermittent or continuous)" },
+    { "id": "Showers", "label": "Yes, showers" }
+  ]
+}

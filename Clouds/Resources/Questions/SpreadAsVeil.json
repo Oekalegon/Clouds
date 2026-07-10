@@ -1,0 +1,16 @@
+{
+  "id": "SpreadAsVeil",
+  "text": "Is the cloud spread out like a veil, totally or partially covering the sky?",
+  "description": "The cloud should appear as a continuous sheet, not subdivided into separate elements or cloudlets, though the shading can vary within it.",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

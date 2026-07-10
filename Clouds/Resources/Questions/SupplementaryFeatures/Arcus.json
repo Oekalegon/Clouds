@@ -1,0 +1,16 @@
+{
+  "id": "Arcus",
+  "text": "Is there a dense, horizontal roll of cloud with ragged edges along the lower front of the cloud, appearing (when well developed) as a dark, menacing arch?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

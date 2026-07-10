@@ -1,0 +1,20 @@
+{
+  "id": "ElementSize",
+  "text": "What is the size of the cloud's elements, held at arm's length?",
+  "description": "If the cloud can be divided into distinct elements or cloudlets, measure the apparent width of most of them against an outstretched hand.",
+  "image": null,
+  "answers": [
+    {
+      "id": "LessThanOneDegree",
+      "label": "Less than 1 finger-width"
+    },
+    {
+      "id": "OneToFiveDegrees",
+      "label": "1 to 3 finger-widths"
+    },
+    {
+      "id": "MoreThanFiveDegrees",
+      "label": "More than 5 finger-widths"
+    }
+  ]
+}

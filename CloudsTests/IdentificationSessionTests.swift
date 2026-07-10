@@ -87,6 +87,96 @@ struct IdentificationSessionTests {
     }
     """
 
+    /// Genus(A,B) + Q1 (near-deterministic genus signal) + FeatureX (a
+    /// "supplementary feature") + AccessoryY (an "accessory cloud"), both
+    /// clearly associated with A (0.25) and essentially absent for B
+    /// (0.05 baseline) — mirrors CLD-9's real content, where every
+    /// feature/accessory node is Genus-conditioned only.
+    private static let featurePhaseNetworkJSON = """
+    {
+      "nodes": [
+        { "id": "Genus", "states": ["A", "B"], "cpt": [{ "distribution": { "A": 0.5, "B": 0.5 } }] },
+        {
+          "id": "Q1", "states": ["Yes", "No"], "parents": ["Genus"],
+          "cpt": [
+            { "given": { "Genus": "A" }, "distribution": { "Yes": 0.99, "No": 0.01 } },
+            { "given": { "Genus": "B" }, "distribution": { "Yes": 0.01, "No": 0.99 } }
+          ]
+        },
+        {
+          "id": "FeatureX", "states": ["Yes", "No"], "parents": ["Genus"],
+          "cpt": [
+            { "given": { "Genus": "A" }, "distribution": { "Yes": 0.25, "No": 0.75 } },
+            { "given": { "Genus": "B" }, "distribution": { "Yes": 0.05, "No": 0.95 } }
+          ]
+        },
+        {
+          "id": "AccessoryY", "states": ["Yes", "No"], "parents": ["Genus"],
+          "cpt": [
+            { "given": { "Genus": "A" }, "distribution": { "Yes": 0.25, "No": 0.75 } },
+            { "given": { "Genus": "B" }, "distribution": { "Yes": 0.05, "No": 0.95 } }
+          ]
+        }
+      ]
+    }
+    """
+
+    private func featurePhaseSession(confidenceThreshold: Double = 0.9) throws -> IdentificationSession {
+        let networkFile = try JSONDecoder().decode(BayesianNetworkFile.self, from: Data(Self.featurePhaseNetworkJSON.utf8))
+        let questions = [
+            question("Q1", states: ["Yes", "No"]),
+            question("FeatureX", states: ["Yes", "No"]),
+            question("AccessoryY", states: ["Yes", "No"]),
+        ]
+        let catalog = try IdentificationCatalog(
+            networkFile: networkFile,
+            questionFiles: questions,
+            supplementaryFeatureIDs: ["FeatureX"],
+            accessoryCloudIDs: ["AccessoryY"]
+        )
+        return IdentificationSession(catalog: catalog, confidenceThreshold: confidenceThreshold)
+    }
+
+    /// Once Q1 confidently settles the genus on A, both FeatureX and
+    /// AccessoryY are still plausible for A (0.25, above the 0.15
+    /// relevance floor) and should be asked next, in a phase distinct
+    /// from genus identification — the session shouldn't finish just
+    /// because genus confidence was reached.
+    @Test func featureAndAccessoryQuestionsAreAskedWhenRelevantToTheDeterminedGenus() async throws {
+        let session = try featurePhaseSession()
+        await session.start()
+        await session.selectAnswer("Yes")  // Q1 -> confidently Genus=A
+
+        #expect(!session.isFinished)
+        let first = try #require(session.currentQuestionID)
+        #expect(Set([first]).isSubset(of: ["FeatureX", "AccessoryY"]))
+
+        await session.selectAnswer("Yes")
+        #expect(!session.isFinished)
+        let second = try #require(session.currentQuestionID)
+        #expect(Set([first, second]) == Set(["FeatureX", "AccessoryY"]))
+
+        await session.selectAnswer("Yes")
+        #expect(session.isFinished)
+        #expect(session.detectedSupplementaryFeatures == ["FeatureX"])
+        #expect(session.detectedAccessoryClouds == ["AccessoryY"])
+    }
+
+    /// Once Q1 confidently settles the genus on B, FeatureX/AccessoryY are
+    /// essentially absent (0.05, below the relevance floor) and should be
+    /// skipped entirely rather than asked and answered "No" — the session
+    /// finishes right after genus identification.
+    @Test func featureAndAccessoryQuestionsAreSkippedWhenNotRelevantToTheDeterminedGenus() async throws {
+        let session = try featurePhaseSession()
+        await session.start()
+        await session.selectAnswer("No")  // Q1 -> confidently Genus=B
+
+        #expect(session.isFinished)
+        #expect(session.currentQuestionID == nil)
+        #expect(session.detectedSupplementaryFeatures.isEmpty)
+        #expect(session.detectedAccessoryClouds.isEmpty)
+    }
+
     private func question(_ id: NodeID, states: [StateID]) -> QuestionDefinition {
         QuestionDefinition(
             id: id,
@@ -240,47 +330,36 @@ struct IdentificationSessionTests {
 
     // MARK: - End-to-end sessions against the real bundled content
 
-    /// Same technique as `IdentificationCatalogTests`/`GenusNetworkContentTests`:
-    /// read the real, production JSON straight off disk rather than via
-    /// `Bundle`, since this unit-test target isn't app-hosted.
-    private static let resourcesURL = URL(fileURLWithPath: #filePath)
-        .deletingLastPathComponent()
-        .deletingLastPathComponent()
-        .appendingPathComponent("Clouds/Resources")
-
     private func loadRealCatalog() throws -> IdentificationCatalog {
-        let decoder = JSONDecoder()
-
-        let networkURL = Self.resourcesURL.appendingPathComponent("BayesianNetwork/genus-network.json")
-        let networkFile = try decoder.decode(BayesianNetworkFile.self, from: Data(contentsOf: networkURL))
-
-        let questionIDs = networkFile.nodes.map(\.id).filter { $0 != "Genus" }
-        let questionFiles = try questionIDs.map { id in
-            try decoder.decode(
-                QuestionDefinition.self,
-                from: Data(contentsOf: Self.resourcesURL.appendingPathComponent("Questions/\(id).json"))
-            )
-        }
-
-        return try IdentificationCatalog(networkFile: networkFile, questionFiles: questionFiles)
+        try RealContentLoading.loadCatalog()
     }
 
-    /// A truthful "user" for `trueGenus`: whichever real (non-NotApplicable)
-    /// answer is most likely for that genus on the asked question, straight
-    /// from the network's own CPT — never the answer a fixed tree-order
-    /// walk would give, since `bestNextQuestion` doesn't respect tree order.
-    private func oracleAnswer(for questionID: NodeID, trueGenus: StateID, network: BayesianNetwork) -> StateID {
-        let distribution = network.cpts[questionID]?.distribution(givenParents: Assignment(["Genus": trueGenus])) ?? [:]
-        let realAnswers = distribution.filter { $0.key != QuestionDefinition.notApplicableStateID }
-        return realAnswers.max { $0.value < $1.value }?.key ?? "Unsure"
+    /// A single, fully-determined "true cloud": the most likely answer for
+    /// every node, sampled once in topological order so a node with
+    /// non-Genus parents (e.g. CLD-9's "ElementSize", which also depends on
+    /// "SpreadAsVeil"/"Granular") is resolved against that same cloud's
+    /// other true answers rather than Genus alone. This fixed ground truth
+    /// is consulted regardless of the order `bestNextQuestion` actually
+    /// asks in, since adaptive selection doesn't respect topological order.
+    private func groundTruth(trueGenus: StateID, network: BayesianNetwork) -> [NodeID: StateID] {
+        var truth: [NodeID: StateID] = ["Genus": trueGenus]
+        for nodeID in network.topologicalOrder where nodeID != "Genus" {
+            guard let node = network.nodes[nodeID], let cpt = network.cpts[nodeID] else { continue }
+            let given = Assignment(Dictionary(uniqueKeysWithValues: node.parentIDs.map { ($0, truth[$0] ?? "") }))
+            let distribution = cpt.distribution(givenParents: given) ?? [:]
+            let realAnswers = distribution.filter { $0.key != QuestionDefinition.notApplicableStateID }
+            truth[nodeID] = (realAnswers.isEmpty ? distribution : realAnswers).max { $0.value < $1.value }?.key
+        }
+        return truth
     }
 
     private func runSessionToCompletion(catalog: IdentificationCatalog, trueGenus: StateID) async -> IdentificationSession {
+        let truth = groundTruth(trueGenus: trueGenus, network: catalog.network)
         let session = IdentificationSession(catalog: catalog)
         await session.start()
 
         while !session.isFinished, let questionID = session.currentQuestionID {
-            let answer = oracleAnswer(for: questionID, trueGenus: trueGenus, network: catalog.network)
+            let answer = truth[questionID] ?? "No"
             await session.selectAnswer(answer)
         }
 
@@ -290,25 +369,26 @@ struct IdentificationSessionTests {
     /// End-to-end regression guard: for each real genus, a "user" who
     /// truthfully answers whatever question `bestNextQuestion` actually
     /// asks (not a fixed tree-order walk) should end up with that genus as
-    /// `mostLikelyGenus`. This is the test that would have caught CLD-8's
-    /// NotApplicable-calibration bug, where genera with a short
-    /// "applicable" question set (Ci, Cs, Cu, Cb) get systematically
-    /// misclassified once a real answer's likelihood is distorted by the
-    /// per-genus NotApplicable rescaling.
+    /// `mostLikelyGenus`. CLD-9's redesigned content (see
+    /// `GenusNetworkContentTests`) replaces CLD-7/CLD-8's flowchart-only
+    /// tree.
     ///
-    /// Those four genera are wrapped in `withKnownIssue` rather than fixed
-    /// here: the real fix is an engine-level renormalization (or a full
-    /// Bayesian-network restructuring), tracked as separate follow-up work.
-    /// `withKnownIssue` will itself fail once that fix lands and one of
-    /// these starts passing — that's the signal to remove it from this set.
+    /// Stratus is a known exception (`withKnownIssue`): its own "textbook"
+    /// answers (per this content's calibration) are shared almost exactly
+    /// by Altostratus — both are "Usual" for a uniform base, full shading,
+    /// and a spread-as-veil appearance, and neither has a uniquely
+    /// distinguishing marker in the current Tabular-Guide feature set. A
+    /// real TestCases.md walk (case 2, actually Altostratus) hit the same
+    /// overlap, and strengthening Stratus's own signal to win *this*
+    /// synthetic self-check made that real case *worse* — so this is
+    /// tracked as an honest content gap, not force-fit by recalibrating.
     @Test(arguments: CloudGenus.allCases)
     func endToEndSessionIdentifiesTheTrueGenusFromTruthfulAnswers(genus: CloudGenus) async throws {
-        let knownlyMiscalibrated: Set<CloudGenus> = [.cirrus, .cirrostratus, .cumulus, .cumulonimbus]
         let catalog = try loadRealCatalog()
         let session = await runSessionToCompletion(catalog: catalog, trueGenus: genus.rawValue)
 
-        if knownlyMiscalibrated.contains(genus) {
-            withKnownIssue("CLD-8's NotApplicable calibration misclassifies this genus under adaptive question selection; tracked for the planned Bayesian network restructuring") {
+        if genus == .stratus {
+            withKnownIssue("Stratus and Altostratus share almost the same feature profile in this content — see comment above") {
                 #expect(session.mostLikelyGenus == genus.rawValue)
             }
         } else {

@@ -1,0 +1,20 @@
+{
+  "id": "VerticalDevelopment",
+  "text": "Does the cloud extend visibly vertically?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "YesDetached",
+      "label": "Yes, detached from other clouds"
+    },
+    {
+      "id": "YesCommonBase",
+      "label": "Yes, sharing a common base with neighbouring clouds"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

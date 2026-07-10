@@ -1,0 +1,16 @@
+{
+  "id": "Murus",
+  "text": "Is there a localized, persistent, often abrupt lowering of cloud from the cloud's base, typically in a rain-free area?",
+  "description": "Commonly known as a \"wall cloud\".",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

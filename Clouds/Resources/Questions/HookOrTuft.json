@@ -1,0 +1,16 @@
+{
+  "id": "HookOrTuft",
+  "text": "Do the filaments terminate in a hook or a tuft?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

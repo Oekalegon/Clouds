@@ -1,0 +1,16 @@
+{
+  "id": "Fluctus",
+  "text": "Is there a short-lived wave formation on the top surface of the cloud, in the form of curls or breaking waves, like breaking ocean waves?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

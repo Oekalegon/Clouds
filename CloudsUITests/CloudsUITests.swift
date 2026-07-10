@@ -90,13 +90,13 @@ final class CloudsUITests: XCTestCase {
         app.switches["Sky Obscured"].tap()
 
         // The dial is replaced by the obscured overlay and Continue still
-        // leads on to the questions.
+        // leads on to the questions. The first question the session asks
+        // isn't necessarily Yes/No (e.g. it may be "Shading"), so this
+        // only checks that some known question — or the result screen —
+        // was reached, not which one.
         XCTAssertTrue(app.staticTexts["Sky obscured"].waitForExistence(timeout: 2))
         app.buttons["Continue"].tap()
-        XCTAssertTrue(
-            app.buttons["Yes"].waitForExistence(timeout: 5) ||
-            app.buttons["Save Observation"].waitForExistence(timeout: 5)
-        )
+        XCTAssertTrue(waitForQuestionOrSaveButton(app, timeout: 5))
     }
 
     @MainActor
@@ -149,17 +149,62 @@ final class CloudsUITests: XCTestCase {
         app.collectionViews["SummaryObservationsList"].staticTexts.matching(identifier: "Nimbostratus")
     }
 
-    /// Answers "Yes" until the result screen appears. The order/count of
-    /// questions isn't hardcoded, since the next question is chosen by
-    /// expected information gain, not a fixed sequence. At most 10 question
-    /// nodes exist, so this always terminates well within the loop.
+    /// The answer that steers toward Nimbostratus for every real question
+    /// node in the bundled genus network — sampled once via
+    /// `IdentificationSessionTests`'s `groundTruth(trueGenus:network:)`
+    /// helper against the same content this app ships, then hardcoded
+    /// here since this UI test target can't import the engine directly.
+    /// Not every question is Yes/No (e.g. `Shading`, `ElementSize`), so a
+    /// fixed set of answer-button identifiers to tap by node id is needed
+    /// rather than a blanket "tap Yes". If this ever drifts from the real
+    /// CPTs, `endToEndSessionIdentifiesTheTrueGenusFromTruthfulAnswers`
+    /// (genus: .nimbostratus) in `IdentificationSessionTests` catches it
+    /// first — this table just needs re-sampling from that same helper.
+    private static let nimbostratusAnswers: [String: String] = [
+        "Arcus": "No", "Asperitas": "No", "Cauda": "No", "Cavum": "No",
+        "DiffuseBase": "Yes", "ElementSize": "LessThanOneDegree", "Fibrous": "Yes",
+        "FlattenedBase": "No", "Fluctus": "No", "Flumen": "No", "Granular": "No",
+        "HasDistinctElements": "No", "HookOrTuft": "No", "Incus": "No",
+        "LightningSeen": "No", "Mamma": "No", "Murus": "No",
+        "OpticalThickness": "Opaque", "Pannus": "Yes", "Pileus": "No",
+        "Precipitation": "Uniform", "Ragged": "No", "Shading": "FullyShaded",
+        "Sheaves": "No", "SilkySheen": "Yes", "SpreadAsVeil": "Yes",
+        "ThinFilaments": "No", "ThunderHeard": "No", "Tuba": "No",
+        "Undulated": "No", "UniformBase": "Yes", "Velum": "No",
+        "VerticalDevelopment": "No", "Virga": "Yes"
+    ]
+
+    /// True once either a known question node (by its title's accessibility
+    /// identifier) or the "Save Observation" button appears — for callers
+    /// that only care whether the Q&A phase was reached, not which
+    /// question came first.
+    private func waitForQuestionOrSaveButton(_ app: XCUIApplication, timeout: TimeInterval) -> Bool {
+        let deadline = Date().addingTimeInterval(timeout)
+        while Date() < deadline {
+            if app.buttons["Save Observation"].exists { return true }
+            if Self.nimbostratusAnswers.keys.contains(where: { app.staticTexts[$0].exists }) { return true }
+            Thread.sleep(forTimeInterval: 0.2)
+        }
+        return false
+    }
+
+    /// Answers whichever question the session actually asks (adaptive, by
+    /// expected information gain — not a fixed order, and not every node
+    /// gets asked once earlier answers make it inapplicable) with the
+    /// answer that leads to Nimbostratus, identified by the question
+    /// title's accessibility identifier (the node id) rather than by
+    /// label text, since several questions aren't Yes/No.
     private func answerUntilFinished(_ app: XCUIApplication) {
-        for _ in 0..<12 {
+        for _ in 0..<(Self.nimbostratusAnswers.count + 5) {
             if app.buttons["Save Observation"].waitForExistence(timeout: 3) {
                 return
             }
-            if app.buttons["Yes"].waitForExistence(timeout: 3) {
-                app.buttons["Yes"].tap()
+            guard let questionID = Self.nimbostratusAnswers.keys.first(where: { app.staticTexts[$0].exists }) else {
+                continue
+            }
+            let answerID = Self.nimbostratusAnswers[questionID] ?? "No"
+            if app.buttons[answerID].exists {
+                app.buttons[answerID].tap()
             }
         }
     }

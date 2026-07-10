@@ -1,0 +1,16 @@
+{
+  "id": "ThunderHeard",
+  "text": "Is thunder heard?",
+  "description": "The thunder may come from a different cloud than the one you're identifying, so on its own it's a weaker sign than seeing lightning.",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "SilkySheen",
+  "text": "Does part of the cloud have a silky sheen?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "YesAtSummit",
+      "label": "Yes, at the summit"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

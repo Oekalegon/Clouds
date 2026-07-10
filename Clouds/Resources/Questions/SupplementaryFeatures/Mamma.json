@@ -1,0 +1,16 @@
+{
+  "id": "Mamma",
+  "text": "Are there any hanging protuberances, like udders, on the underside of the cloud?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

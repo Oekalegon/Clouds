@@ -40,6 +40,23 @@ struct QuestionDefinitionTests {
         ])
     }
 
+    @Test func decodingQuestionDefinitionParsesPerAnswerDescriptions() throws {
+        let json = """
+        {
+          "id": "OpticalThickness",
+          "text": "Does the cloud appear thin, translucent, or opaque?",
+          "answers": [
+            { "id": "Thin", "label": "Thin", "description": "The disc of the Sun or Moon can be seen through the cloud." },
+            { "id": "Opaque", "label": "Opaque" }
+          ]
+        }
+        """
+        let question = try decodeQuestion(json)
+
+        #expect(question.answers[0].description == "The disc of the Sun or Moon can be seen through the cloud.")
+        #expect(question.answers[1].description == nil)
+    }
+
     @Test func decodingQuestionDefinitionAllowsOmittedDescriptionAndImage() throws {
         let json = """
         {

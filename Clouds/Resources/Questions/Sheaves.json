@@ -1,0 +1,16 @@
+{
+  "id": "Sheaves",
+  "text": "Does the cloud appear grouped in sheaves?",
+  "description": "Sheaves look like tightly bound bundles of wheat or tied ropes.",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

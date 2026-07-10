@@ -1,0 +1,20 @@
+{
+  "id": "Fibrous",
+  "text": "Does the cloud appear fibrous (hair-like)?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "YesAtSummit",
+      "label": "Yes, at the summit"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

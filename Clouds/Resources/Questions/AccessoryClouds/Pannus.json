@@ -1,0 +1,16 @@
+{
+  "id": "Pannus",
+  "text": "Are there ragged shreds of cloud, sometimes forming a continuous layer, hanging below (and sometimes attached to) the cloud?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

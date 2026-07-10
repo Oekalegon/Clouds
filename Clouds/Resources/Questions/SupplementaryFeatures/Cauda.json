@@ -1,0 +1,16 @@
+{
+  "id": "Cauda",
+  "text": "Is there a horizontal, tail-shaped cloud (not a funnel) extending away from the cloud at a low level, typically with its base at the same height as the cloud it's attached to?",
+  "description": "Commonly known as a \"tail cloud\".",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

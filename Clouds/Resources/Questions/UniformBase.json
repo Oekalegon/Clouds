@@ -1,0 +1,16 @@
+{
+  "id": "UniformBase",
+  "text": "Does the cloud have a uniform and flat base?",
+  "description": "The base occurs at a single, consistent altitude across the sky, without large abrupt steps or breaks. Lower, distinct clouds that happen to pass beneath don't count as breaking the uniformity.",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

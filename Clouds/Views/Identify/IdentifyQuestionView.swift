@@ -11,6 +11,9 @@ import UIKit
 struct IdentifyQuestionView: View {
     let question: QuestionDefinition
     let selectedAnswer: StateID?
+    let posterior: [StateID: Double]
+    var supplementaryFeatures: [NodeID] = []
+    var accessoryClouds: [NodeID] = []
     let onSelect: (StateID) -> Void
 
     var body: some View {
@@ -20,6 +23,7 @@ struct IdentifyQuestionView: View {
             VStack(alignment: .leading, spacing: 12) {
                 Text(question.text)
                     .font(.title2.bold())
+                    .accessibilityIdentifier(question.id)
 
                 if let description = question.description {
                     Text(description)
@@ -32,17 +36,33 @@ struct IdentifyQuestionView: View {
                         Button {
                             onSelect(answer.id)
                         } label: {
-                            Text(answer.label)
-                                .frame(maxWidth: .infinity)
+                            VStack(spacing: 2) {
+                                Text(answer.label)
+                                if let description = answer.description {
+                                    Text(description)
+                                        .font(.caption)
+                                        .multilineTextAlignment(.center)
+                                }
+                            }
+                            .frame(maxWidth: .infinity)
                         }
                         .buttonStyle(.borderedProminent)
                         .tint(answer.id == selectedAnswer ? .accentColor : .secondary)
+                        .accessibilityIdentifier(answer.id)
                     }
                 }
                 .padding(.top, 8)
             }
             .padding()
             .background(.thinMaterial)
+        }
+        .overlay(alignment: .topTrailing) {
+            DebugPosteriorView(
+                posterior: posterior,
+                supplementaryFeatures: supplementaryFeatures,
+                accessoryClouds: accessoryClouds
+            )
+            .padding()
         }
     }
 
@@ -65,17 +85,17 @@ struct IdentifyQuestionView: View {
 #Preview {
     IdentifyQuestionView(
         question: QuestionDefinition(
-            id: "LightningOrThunder",
-            text: "Is lightning seen or thunder heard?",
-            description: "This is the clearest sign of a Cumulonimbus, even when the cloud's shape is hard to judge.",
+            id: "LightningSeen",
+            text: "Is lightning seen to be associated with this cloud?",
+            description: "Only count lightning you can see coming from this specific cloud, not a flash elsewhere in the sky.",
             image: nil,
             answers: [
-                QuestionAnswer(id: "Yes", label: "Yes"),
-                QuestionAnswer(id: "No", label: "No"),
-                QuestionAnswer(id: "Unsure", label: "Not sure")
+                QuestionAnswer(id: "Yes", label: "Yes", description: "A flash you can see coming from this cloud"),
+                QuestionAnswer(id: "No", label: "No")
             ]
         ),
         selectedAnswer: nil,
+        posterior: ["Cb": 0.62, "Cu": 0.21, "Sc": 0.09, "Ac": 0.05, "St": 0.02, "Ci": 0.01],
         onSelect: { _ in }
     )
 }

@@ -1,0 +1,16 @@
+{
+  "id": "Virga",
+  "text": "Are there trails of precipitation hanging from the underside of the cloud that evaporate before reaching the ground?",
+  "description": "Streaks or a hazy curtain that trail off partway down rather than reaching the ground, sometimes visibly bending with the wind.",
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

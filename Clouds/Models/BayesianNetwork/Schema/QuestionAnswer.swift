@@ -12,4 +12,11 @@ import Foundation
 struct QuestionAnswer: Decodable, Hashable {
     let id: StateID
     let label: String
+    let description: String?
+
+    init(id: StateID, label: String, description: String? = nil) {
+        self.id = id
+        self.label = label
+        self.description = description
+    }
 }

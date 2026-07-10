@@ -26,6 +26,16 @@ struct ObservationRow: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
+                if !observation.supplementaryFeatures.isEmpty {
+                    Text("Supplementary: \(observation.supplementaryFeatures.joined(separator: ", "))")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                if !observation.accessoryClouds.isEmpty {
+                    Text("Accessory clouds: \(observation.accessoryClouds.joined(separator: ", "))")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
         }
     }

@@ -1,0 +1,16 @@
+{
+  "id": "Tuba",
+  "text": "Is there a cloud column or inverted cone hanging from the cloud's base?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

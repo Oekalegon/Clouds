@@ -1,0 +1,16 @@
+{
+  "id": "Undulated",
+  "text": "Does the cloud have an undulated or rippled structure?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "Pileus",
+  "text": "Is there a small cap or hood of cloud above the top of, or attached to the upper part of, the cloud, which the cloud often appears to be pushing up into or through?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}

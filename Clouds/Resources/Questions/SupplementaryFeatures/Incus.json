@@ -1,0 +1,16 @@
+{
+  "id": "Incus",
+  "text": "Is the upper part of the cloud spread out in the shape of an anvil, with a smooth, fibrous, or striated appearance?",
+  "description": null,
+  "image": null,
+  "answers": [
+    {
+      "id": "Yes",
+      "label": "Yes"
+    },
+    {
+      "id": "No",
+      "label": "No"
+    }
+  ]
+}
