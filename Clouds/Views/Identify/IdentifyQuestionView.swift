@@ -23,6 +23,7 @@ struct IdentifyQuestionView: View {
             VStack(alignment: .leading, spacing: 12) {
                 Text(question.text)
                     .font(.title2.bold())
+                    .accessibilityIdentifier(question.id)
 
                 if let description = question.description {
                     Text(description)
@@ -47,6 +48,7 @@ struct IdentifyQuestionView: View {
                         }
                         .buttonStyle(.borderedProminent)
                         .tint(answer.id == selectedAnswer ? .accentColor : .secondary)
+                        .accessibilityIdentifier(answer.id)
                     }
                 }
                 .padding(.top, 8)
