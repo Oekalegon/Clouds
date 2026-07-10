@@ -17,7 +17,11 @@ final class CloudObservation {
     var genus: String?
     var species: String?
     var variety: String?
-    var specialFeature: String?
+    /// Detected supplementary features (Mamma, Arcus, ...) and accessory
+    /// clouds (Pileus, Velum, ...) are distinct WMO categories, so they're
+    /// kept as separate lists rather than merged into one field.
+    var supplementaryFeatures: [String]
+    var accessoryClouds: [String]
     @Attribute(.externalStorage) var photoData: Data?
     var thumbnailData: Data?
     /// The sky-wide conditions (cloud cover, weather) this observation was
@@ -34,7 +38,8 @@ final class CloudObservation {
         genus: String? = nil,
         species: String? = nil,
         variety: String? = nil,
-        specialFeature: String? = nil,
+        supplementaryFeatures: [String] = [],
+        accessoryClouds: [String] = [],
         photoData: Data? = nil,
         thumbnailData: Data? = nil,
         skyConditions: SkyConditions? = nil
@@ -46,7 +51,8 @@ final class CloudObservation {
         self.genus = genus
         self.species = species
         self.variety = variety
-        self.specialFeature = specialFeature
+        self.supplementaryFeatures = supplementaryFeatures
+        self.accessoryClouds = accessoryClouds
         self.photoData = photoData
         self.thumbnailData = thumbnailData
         self.skyConditions = skyConditions
@@ -58,13 +64,5 @@ final class CloudObservation {
     /// view actually runs.
     static var standalonePredicate: Predicate<CloudObservation> {
         #Predicate { $0.skyConditions == nil }
-    }
-
-    /// Joins a session's detected supplementary features and accessory
-    /// clouds into the flat string stored in `specialFeature`, or `nil`
-    /// when neither was detected.
-    static func specialFeatureText(supplementaryFeatures: [NodeID], accessoryClouds: [NodeID]) -> String? {
-        let combined = supplementaryFeatures + accessoryClouds
-        return combined.isEmpty ? nil : combined.joined(separator: ", ")
     }
 }

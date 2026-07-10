@@ -188,10 +188,8 @@ struct IdentifyView: View {
             longitude: location?.coordinate.longitude,
             placeName: location?.placeName,
             genus: genus.displayName,
-            specialFeature: CloudObservation.specialFeatureText(
-                supplementaryFeatures: session.detectedSupplementaryFeatures,
-                accessoryClouds: session.detectedAccessoryClouds
-            ),
+            supplementaryFeatures: session.detectedSupplementaryFeatures,
+            accessoryClouds: session.detectedAccessoryClouds,
             photoData: photoData,
             thumbnailData: thumbnailData
         )
