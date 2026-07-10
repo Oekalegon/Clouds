@@ -182,14 +182,16 @@ struct IdentifyView: View {
         // now, so today's location would be confidently wrong — its own
         // EXIF GPS (or nothing) is the honest source.
         let location = photoOrigin == .library ? photoLocation : capturedLocation
-        let specialFeatures = session.detectedSupplementaryFeatures + session.detectedAccessoryClouds
         let observation = CloudObservation(
             date: photoDate ?? .now,
             latitude: location?.coordinate.latitude,
             longitude: location?.coordinate.longitude,
             placeName: location?.placeName,
             genus: genus.displayName,
-            specialFeature: specialFeatures.isEmpty ? nil : specialFeatures.joined(separator: ", "),
+            specialFeature: CloudObservation.specialFeatureText(
+                supplementaryFeatures: session.detectedSupplementaryFeatures,
+                accessoryClouds: session.detectedAccessoryClouds
+            ),
             photoData: photoData,
             thumbnailData: thumbnailData
         )

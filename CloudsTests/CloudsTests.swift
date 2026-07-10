@@ -23,4 +23,26 @@ struct CloudsTests {
         #expect(observation.thumbnailData == nil)
         #expect(observation.skyConditions == nil)
     }
+
+    @Test func specialFeatureTextIsNilWhenNothingDetected() async throws {
+        #expect(CloudObservation.specialFeatureText(supplementaryFeatures: [], accessoryClouds: []) == nil)
+    }
+
+    @Test func specialFeatureTextJoinsOnlySupplementaryFeatures() async throws {
+        let text = CloudObservation.specialFeatureText(supplementaryFeatures: ["Mamma", "Arcus"], accessoryClouds: [])
+        #expect(text == "Mamma, Arcus")
+    }
+
+    @Test func specialFeatureTextJoinsOnlyAccessoryClouds() async throws {
+        let text = CloudObservation.specialFeatureText(supplementaryFeatures: [], accessoryClouds: ["Pileus"])
+        #expect(text == "Pileus")
+    }
+
+    @Test func specialFeatureTextJoinsSupplementaryFeaturesBeforeAccessoryClouds() async throws {
+        let text = CloudObservation.specialFeatureText(
+            supplementaryFeatures: ["Mamma", "Arcus"],
+            accessoryClouds: ["Pileus", "Velum"]
+        )
+        #expect(text == "Mamma, Arcus, Pileus, Velum")
+    }
 }

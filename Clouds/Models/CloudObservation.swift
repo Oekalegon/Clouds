@@ -59,4 +59,12 @@ final class CloudObservation {
     static var standalonePredicate: Predicate<CloudObservation> {
         #Predicate { $0.skyConditions == nil }
     }
+
+    /// Joins a session's detected supplementary features and accessory
+    /// clouds into the flat string stored in `specialFeature`, or `nil`
+    /// when neither was detected.
+    static func specialFeatureText(supplementaryFeatures: [NodeID], accessoryClouds: [NodeID]) -> String? {
+        let combined = supplementaryFeatures + accessoryClouds
+        return combined.isEmpty ? nil : combined.joined(separator: ", ")
+    }
 }
